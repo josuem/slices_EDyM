@@ -1,0 +1,163 @@
+---
+title: "Diapositiva de testing - Xaringan"
+# subtitle: "Electrónica digital y microcontroladores"
+author: "Josué Meneses Díaz"
+# institute: "Universidad de Santiago de Chile"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: 
+      - default
+      - css/personal.css # - metropolis
+      - metropolis-fonts  # css/mytheme.css, "css/mytheme-fonts.css"]
+    lib_dir: libs
+    seal: true
+    self_contained: false
+    nature:
+      highlightStyle: googlecode
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
+      # ratio: 4:3
+      beforeInit: "macros.js"
+      slideNumberFormat: |
+        <div class="progress-bar-container">
+          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
+          </div>
+        </div>
+---
+```{r setup, include = FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+library(xaringanExtra)
+library(nhsrtheme)
+library(NHSRdatasets)
+# set default options
+opts_chunk$set(echo=FALSE,
+               collapse = TRUE,
+               fig.width = 7.252,
+               fig.height = 4,
+               dpi = 300)
+
+# set engines
+knitr::knit_engines$set("markdown")
+
+xaringanExtra::use_tile_view()
+xaringanExtra::use_panelset()
+xaringanExtra::use_scribble()
+
+# Configuración de Python
+Sys.setenv(RETICULATE_PYTHON = "E:/Users/Josue/anaconda3/python.exe")
+library(reticulate)
+
+todo<-FALSE
+```
+
+```{python config, echo=FALSE}
+import matplotlib.pyplot as plt
+import matplotlib
+import numpy as np
+
+matplotlib.use('Agg')
+```
+
+
+name: question
+class: inverse, middle, center
+
+{{content}}
+
+---
+template: question
+
+# How can we make our slides<br>look more interesting???
+
+--
+
+----
+
+.left-col[.center[
+### with placement
+]]
+
+--
+
+.center-col[
+.center[
+### pretty pictures
+]]
+
+--
+
+.right-col[.center[
+### and icons
+]]
+
+.bottom[.left[
+
+<br><br>
+
+Silvia crea una nueva regla en el ccs que permite utilizar tres columnas como las anteriores mediante la sentencia `.left-col`, `.center-col` y `.right-col`.
+<br><br>
+
+- **Fuente: ** [Sharing Your Work with xaringan - Silvia Canelón, Ph.D.](https://spcanelon.github.io/xaringan-basics-and-beyond/index.htm)
+]
+]
+
+---
+class: highlight-last-item
+
+
+# Uso de templates
+Se pueden crear templates para cambiar el comportamiento general de una diapositiva. En el ejemplo anterior se ha creado
+
+```{markdown}
+name: question
+class: inverse, middle, center
+
+{{content}}
+
+---
+template: question
+```
+
+- **Fuente: ** [Sharing Your Work with xaringan - Silvia Canelón, Ph.D.](https://spcanelon.github.io/xaringan-basics-and-beyond/index.htm)
+
+---
+# Uso de -- en columnas
+
+.left-column[
+## Left column title
+  
+### Another title 
+]
+  
+.right-column[
+
+A whole sentence
+
++ one `Markdown` bullet point
+{{content}}
+
+]
+
+--
+
++ a second bullet point
+{{content}}
+
+--
+
++ a third bullet point
+{{content}}
+
+--
+
+**Fuente: ** [Incremental slides do not work with a two-column layout - stackoverflow](https://stackoverflow.com/questions/46408057/incremental-slides-do-not-work-with-a-two-column-layout)
+
+---
+
+# 
+
+
