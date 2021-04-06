@@ -4,7 +4,7 @@
     <title>Presentación del curso</title>
     <meta charset="utf-8" />
     <meta name="author" content="Josué Meneses Díaz" />
-    <meta name="date" content="2021-03-28" />
+    <meta name="date" content="2021-04-05" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
@@ -26,7 +26,7 @@ class: center, middle, inverse, title-slide
 ## Electrónica digital y microcontroladores
 ### Josué Meneses Díaz
 ### Universidad de Santiago de Chile
-### 2021-03-28
+### 2021-04-05
 
 ---
 
@@ -58,161 +58,313 @@ class: center, middle, inverse, title-slide
 
 
 
+# Objetivos del curso
+&lt;br&gt;&lt;br&gt;
+- Comprender los conceptos fundamentales que rigen la Electrónica digital.
+--
+
+- Aprender a **diseñar** y **analizar** circuitos digitales:
+  - Diseño de circuitos combinacionales.
+  - Diseño de circuitos secuenciales.
+
+--
+- Conocer las caracteristicas generales de los microcontroladores (MCU)
+  - Arquitectura 
+  - Como programar un MCU&lt;br&gt;&lt;br&gt;
+
+
+---
+
 # Introducción
 ## ¿Qué es la electrónica digital?
+.pull-left[
+Es el **análisis y diseño** de circuitos electrónicos que permiten llevar a cabo un o varias operaciones necesarias para completar una **decisión lógica**.
 
----
-# Objetivos del curso
-
-.left-column[]
-
-.right-column.middle[
-- Comprender los conceptos fundamentales de la electrónica digital.
-&lt;br&gt;&lt;br&gt;
-- Aprender a realizar y analizar circuitos digitales
-  - Diseño de circuitos combinacionales.
-  - Diseño de circuitos secuenciales.&lt;br&gt;&lt;br&gt;
-- Entender como funcionan los microcontroladores (MCU)
-  - Como programar un MCU&lt;br&gt;&lt;br&gt;
-- Aplicar estos conocimientos a problemas ingenieriles
+Se trabaja con señales digitales, i.e., señales que varían entre dos posibles estados: 1 y 0 (de hay su naturaleza ***binaria***).
 ]
+--
+Dentro de sus ventajas tenemos:
+.font80[
+.pull-right[
+
+- Curva de aprendizaje rápida, diseños fáciles.
+- Mayor precisión y posibilidad de programación.
+- Se elimina el ruido entre los datos enviados.
+    - Posibilidad de realizar copias exactas de datos, imágenes, música, etc.
+    - Mejora considerablemente el traspaso de información desde dos medios de comunicación.
+- Sus salidas por lo general son invariantes en el tiempo.
+]]
 
 ---
+# Introducción - Linea de Tiempo
 
-# Motivación
-## Fundamentos
-&lt;img src="01_presentacion_curso_files/figure-html/analogic-signal-1.png" width="1134" /&gt;
-
- .center[**Fig.1 ** Señal digital cuadrada, utilizada en generalmente en los sistemas digitales.(a) Señal ideal transmitida (b) Señal real con ruido.]
+&lt;img src="./images/timeline.svg" height="80%" style="display: block; margin: auto;" /&gt;
 
 ---
+&lt;!-- # Motivación --&gt;
+&lt;!-- ## Fundamentos --&gt;
+&lt;!-- ```{python analogic-signal, echo=FALSE, results='hide'} --&gt;
+&lt;!-- from scipy import signal --&gt;
+&lt;!-- import matplotlib.pyplot as plt --&gt;
 
-# Motivación
-## Fundamentos
-&lt;img src="01_presentacion_curso_files/figure-html/logic-signal-1.png" width="1134" /&gt;
+&lt;!-- import numpy as np --&gt;
+
+&lt;!-- t = np.linspace(0, 1, 500, endpoint=False) --&gt;
+
+&lt;!-- cm = 1/2.54 --&gt;
+&lt;!-- fig, ax = plt.subplots(1, 2, figsize=(30*cm, 10*cm)) --&gt;
+
+&lt;!-- # Señal ideal --&gt;
+&lt;!-- signal =  np.sin(2 * np.pi * 5 * t) --&gt;
+&lt;!-- ax[0].plot(t, signal, color="black") --&gt;
+&lt;!-- ax[0].set_title("(a)") --&gt;
+&lt;!-- ax[0].set_ylabel("Voltaje (V)"); ax[0].set_xlabel("Tiempo (s)") --&gt;
+
+&lt;!-- # Señal con ruido --&gt;
+&lt;!-- noise = np.random.normal(0, 0.1, signal.shape) --&gt;
+&lt;!-- ax[1].plot(t,  signal+noise , color="black") --&gt;
+&lt;!-- ax[1].set_title("(b)") --&gt;
+&lt;!-- ax[1].set_xlabel("Tiempo (s)") --&gt;
 
 
-.center[**Fig.2** Señal digital. (a) Señal digital ideal. (b) Señal digital con ruido.]
+&lt;!-- plt.xlabel("Tiempo (s)") --&gt;
+&lt;!-- plt.show() --&gt;
+&lt;!-- ``` --&gt;
 
----
+&lt;!--  .center[**Fig.1 ** Señal digital cuadrada, utilizada en generalmente en los sistemas digitales.(a) Señal ideal transmitida (b) Señal real con ruido.] --&gt;
+
+&lt;!-- --- --&gt;
+
+&lt;!-- # Motivación --&gt;
+&lt;!-- ## Fundamentos --&gt;
+&lt;!-- ```{python logic-signal, echo=FALSE, results='hide', fig.show=TRUE} --&gt;
+&lt;!-- #!/usr/bin/env python --&gt;
+&lt;!-- # -*- coding: utf-8 -*- --&gt;
+
+&lt;!-- import matplotlib.pyplot as plt --&gt;
+&lt;!-- import matplotlib --&gt;
+&lt;!-- import numpy as np --&gt;
+
+&lt;!-- matplotlib.use('Agg') --&gt;
+
+&lt;!-- from scipy import signal --&gt;
+
+&lt;!-- t            = np.linspace(0, 1, 500, endpoint=False) --&gt;
+&lt;!-- logic_signal = 0.5+0.5*signal.square(2 * np.pi * 5 * t)   --&gt;
+&lt;!-- noise        = np.random.normal(0, 0.05, logic_signal.shape) --&gt;
+
+&lt;!-- cm = 1/2.54 --&gt;
+&lt;!-- fig, ax = plt.subplots(1, 2, figsize=(30*cm, 10*cm)) --&gt;
+
+&lt;!-- title = ["(a)", "(b)"] --&gt;
+&lt;!-- data = [logic_signal, logic_signal+noise] --&gt;
+
+&lt;!-- for i in [0, 1]: --&gt;
+&lt;!--   ax[i].plot(t, data[i], color="black") --&gt;
+&lt;!--   ax[i].set_xlabel(r"Tiempo (s)") --&gt;
+&lt;!--   ax[i].set_title(title[i]) --&gt;
+
+&lt;!-- ax[0].set_ylabel(r"Nivel logico") --&gt;
+
+&lt;!-- plt.show() --&gt;
+&lt;!-- ``` --&gt;
+&lt;!--  --&gt;
+
+&lt;!-- .center[**Fig.2** Señal digital. (a) Señal digital ideal. (b) Señal digital con ruido.] --&gt;
+
+&lt;!-- --- --&gt;
 
 # Programa del Curso
 
 .left-col[
-### 1) Sistemas numéricos
+### 1) Conceptos lógicos básicos
+  - Señal digital
+  - Niveles lógicos
+  - Puertas lógicas y tablas de verdad
+  
+### 2) Sistemas numéricos
   - Sistena decimal
   - Sistema binario
   - Sistema Hexadécinal
   - Conversión ente sistemas
- 
-### 2) Principios digitales
-  - Señal Digital: Partes principales
-  - Niveles Lógicos
-  - Teoremas booleanos
 ]
 
 --
 
 .center-col[
 ### 3) Lógica Combinacional
+  - Funciones lógicas
+  - Teoremas booleanos
   - Miniterminos y Maxiterminos
   - Mapas de Karnaugh
   - Aplicaciones Fundamentales
 ]
-
---
-
 .right-col[
 ### 4) Lógica secuencial
   - Latch y Flipflops
   - Tablas de estados
   - Máquinas de estados finitas
   - Aplicaciones
+]
+
+--
+---
+# Programa del Curso
+.pull-left[
+&lt;br&gt;
 
 ### 5) Microcontroladores
   - Tipos de arquitectura 
   - Componentes internos
   - Memorias
   - Programación
+  - Uso de Perfisféricos
+]
+.pull-right[
+&lt;br&gt;
+
+### 6) Otros temas
+  - Osciladores
+  - Multivibradores
+  - Conversores AD y DA
+  - Tipos de Memorias
 ]
 
 ---
 
-# Evaluación
+# Evaluación 
 .panelset[.panel[.panel-name[Antiguamente]
-
-.big[- Informes de laboratorios (70%)
-- Proyecto final (30%)]
-]
-
-.panel[.panel-name[Actual (Pandemia)]
-- **Nuevo** Laboratorios Asincronos 
-- Simulaciones por tema 
-- Presentación final
-
+.font120[
+- Informes de laboratorios (70%) 
+- Proyecto final (30%)
 ]]
 
+.panel[.panel-name[Actual (Pandemia)]
+.font120[
+- **Nuevo** Laboratorios Asíncronos (30%)
+- Simulaciones por tema (50%)
+- Presentación final (20%)
+]]]
+
 ---
+
 # Softwares
 
 A continuación se presentan una serie de programas que pueden ser utilizados para las simulaciones requeridas a lo largo del curso.
 
-.panelset[
-.panel[.panel-name[logisim-evolution]
+.panelset[.panel[.panel-name[logisim-evolution]
 - Software libre :
-- Recomendado para diseño de sistemas digitales. 
+- Recomendado para diseño de sistemas digitales. &lt;br&gt;
 
-]
+.center[[logisim-evolucion - Github](https://github.com/reds-heig/logisim-evolution)]]
+
 .panel[.panel-name[LT-Spice]
 - Software gratuito, de la empresa AnalogDevice
 - Utiliza PSpice
 - Diferentes tipos de estudios: AC, DC, Transiente, Freq, etc.
-- Simulación Analógica y digital
-
-]
+- Simulación Analógica y digital. &lt;br&gt;
+.center[[LT-Spice - Analog Devices](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html#)]]
 
 .panel[.panel-name[SimuIde]
 - Software libre
 - Permite simulación de:
   - Sistemas digitales
-  - Microcontroladores 
-  
-]
+  - Microcontroladores &lt;br&gt;
+.center[  
+[SimulIde - Official Page](https://www.simulide.com/p/downloads.html)
+[SimulIde - Github](https://github.com/SimulIDE/SimulIDE)]]
 
 .panel[.panel-name[Proteus]
 - Programa Propietario
 - También basado en PSpice
 - Gran número de elementos digitales para simulación
 - Permite diseño de PCB
-- Posee simulación de Microcontroladores (MCU)
-
-]
+- Posee simulación de Microcontroladores (MCU) &lt;br&gt;
+.center[[labcenter - Official Page](https://www.labcenter.com/)]]
 
 .panel[.panel-name[Multisim]
 - Programa Propietario
 - También basado en PSpice
 - Gran número de elementos digitales para simulación
 - Permite diseño de PCB
-- Posee simulación de Microcontroladores (MCU)
+- Posee simulación de Microcontroladores (MCU) &lt;br&gt;
+.center[[National Instrument - Official Page](https://www.ni.com/en-us/support/downloads/software-products/download.multisim.html)]]
 
 ]
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+# Bibliografía
+
+
+
+.font80[
+
+- 
+&lt;p&gt;&lt;cite&gt;Horowitz, P. and W. Hill
+(2015).
+&lt;em&gt;The Art of Electronics&lt;/em&gt;.
+Cambridge Univ. Press.&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;Bignell, J. W., R. L. Donovan, and G. Urbina Medel
+(1997).
+&lt;em&gt;Electrónica Digital&lt;/em&gt;.&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;Mano, M. M.
+(2003).
+&lt;em&gt;Diseño Digital&lt;/em&gt;.
+Pearson Educación.&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;Mano, M. M.
+(2017).
+&lt;em&gt;Digital Logic and Computer Design&lt;/em&gt;.
+Pearson Education India.&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;Karris, S. T.
+(2007).
+&lt;em&gt;Digital Circuit Analysis and Design with Simulink Modeling and Introduction to CPLDs and FPGAs&lt;/em&gt;.
+Orchard Publications.&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;Angulo Usategui, J. M. and I. Angulo Martínez
+(2003).
+&amp;ldquo;Microcontroladores PIC: Diseño Practico de Aplicaciones&amp;rdquo;.
+&lt;/p&gt;&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;Schilling, D. L. and C. Belove
+(1993).
+&amp;ldquo;Circuitos Electrónicos: Discretos e Integrados&amp;rdquo;.
+&lt;/p&gt;&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;Floyd, T. L.
+(2006).
+&lt;em&gt;Fundamentos de Sistemas Digitales&lt;/em&gt;.
+Prentice Hall.&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;logisim-evolution
+(2020).
+&lt;em&gt;Logisim-Evolution&lt;/em&gt;.&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;LTspice | Design Center | Analog Devices
+&lt;em&gt;LTspice | Design Center | Analog Devices&lt;/em&gt;.
+https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html.&lt;/cite&gt;&lt;/p&gt;
 ]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
