@@ -4,7 +4,8 @@
     <title>Presentación del curso</title>
     <meta charset="utf-8" />
     <meta name="author" content="Josué Meneses Díaz" />
-    <meta name="date" content="2021-04-05" />
+    <meta name="author" content="josue.meneses@usach.cl" />
+    <meta name="date" content="2021-04-16" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
@@ -25,36 +26,11 @@ class: center, middle, inverse, title-slide
 # Presentación del curso
 ## Electrónica digital y microcontroladores
 ### Josué Meneses Díaz
+### <a href="mailto:josue.meneses@usach.cl" class="email">josue.meneses@usach.cl</a>
 ### Universidad de Santiago de Chile
-### 2021-04-05
+### 2021-04-16
 
 ---
-
-&lt;style type="text/css"&gt;
-.red{
-  opacity: 0.5;
-  color:red;
-}
-.fs-m{
-  font-size: 120%;
-  
-}
-.big{
-  font-size: 150%;
-}
-
-.center2 {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-&lt;/style&gt;
-
-
 
 
 
@@ -94,85 +70,35 @@ Dentro de sus ventajas tenemos:
     - Mejora considerablemente el traspaso de información desde dos medios de comunicación.
 - Sus salidas por lo general son invariantes en el tiempo.
 ]]
+---
 
+# Análogo - Digital
+&lt;br&gt;
+&lt;img src="./images/analogo-digital.png" width="120%" /&gt;
 ---
 # Introducción - Linea de Tiempo
+.panelset[.panel[.panel-name[1940]
+&lt;img src="./images/timeline-01.svg" width="70%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[1950]
+&lt;img src="./images/timeline-02.svg" width="70%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[1960]
+&lt;img src="./images/timeline-03.svg" width="70%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[1970]
+&lt;img src="./images/timeline-04.svg" width="70%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[1990]
+&lt;img src="./images/timeline-05.svg" width="70%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[2000]
+&lt;img src="./images/timeline-06.svg" width="70%" style="display: block; margin: auto;" /&gt;
+]]
 
-&lt;img src="./images/timeline.svg" height="80%" style="display: block; margin: auto;" /&gt;
 
 ---
-&lt;!-- # Motivación --&gt;
-&lt;!-- ## Fundamentos --&gt;
-&lt;!-- ```{python analogic-signal, echo=FALSE, results='hide'} --&gt;
-&lt;!-- from scipy import signal --&gt;
-&lt;!-- import matplotlib.pyplot as plt --&gt;
 
-&lt;!-- import numpy as np --&gt;
-
-&lt;!-- t = np.linspace(0, 1, 500, endpoint=False) --&gt;
-
-&lt;!-- cm = 1/2.54 --&gt;
-&lt;!-- fig, ax = plt.subplots(1, 2, figsize=(30*cm, 10*cm)) --&gt;
-
-&lt;!-- # Señal ideal --&gt;
-&lt;!-- signal =  np.sin(2 * np.pi * 5 * t) --&gt;
-&lt;!-- ax[0].plot(t, signal, color="black") --&gt;
-&lt;!-- ax[0].set_title("(a)") --&gt;
-&lt;!-- ax[0].set_ylabel("Voltaje (V)"); ax[0].set_xlabel("Tiempo (s)") --&gt;
-
-&lt;!-- # Señal con ruido --&gt;
-&lt;!-- noise = np.random.normal(0, 0.1, signal.shape) --&gt;
-&lt;!-- ax[1].plot(t,  signal+noise , color="black") --&gt;
-&lt;!-- ax[1].set_title("(b)") --&gt;
-&lt;!-- ax[1].set_xlabel("Tiempo (s)") --&gt;
-
-
-&lt;!-- plt.xlabel("Tiempo (s)") --&gt;
-&lt;!-- plt.show() --&gt;
-&lt;!-- ``` --&gt;
-
-&lt;!--  .center[**Fig.1 ** Señal digital cuadrada, utilizada en generalmente en los sistemas digitales.(a) Señal ideal transmitida (b) Señal real con ruido.] --&gt;
-
-&lt;!-- --- --&gt;
-
-&lt;!-- # Motivación --&gt;
-&lt;!-- ## Fundamentos --&gt;
-&lt;!-- ```{python logic-signal, echo=FALSE, results='hide', fig.show=TRUE} --&gt;
-&lt;!-- #!/usr/bin/env python --&gt;
-&lt;!-- # -*- coding: utf-8 -*- --&gt;
-
-&lt;!-- import matplotlib.pyplot as plt --&gt;
-&lt;!-- import matplotlib --&gt;
-&lt;!-- import numpy as np --&gt;
-
-&lt;!-- matplotlib.use('Agg') --&gt;
-
-&lt;!-- from scipy import signal --&gt;
-
-&lt;!-- t            = np.linspace(0, 1, 500, endpoint=False) --&gt;
-&lt;!-- logic_signal = 0.5+0.5*signal.square(2 * np.pi * 5 * t)   --&gt;
-&lt;!-- noise        = np.random.normal(0, 0.05, logic_signal.shape) --&gt;
-
-&lt;!-- cm = 1/2.54 --&gt;
-&lt;!-- fig, ax = plt.subplots(1, 2, figsize=(30*cm, 10*cm)) --&gt;
-
-&lt;!-- title = ["(a)", "(b)"] --&gt;
-&lt;!-- data = [logic_signal, logic_signal+noise] --&gt;
-
-&lt;!-- for i in [0, 1]: --&gt;
-&lt;!--   ax[i].plot(t, data[i], color="black") --&gt;
-&lt;!--   ax[i].set_xlabel(r"Tiempo (s)") --&gt;
-&lt;!--   ax[i].set_title(title[i]) --&gt;
-
-&lt;!-- ax[0].set_ylabel(r"Nivel logico") --&gt;
-
-&lt;!-- plt.show() --&gt;
-&lt;!-- ``` --&gt;
-&lt;!--  --&gt;
-
-&lt;!-- .center[**Fig.2** Señal digital. (a) Señal digital ideal. (b) Señal digital con ruido.] --&gt;
-
-&lt;!-- --- --&gt;
 
 # Programa del Curso
 
@@ -240,6 +166,104 @@ Dentro de sus ventajas tenemos:
 
 ---
 
+# Softwares - Diseños digitales
+
+A continuación se presentan una serie de programas que pueden ser utilizados para las simulaciones requeridas a lo largo del curso.
+
+.panelset[.panel[.panel-name[logisim-evolution]
+.pull-left[
+- Software libre :
+- Recomendado para diseño de sistemas digitales. &lt;br&gt;
+]
+.pull-right[
+&lt;div class="figure"&gt;
+&lt;img src="./images/ejemplo-logisim-evolution.jpg" alt="Ejemplo de programa realizado en logisim-evolution" width="410" /&gt;
+&lt;p class="caption"&gt;Ejemplo de programa realizado en logisim-evolution&lt;/p&gt;
+&lt;/div&gt;
+
+]
+.center[[logisim-evolucion - Github](https://github.com/reds-heig/logisim-evolution)]]
+
+.panel[.panel-name[LT-Spice]
+.pull-left[
+- Software gratuito, de la empresa AnalogDevice
+- Utiliza Spice
+- Diferentes tipos de estudios: AC, DC, Transiente, Freq, etc.
+- Simulación Analógica y digital. &lt;br&gt;]
+.pull-right[
+&lt;br&gt;
+&lt;img src="./images/lt-spice-logo.png" width="160%" /&gt;
+]
+.center[[LT-Spice - Analog Devices](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html#)]]
+
+.panel[.panel-name[SimulIde]
+.pull-left[
+- Software libre
+- Permite simulación de:
+  - Sistemas digitales
+  - Microcontroladores &lt;br&gt;]
+.pull-right[
+&lt;img src="./images/ejemplo-simulide.jpeg" width="326" /&gt;
+]
+
+.center[  
+[SimulIde - Official Page](https://www.simulide.com/p/downloads.html)
+[SimulIde - Github](https://github.com/SimulIDE/SimulIDE)]]
+
+.panel[.panel-name[Proteus]
+.pull-left[
+- Programa Propietario
+- También basado en Spice
+- Gran número de elementos digitales para simulación
+- Permite diseño de PCB
+- Posee simulación de Microcontroladores (MCU) &lt;br&gt;]
+.pull-right[
+&lt;img src="./images/PROTEUS-logo.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+]
+.center[[labcenter - Official Page](https://www.labcenter.com/)]]
+
+.panel[.panel-name[Multisim]
+.pull-left[
+- Programa Propietario
+- También basado en Spice
+- Gran número de elementos digitales para simulación
+- Permite diseño de PCB
+- Posee simulación de Microcontroladores (MCU) &lt;br&gt;]
+.pull-right[
+&lt;img src="./images/logo-Multisim.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+]
+.center[[National Instrument - Official Page](https://www.ni.com/en-us/support/downloads/software-products/download.multisim.html)]]
+]
+---
+# Softwares - Microcontroladores
+.panelset[
+.panel[.panel-name[MPLAB]
+.pull-left[
+- Permite programar y grabar en los microcontroladores PIC
+- Programa propietario gratuito
+- Permite programar en Ensamblador y C (mod)
+]
+.pull-right[
+&lt;img src="./images/mplab-xide.png" width="40%" style="display: block; margin: auto;" /&gt;
+]
+.center[[MPLAB IDE - Official Page](https://www.ni.com/en-us/support/downloads/software-products/download.multisim.html)]
+.center[[MPLAB XC8](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xc-compilers)]
+]
+
+.panel[.panel-name[Arduino]
+.pull-left[
+- Plantaforma de desarrollo para los microcontroladores ATmega
+- Programa opensource de código abierto
+- Permite programar en C (mod)
+]
+
+.pull-right[
+&lt;img src="./images/Arduino_logo.png" width="40%" style="display: block; margin: auto;" /&gt;
+]
+.center[[Arduino - Official Page](https://www.arduino.cc/)]]
+]
+
+---
 # Evaluación 
 .panelset[.panel[.panel-name[Antiguamente]
 .font120[
@@ -256,69 +280,50 @@ Dentro de sus ventajas tenemos:
 
 ---
 
-# Softwares
+# Plataforma Moodle
 
-A continuación se presentan una serie de programas que pueden ser utilizados para las simulaciones requeridas a lo largo del curso.
+&lt;img src="./images/moodle_1.png" width="100%" style="display: block; margin: auto;" /&gt;
+.center[
+[Link Plataforma del curso](https://uvirtual.usach.cl/moodle/course/view.php?id=17661)]
+---
+# Laboratorios Remotos asíncronos
+.pull-left[
+## Arduino
+- Plataforma de desarrollo de código libre
+- Programado en C/C++ (mod)
+  - "Lenguaje Arduino"
+- Prototipado Modular
+- Por ahora lo usaremos como una **caja negra**
 
-.panelset[.panel[.panel-name[logisim-evolution]
-- Software libre :
-- Recomendado para diseño de sistemas digitales. &lt;br&gt;
-
-.center[[logisim-evolucion - Github](https://github.com/reds-heig/logisim-evolution)]]
-
-.panel[.panel-name[LT-Spice]
-- Software gratuito, de la empresa AnalogDevice
-- Utiliza PSpice
-- Diferentes tipos de estudios: AC, DC, Transiente, Freq, etc.
-- Simulación Analógica y digital. &lt;br&gt;
-.center[[LT-Spice - Analog Devices](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html#)]]
-
-.panel[.panel-name[SimuIde]
-- Software libre
-- Permite simulación de:
-  - Sistemas digitales
-  - Microcontroladores &lt;br&gt;
-.center[  
-[SimulIde - Official Page](https://www.simulide.com/p/downloads.html)
-[SimulIde - Github](https://github.com/SimulIDE/SimulIDE)]]
-
-.panel[.panel-name[Proteus]
-- Programa Propietario
-- También basado en PSpice
-- Gran número de elementos digitales para simulación
-- Permite diseño de PCB
-- Posee simulación de Microcontroladores (MCU) &lt;br&gt;
-.center[[labcenter - Official Page](https://www.labcenter.com/)]]
-
-.panel[.panel-name[Multisim]
-- Programa Propietario
-- También basado en PSpice
-- Gran número de elementos digitales para simulación
-- Permite diseño de PCB
-- Posee simulación de Microcontroladores (MCU) &lt;br&gt;
-.center[[National Instrument - Official Page](https://www.ni.com/en-us/support/downloads/software-products/download.multisim.html)]]
-
+&lt;img src="./images/Arduino-Uno.png" width="50%" style="display: block; margin: auto;" /&gt;
 ]
+--
 
+.pull-right[
+## Raspberry Pi
+- Son una serie de mini-computadores que funcionan sobre **GNU Linux**
+- Poseen comunicación con el exterior mediante GPIO
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Anydesk
+- Programa Propietarios, gratuito para uso personal
+- Multiplataforma
+- VNC
+.center[
+[Página oficial - AnyDeks](https://anydesk.com/es/downloads)
+]]
 
 ---
 
+# Laboratorios Remotos asíncronos - Flujo de trabajo
+&lt;br&gt;&lt;br&gt;
+&lt;img src="./images/flujo_trabajo.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
+--
+&lt;br&gt;
+&lt;img src="./images/puesto_trabajo.png" width="25%" style="display: block; margin: auto;" /&gt;
+.center[pass: electro2021]
+
+---
 # Bibliografía
 
 
@@ -381,9 +386,8 @@ https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-sim
 <script>var slideshow = remark.create({
 "highlightStyle": "googlecode",
 "highlightLines": true,
-"countIncrementalSlides": false,
-"ratio": "16:9",
-"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>"
+"countIncrementalSlides": true,
+"ratio": "16:9"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

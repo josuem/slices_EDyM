@@ -1,0 +1,68 @@
+---
+title: "Arduino y Raspberry Pi"
+subtitle: "Electrónica digital y microcontroladores"
+author: 
+  - "Josué Meneses Díaz"
+  - "josue.meneses@usach.cl"
+session: "00"
+institute: "Universidad de Santiago de Chile"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    css: 
+      - default
+      - css/personal.css      # - metropolis
+      - metropolis-fonts  # css/mytheme.css, "css/mytheme-fonts.css"]
+    lib_dir: libs
+    seal: true
+    self_contained: false
+    nature:
+      highlightStyle: googlecode
+      highlightLines: true
+      countIncrementalSlides: true
+      # countdown: 3600000
+      ratio: 16:9 # ratio: 4:3
+      beforeInit: "macros.js"
+---
+
+```{r setup, include = FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+library(xaringanExtra)
+#library(nhsrtheme)
+#library(NHSRdatasets)
+# set default options
+opts_chunk$set(echo=FALSE,
+               collapse = TRUE,
+               fig.width = 7.252,
+               fig.height = 4,
+               dpi = 300)
+
+# set engines
+knitr::knit_engines$set("markdown")
+
+xaringanExtra::use_tile_view()
+xaringanExtra::use_panelset()
+xaringanExtra::use_scribble()
+
+todo<-FALSE
+```
+# Arduino
+## ¿Qué es?
+- Es una **plataforma de desarrollo**: *No es un microcontrolador*
+- Trabaja utilizando microcontroladores AVR Atmel (microchip)
+- Es programado mediante C/C++ (mod)
+- De bajo costo, flexible y fácil uso
+- **Es de código abierto**
+- Posee todo lo necesario para realizar su configuración y 
+---
+
+# Raspberry Pi
+
+---
+# Análogo - Digital
+
+
+---
+

@@ -1,7 +1,19 @@
 /* TODO
 - Crear variables de control para cambiar los tamaños de letras dentro del documento*/
+.red{
+  opacity: 0.5;
+  color:red;
+}
 
-
+/*https://stackoverflow.com/questions/53510905/can-i-center-and-middle-a-figure-in-html-xaringan-r#53646874*/
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
 /*-- EXPERIMENTAL -----------------------------------------------------------*/
 
 /*-- 3 column layout --*/

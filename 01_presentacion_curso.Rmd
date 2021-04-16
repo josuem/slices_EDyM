@@ -1,7 +1,9 @@
 ---
 title: "Presentación del curso"
 subtitle: "Electrónica digital y microcontroladores"
-author: "Josué Meneses Díaz"
+author: 
+  - "Josué Meneses Díaz"
+  - "josue.meneses@usach.cl"
 session: "00"
 institute: "Universidad de Santiago de Chile"
 date: "`r Sys.Date()`"
@@ -9,8 +11,7 @@ output:
   xaringan::moon_reader:
     css: 
       - default
-      - css/personal.css
-      # - metropolis
+      - css/personal.css      # - metropolis
       - metropolis-fonts  # css/mytheme.css, "css/mytheme-fonts.css"]
     lib_dir: libs
     seal: true
@@ -18,47 +19,16 @@ output:
     nature:
       highlightStyle: googlecode
       highlightLines: true
-      countIncrementalSlides: false
-      ratio: 16:9
-      # ratio: 4:3
+      countIncrementalSlides: true
+      # countdown: 3600000
+      ratio: 16:9 # ratio: 4:3
       beforeInit: "macros.js"
-      slideNumberFormat: |
-        <div class="progress-bar-container">
-          <div class="progress-bar" style="width: calc(%current% / %total% * 100%);">
-          </div>
-        </div>
 ---
-```{css echo=FALSE}
-.red{
-  opacity: 0.5;
-  color:red;
-}
-.fs-m{
-  font-size: 120%;
-  
-}
-.big{
-  font-size: 150%;
-}
-
-.center2 {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-```
-
 ```{r setup, include = FALSE}
 options(htmltools.dir.version = FALSE)
 library(knitr)
 library(tidyverse)
 library(xaringanExtra)
-library(nhsrtheme)
-library(NHSRdatasets)
 # set default options
 opts_chunk$set(echo=FALSE,
                collapse = TRUE,
@@ -74,18 +44,11 @@ xaringanExtra::use_panelset()
 xaringanExtra::use_scribble()
 
 # Configuración de Python
-Sys.setenv(RETICULATE_PYTHON = "E:/Users/Josue/anaconda3/python.exe")
-library(reticulate)
+# Sys.setenv(RETICULATE_PYTHON = "E:/Users/Josue/anaconda3/python.exe")
+# Sys.setenv(RETICULATE_PYTHON = "C:/Users/Usuario/Anaconda3/python.exe")
+# library(reticulate)
 
 todo<-FALSE
-```
-
-```{python config, echo=FALSE}
-import matplotlib.pyplot as plt
-import matplotlib
-import numpy as np
-
-matplotlib.use('Agg')
 ```
 
 # Objetivos del curso
@@ -124,87 +87,49 @@ Dentro de sus ventajas tenemos:
     - Mejora considerablemente el traspaso de información desde dos medios de comunicación.
 - Sus salidas por lo general son invariantes en el tiempo.
 ]]
+---
 
+# Análogo - Digital
+<br>
+```{r, out.width="120%"}
+knitr::include_graphics("./images/analogo-digital.png")
+```
 ---
 # Introducción - Linea de Tiempo
-
-```{r, fig.align='center', out.height="80%"}
-knitr::include_graphics("./images/timeline.svg")
+.panelset[.panel[.panel-name[1940]
+```{r, out.width="70%", fig.align='center'}
+knitr::include_graphics("./images/timeline-01.svg")
 ```
+]
+.panel[.panel-name[1950]
+```{r, out.width="70%", fig.align='center'}
+knitr::include_graphics("./images/timeline-02.svg")
+```
+]
+.panel[.panel-name[1960]
+```{r, out.width="70%", fig.align='center'}
+knitr::include_graphics("./images/timeline-03.svg")
+```
+]
+.panel[.panel-name[1970]
+```{r, out.width="70%", fig.align='center'}
+knitr::include_graphics("./images/timeline-04.svg")
+```
+]
+.panel[.panel-name[1990]
+```{r, out.width="70%", fig.align='center'}
+knitr::include_graphics("./images/timeline-05.svg")
+```
+]
+.panel[.panel-name[2000]
+```{r, out.width="70%", fig.align='center'}
+knitr::include_graphics("./images/timeline-06.svg")
+```
+]]
+
 
 ---
-<!-- # Motivación -->
-<!-- ## Fundamentos -->
-<!-- ```{python analogic-signal, echo=FALSE, results='hide'} -->
-<!-- from scipy import signal -->
-<!-- import matplotlib.pyplot as plt -->
 
-<!-- import numpy as np -->
-
-<!-- t = np.linspace(0, 1, 500, endpoint=False) -->
-
-<!-- cm = 1/2.54 -->
-<!-- fig, ax = plt.subplots(1, 2, figsize=(30*cm, 10*cm)) -->
-
-<!-- # Señal ideal -->
-<!-- signal =  np.sin(2 * np.pi * 5 * t) -->
-<!-- ax[0].plot(t, signal, color="black") -->
-<!-- ax[0].set_title("(a)") -->
-<!-- ax[0].set_ylabel("Voltaje (V)"); ax[0].set_xlabel("Tiempo (s)") -->
-
-<!-- # Señal con ruido -->
-<!-- noise = np.random.normal(0, 0.1, signal.shape) -->
-<!-- ax[1].plot(t,  signal+noise , color="black") -->
-<!-- ax[1].set_title("(b)") -->
-<!-- ax[1].set_xlabel("Tiempo (s)") -->
-
-
-<!-- plt.xlabel("Tiempo (s)") -->
-<!-- plt.show() -->
-<!-- ``` -->
-
-<!-- `r n_fig<-1` .center[**Fig.`r n_fig` ** Señal digital cuadrada, utilizada en generalmente en los sistemas digitales.(a) Señal ideal transmitida (b) Señal real con ruido.] -->
-
-<!-- --- -->
-
-<!-- # Motivación -->
-<!-- ## Fundamentos -->
-<!-- ```{python logic-signal, echo=FALSE, results='hide', fig.show=TRUE} -->
-<!-- #!/usr/bin/env python -->
-<!-- # -*- coding: utf-8 -*- -->
-
-<!-- import matplotlib.pyplot as plt -->
-<!-- import matplotlib -->
-<!-- import numpy as np -->
-
-<!-- matplotlib.use('Agg') -->
-
-<!-- from scipy import signal -->
-
-<!-- t            = np.linspace(0, 1, 500, endpoint=False) -->
-<!-- logic_signal = 0.5+0.5*signal.square(2 * np.pi * 5 * t)   -->
-<!-- noise        = np.random.normal(0, 0.05, logic_signal.shape) -->
-
-<!-- cm = 1/2.54 -->
-<!-- fig, ax = plt.subplots(1, 2, figsize=(30*cm, 10*cm)) -->
-
-<!-- title = ["(a)", "(b)"] -->
-<!-- data = [logic_signal, logic_signal+noise] -->
-
-<!-- for i in [0, 1]: -->
-<!--   ax[i].plot(t, data[i], color="black") -->
-<!--   ax[i].set_xlabel(r"Tiempo (s)") -->
-<!--   ax[i].set_title(title[i]) -->
-
-<!-- ax[0].set_ylabel(r"Nivel logico") -->
-
-<!-- plt.show() -->
-<!-- ``` -->
-<!-- `r  n_fig<-n_fig+1` -->
-
-<!-- .center[**Fig.`r n_fig`** Señal digital. (a) Señal digital ideal. (b) Señal digital con ruido.] -->
-
-<!-- --- -->
 
 # Programa del Curso
 
@@ -272,6 +197,116 @@ knitr::include_graphics("./images/timeline.svg")
 
 ---
 
+# Softwares - Diseños digitales
+
+A continuación se presentan una serie de programas que pueden ser utilizados para las simulaciones requeridas a lo largo del curso.
+
+.panelset[.panel[.panel-name[logisim-evolution]
+.pull-left[
+- Software libre :
+- Recomendado para diseño de sistemas digitales. <br>
+]
+.pull-right[
+```{r, fig.cap="Ejemplo de programa realizado en logisim-evolution"}
+knitr::include_graphics("./images/ejemplo-logisim-evolution.jpg")
+
+```
+
+]
+.center[[logisim-evolucion - Github](https://github.com/reds-heig/logisim-evolution)]]
+
+.panel[.panel-name[LT-Spice]
+.pull-left[
+- Software gratuito, de la empresa AnalogDevice
+- Utiliza Spice
+- Diferentes tipos de estudios: AC, DC, Transiente, Freq, etc.
+- Simulación Analógica y digital. <br>]
+.pull-right[
+<br>
+```{r, out.width="160%"}
+knitr::include_graphics("./images/lt-spice-logo.png")
+```
+]
+.center[[LT-Spice - Analog Devices](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html#)]]
+
+.panel[.panel-name[SimulIde]
+.pull-left[
+- Software libre
+- Permite simulación de:
+  - Sistemas digitales
+  - Microcontroladores <br>]
+.pull-right[
+```{r, }
+knitr::include_graphics("./images/ejemplo-simulide.jpeg")
+```
+]
+
+.center[  
+[SimulIde - Official Page](https://www.simulide.com/p/downloads.html)
+[SimulIde - Github](https://github.com/SimulIDE/SimulIDE)]]
+
+.panel[.panel-name[Proteus]
+.pull-left[
+- Programa Propietario
+- También basado en Spice
+- Gran número de elementos digitales para simulación
+- Permite diseño de PCB
+- Posee simulación de Microcontroladores (MCU) <br>]
+.pull-right[
+```{r, fig.align='center', out.width="80%"}
+knitr::include_graphics("./images/PROTEUS-logo.jpg")
+```
+]
+.center[[labcenter - Official Page](https://www.labcenter.com/)]]
+
+.panel[.panel-name[Multisim]
+.pull-left[
+- Programa Propietario
+- También basado en Spice
+- Gran número de elementos digitales para simulación
+- Permite diseño de PCB
+- Posee simulación de Microcontroladores (MCU) <br>]
+.pull-right[
+```{r, fig.align='center', out.width="80%"}
+knitr::include_graphics("./images/logo-Multisim.jpg")
+```
+]
+.center[[National Instrument - Official Page](https://www.ni.com/en-us/support/downloads/software-products/download.multisim.html)]]
+]
+---
+# Softwares - Microcontroladores
+.panelset[
+.panel[.panel-name[MPLAB]
+.pull-left[
+- Permite programar y grabar en los microcontroladores PIC
+- Programa propietario gratuito
+- Permite programar en Ensamblador y C (mod)
+]
+.pull-right[
+```{r, fig.align='center', out.width="40%"}
+knitr::include_graphics("./images/mplab-xide.png")
+```
+]
+.center[[MPLAB IDE - Official Page](https://www.ni.com/en-us/support/downloads/software-products/download.multisim.html)]
+.center[[MPLAB XC8](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xc-compilers)]
+]
+
+.panel[.panel-name[Arduino]
+.pull-left[
+- Plantaforma de desarrollo para los microcontroladores ATmega
+- Programa opensource de código abierto
+- Permite programar en C (mod)
+]
+
+.pull-right[
+```{r, fig.align='center', out.width="40%"}
+knitr::include_graphics("./images/Arduino_logo.png")
+```
+]
+.center[[Arduino - Official Page](https://www.arduino.cc/)]]
+]
+
+---
 # Evaluación 
 .panelset[.panel[.panel-name[Antiguamente]
 .font120[
@@ -288,69 +323,58 @@ knitr::include_graphics("./images/timeline.svg")
 
 ---
 
-# Softwares
+# Plataforma Moodle
 
-A continuación se presentan una serie de programas que pueden ser utilizados para las simulaciones requeridas a lo largo del curso.
+```{r, fig.align='center', out.width="100%"}
+knitr::include_graphics("./images/moodle_1.png")
+```
+.center[
+[Link Plataforma del curso](https://uvirtual.usach.cl/moodle/course/view.php?id=17661)]
+---
+# Laboratorios Remotos asíncronos
+.pull-left[
+## Arduino
+- Plataforma de desarrollo de código libre
+- Programado en C/C++ (mod)
+  - "Lenguaje Arduino"
+- Prototipado Modular
+- Por ahora lo usaremos como una **caja negra**
 
-.panelset[.panel[.panel-name[logisim-evolution]
-- Software libre :
-- Recomendado para diseño de sistemas digitales. <br>
-
-.center[[logisim-evolucion - Github](https://github.com/reds-heig/logisim-evolution)]]
-
-.panel[.panel-name[LT-Spice]
-- Software gratuito, de la empresa AnalogDevice
-- Utiliza PSpice
-- Diferentes tipos de estudios: AC, DC, Transiente, Freq, etc.
-- Simulación Analógica y digital. <br>
-.center[[LT-Spice - Analog Devices](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html#)]]
-
-.panel[.panel-name[SimuIde]
-- Software libre
-- Permite simulación de:
-  - Sistemas digitales
-  - Microcontroladores <br>
-.center[  
-[SimulIde - Official Page](https://www.simulide.com/p/downloads.html)
-[SimulIde - Github](https://github.com/SimulIDE/SimulIDE)]]
-
-.panel[.panel-name[Proteus]
-- Programa Propietario
-- También basado en PSpice
-- Gran número de elementos digitales para simulación
-- Permite diseño de PCB
-- Posee simulación de Microcontroladores (MCU) <br>
-.center[[labcenter - Official Page](https://www.labcenter.com/)]]
-
-.panel[.panel-name[Multisim]
-- Programa Propietario
-- También basado en PSpice
-- Gran número de elementos digitales para simulación
-- Permite diseño de PCB
-- Posee simulación de Microcontroladores (MCU) <br>
-.center[[National Instrument - Official Page](https://www.ni.com/en-us/support/downloads/software-products/download.multisim.html)]]
-
+```{r, fig.align='center', out.width="50%"}
+knitr::include_graphics("./images/Arduino-Uno.png")
+```
 ]
+--
 
+.pull-right[
+## Raspberry Pi
+- Son una serie de mini-computadores que funcionan sobre **GNU Linux**
+- Poseen comunicación con el exterior mediante GPIO
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+## Anydesk
+- Programa Propietarios, gratuito para uso personal
+- Multiplataforma
+- VNC
+.center[
+[Página oficial - AnyDeks](https://anydesk.com/es/downloads)
+]]
 
 ---
 
+# Laboratorios Remotos asíncronos - Flujo de trabajo
+<br><br>
+```{r , fig.align='center', out.width="80%"}
+knitr::include_graphics("./images/flujo_trabajo.svg")
+```
+
+--
+<br>
+```{r, fig.align='center', out.width="25%"}
+knitr::include_graphics("./images/puesto_trabajo.png")
+```
+.center[pass: electro2021]
+
+---
 # Bibliografía
 ```{r, load_refs, echo=FALSE, results='hide', warning=FALSE, message=FALSE}
 library(RefManageR)

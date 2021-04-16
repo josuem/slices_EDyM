@@ -1,0 +1,10 @@
+graph LR
+    F["Reserva hora"] -->A
+    A[Simulación] --> |AnyDesk| C["Raspberry Pi"]
+    
+    C--> |.hex| D[Arduino]
+    C--> |.ino| D[Arduino]
+    D --> H{"Funciona?"}
+    H --> |Si| Z["Moodle"]
+    H --> |No| A
+    H --> |No| F

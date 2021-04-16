@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Conceptos fundamentales - Parte 1</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Josué Meneses Díaz" />
+    <meta name="author" content="josue.meneses@usach.cl" />
+    <meta name="date" content="2021-04-14" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
+    <link rel="stylesheet" href="css/personal.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Conceptos fundamentales - Parte 1
+## Electrónica digital y microcontroladores
+### Josué Meneses Díaz
+### <a href="mailto:josue.meneses@usach.cl" class="email">josue.meneses@usach.cl</a>
+### Universidad de Santiago de Chile
+### 2021-04-14
+
+---
+
+&lt;style type="text/css"&gt;
+.red{
+  opacity: 0.5;
+  color:red;
+}
+.fs-m{
+  font-size: 120%;
+  
+}
+.big{
+  font-size: 150%;
+}
+
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+&lt;/style&gt;
+
+
+
+
+
+# Objetivos
+- Introducir algunos conceptos básicos utilizados en electrónica digital:
+  - Niveles Lógicos
+  - Lógica positiva y negativa
+  - Señal lógica
+- Aplicar el concepto de **señal lógica** a la comunicación serial Asíncrona (USART)
+
+---
+# Motivación
+
+---
+
+# Señal lógica
+## Caracteristicas
+
+.red[- Buscar imagen con las partes de la señal]
+
+???
+- La señal puede ser periódica (llamamos reloj o señal de reloj)
+- o puede ser no-periodica (pulso de encendido, por ejemplo)
+- Tiene un tiempo tanto de subida como bajada
+  - Los tramos de subida son llamados **flanco de subida**
+  - Los tramos de bajada son llamados **flanco de bajada**
+
+---
+# Niveles Lógicos
+
+.pull-left[ ## Nivel lógico Alto
+- 1 (uno lógico)
+- Verdadero
+- +5V (+3.3V)
+- Alto o HIGH
+]
+
+--
+
+.pull-right[ ## Nivel lógico Bajo
+- 0 (cero lógico)
+- Falso
+- GND
+- Bajo o LOW
+]
+
+???
+- En electrónica siempre trabajaremos con dos niveles lógicos (de aquí su naturaleza binaria). Podemos asignarle diversos nombres a cada uno de estos niveles: **1, Verdatero o True, Alto o High**
+
+
+---
+
+
+# Aplicación - Comunicación serial asíncrona (UART)
+UART -&gt; **universally asynchronous receiver/transmitter** 
+
+.pull-left[
+## Ventajas
+- Es una de las más simple 
+  - Ampliamente utilizada en instrumentos
+- Permite enviar señales de larga distancia
+- Utiliza el mínimo de conexiones
+]
+.pull-right[
+## Desventajas
+- Lenta transferencia de datos
+]
+---
+# Arduino
+---
+# Programando Arduino
+---
+
+# Bibliografía
+
+
+
+.font80[
+
+- 
+&lt;p&gt;&lt;cite&gt;Horowitz, P. and W. Hill
+(2015).
+&lt;em&gt;The Art of Electronics&lt;/em&gt;.
+Cambridge Univ. Press.&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;Bignell, J. W., R. L. Donovan, and G. Urbina Medel
+(1997).
+&lt;em&gt;Electrónica Digital&lt;/em&gt;.&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;Mano, M. M.
+(2003).
+&lt;em&gt;Diseño Digital&lt;/em&gt;.
+Pearson Educación.&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;Mano, M. M.
+(2017).
+&lt;em&gt;Digital Logic and Computer Design&lt;/em&gt;.
+Pearson Education India.&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;Karris, S. T.
+(2007).
+&lt;em&gt;Digital Circuit Analysis and Design with Simulink Modeling and Introduction to CPLDs and FPGAs&lt;/em&gt;.
+Orchard Publications.&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;Angulo Usategui, J. M. and I. Angulo Martínez
+(2003).
+&amp;ldquo;Microcontroladores PIC: Diseño Practico de Aplicaciones&amp;rdquo;.
+&lt;/p&gt;&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;Schilling, D. L. and C. Belove
+(1993).
+&amp;ldquo;Circuitos Electrónicos: Discretos e Integrados&amp;rdquo;.
+&lt;/p&gt;&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;Floyd, T. L.
+(2006).
+&lt;em&gt;Fundamentos de Sistemas Digitales&lt;/em&gt;.
+Prentice Hall.&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;logisim-evolution
+(2020).
+&lt;em&gt;Logisim-Evolution&lt;/em&gt;.&lt;/cite&gt;&lt;/p&gt;
+- 
+&lt;p&gt;&lt;cite&gt;LTspice | Design Center | Analog Devices
+&lt;em&gt;LTspice | Design Center | Analog Devices&lt;/em&gt;.
+https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html.&lt;/cite&gt;&lt;/p&gt;
+]
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "googlecode",
+"highlightLines": true,
+"countIncrementalSlides": true,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
