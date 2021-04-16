@@ -42,7 +42,7 @@ knitr::knit_engines$set("markdown")
 xaringanExtra::use_tile_view()
 xaringanExtra::use_panelset()
 xaringanExtra::use_scribble()
-
+# xaringanExtra::use_share_again()
 # Configuración de Python
 # Sys.setenv(RETICULATE_PYTHON = "E:/Users/Josue/anaconda3/python.exe")
 # Sys.setenv(RETICULATE_PYTHON = "C:/Users/Usuario/Anaconda3/python.exe")
@@ -57,8 +57,8 @@ todo<-FALSE
 --
 
 - Aprender a **diseñar** y **analizar** circuitos digitales:
-  - Diseño de circuitos combinacionales.
-  - Diseño de circuitos secuenciales.
+  - Circuitos combinacionales.
+  - Circuitos secuenciales.
 
 --
 - Conocer las caracteristicas generales de los microcontroladores (MCU)
@@ -127,7 +127,13 @@ knitr::include_graphics("./images/timeline-06.svg")
 ```
 ]]
 
-
+???
+1. **1940 :** Primer computador moderno construido mediante válvulas de vacío. De gran tamaño y bajo poder de computo. Exclusivo para universidades y militares por su coste, tamaño y complejidad de construcción.
+2. **1950:** Surge el transistor, reduciendo el tamaño, pero no el conste de los computadores.
+3. **1960:** El mayor apogeo de la electrónica digital ocurre con la creaciones de los circuitos integrados. Menos espacio: un bloque de 3x3mm equivale a 4-8 válvulas de vacío. La masificación de su construcción redujo costos y aplicaciones, permitiendo a los ingenieros optar a estos diseños, ampliando enormemente las aplicaciones.
+4. **1970:**  Surge el primer microprocesador, el **Intel 4004** de 4 bits (1971). Al ser un microprocesador requería de otros circuitos para funcionar. En la misma década, la empresa Texas Instrument Fabrico el primer microcontrolador llamado **TMS1000 (1974).**
+5. **1993:** Microchip crea el primer microcontrolador usando  **memorias EPPROM (PIC16x84) [4].** Atmel crea el primer MCU usando memoria Flash [5, 6].
+6. **2000:**  Con el nuevo milenio un gran numero de proyectos han surgido (y surgen) **opensource**. Destacamos Arduino, una plataforma de desarrollo que ha facilitado enormemente el prototipado y automatización de sistemas, por su simpleza y bajo conste [7]. **Raspberry Pi** es un proyecto[8]
 ---
 
 
@@ -167,7 +173,6 @@ knitr::include_graphics("./images/timeline-06.svg")
   - Aplicaciones
 ]
 
---
 ---
 # Programa del Curso
 .pull-left[
@@ -203,11 +208,11 @@ A continuación se presentan una serie de programas que pueden ser utilizados pa
 
 .panelset[.panel[.panel-name[logisim-evolution]
 .pull-left[
-- Software libre :
+- Software libre
 - Recomendado para diseño de sistemas digitales. <br>
 ]
 .pull-right[
-```{r, fig.cap="Ejemplo de programa realizado en logisim-evolution"}
+```{r, fig.cap="Ejemplo de programa realizado en logisim-evolution", out.width="70%", fig.align='center'}
 knitr::include_graphics("./images/ejemplo-logisim-evolution.jpg")
 
 ```
@@ -217,7 +222,7 @@ knitr::include_graphics("./images/ejemplo-logisim-evolution.jpg")
 
 .panel[.panel-name[LT-Spice]
 .pull-left[
-- Software gratuito, de la empresa AnalogDevice
+- Software gratuito, de la empresa Analog Devices
 - Utiliza Spice
 - Diferentes tipos de estudios: AC, DC, Transiente, Freq, etc.
 - Simulación Analógica y digital. <br>]
@@ -278,8 +283,8 @@ knitr::include_graphics("./images/logo-Multisim.jpg")
 .panelset[
 .panel[.panel-name[MPLAB]
 .pull-left[
+- Gratuito, de la empresea Microchip
 - Permite programar y grabar en los microcontroladores PIC
-- Programa propietario gratuito
 - Permite programar en Ensamblador y C (mod)
 ]
 .pull-right[
@@ -293,9 +298,9 @@ knitr::include_graphics("./images/mplab-xide.png")
 
 .panel[.panel-name[Arduino]
 .pull-left[
-- Plantaforma de desarrollo para los microcontroladores ATmega
-- Programa opensource de código abierto
-- Permite programar en C (mod)
+- Programa opensource (código abierto y gratuito)
+- Plantaforma de desarrollo para los microcontroladores ATmega y Cortex (firmware modificado)
+- Permite programar en C/C++ (mod, lenguaje Arduino)
 ]
 
 .pull-right[
