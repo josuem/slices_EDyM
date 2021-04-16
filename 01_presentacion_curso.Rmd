@@ -42,7 +42,7 @@ knitr::knit_engines$set("markdown")
 xaringanExtra::use_tile_view()
 xaringanExtra::use_panelset()
 xaringanExtra::use_scribble()
-# xaringanExtra::use_share_again()
+xaringanExtra::use_share_again()
 # Configuración de Python
 # Sys.setenv(RETICULATE_PYTHON = "E:/Users/Josue/anaconda3/python.exe")
 # Sys.setenv(RETICULATE_PYTHON = "C:/Users/Usuario/Anaconda3/python.exe")
