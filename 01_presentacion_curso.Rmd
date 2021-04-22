@@ -116,38 +116,38 @@ Dentro de sus ventajas tenemos:
 # Análogo - Digital
 <br>
 ```{r, out.width="120%"}
-knitr::include_graphics("./images/analogo-digital.png")
+knitr::include_graphics("./images/01/analogo-digital.png")
 ```
 ---
 # Introducción - Linea de Tiempo
 .panelset[.panel[.panel-name[1940]
 ```{r, out.width="70%", fig.align='center'}
-knitr::include_graphics("./images/timeline-01.svg")
+knitr::include_graphics("./images/01/timeline-01.svg")
 ```
 ]
 .panel[.panel-name[1950]
 ```{r, out.width="70%", fig.align='center'}
-knitr::include_graphics("./images/timeline-02.svg")
+knitr::include_graphics("./images/01/timeline-02.svg")
 ```
 ]
 .panel[.panel-name[1960]
 ```{r, out.width="70%", fig.align='center'}
-knitr::include_graphics("./images/timeline-03.svg")
+knitr::include_graphics("./images/01/timeline-03.svg")
 ```
 ]
 .panel[.panel-name[1970]
 ```{r, out.width="70%", fig.align='center'}
-knitr::include_graphics("./images/timeline-04.svg")
+knitr::include_graphics("./images/01/timeline-04.svg")
 ```
 ]
 .panel[.panel-name[1990]
 ```{r, out.width="70%", fig.align='center'}
-knitr::include_graphics("./images/timeline-05.svg")
+knitr::include_graphics("./images/01/timeline-05.svg")
 ```
 ]
 .panel[.panel-name[2000]
 ```{r, out.width="70%", fig.align='center'}
-knitr::include_graphics("./images/timeline-06.svg")
+knitr::include_graphics("./images/01/timeline-06.svg")
 ```
 ]]
 
@@ -232,7 +232,7 @@ A continuación se presentan una serie de programas que pueden ser utilizados pa
 ]
 .pull-right[
 ```{r, fig.cap="Ejemplo de programa realizado en logisim-evolution"}
-knitr::include_graphics("./images/ejemplo-logisim-evolution.jpg")
+knitr::include_graphics("./images/01/ejemplo-logisim-evolution.jpg")
 
 ```
 
@@ -248,7 +248,7 @@ knitr::include_graphics("./images/ejemplo-logisim-evolution.jpg")
 .pull-right[
 <br>
 ```{r, out.width="160%"}
-knitr::include_graphics("./images/lt-spice-logo.png")
+knitr::include_graphics("./images/01/lt-spice-logo.png")
 ```
 ]
 .center[[LT-Spice - Analog Devices](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html#)]]
@@ -261,7 +261,7 @@ knitr::include_graphics("./images/lt-spice-logo.png")
   - Microcontroladores <br>]
 .pull-right[
 ```{r, }
-knitr::include_graphics("./images/ejemplo-simulide.jpeg")
+knitr::include_graphics("./images/01/ejemplo-simulide.jpeg")
 ```
 ]
 
@@ -278,7 +278,7 @@ knitr::include_graphics("./images/ejemplo-simulide.jpeg")
 - Posee simulación de Microcontroladores (MCU) <br>]
 .pull-right[
 ```{r, fig.align='center', out.width="80%"}
-knitr::include_graphics("./images/PROTEUS-logo.jpg")
+knitr::include_graphics("./images/01/PROTEUS-logo.jpg")
 ```
 ]
 .center[[labcenter - Official Page](https://www.labcenter.com/)]]
@@ -292,7 +292,7 @@ knitr::include_graphics("./images/PROTEUS-logo.jpg")
 - Posee simulación de Microcontroladores (MCU) <br>]
 .pull-right[
 ```{r, fig.align='center', out.width="80%"}
-knitr::include_graphics("./images/logo-Multisim.jpg")
+knitr::include_graphics("./images/01/logo-Multisim.jpg")
 ```
 ]
 .center[[National Instrument - Official Page](https://www.ni.com/en-us/support/downloads/software-products/download.multisim.html)]]
@@ -308,7 +308,7 @@ knitr::include_graphics("./images/logo-Multisim.jpg")
 ]
 .pull-right[
 ```{r, fig.align='center', out.width="40%"}
-knitr::include_graphics("./images/mplab-xide.png")
+knitr::include_graphics("./images/01/mplab-xide.png")
 ```
 ]
 .center[[MPLAB IDE - Official Page](https://www.ni.com/en-us/support/downloads/software-products/download.multisim.html)]
@@ -324,7 +324,7 @@ knitr::include_graphics("./images/mplab-xide.png")
 
 .pull-right[
 ```{r, fig.align='center', out.width="40%"}
-knitr::include_graphics("./images/Arduino_logo.png")
+knitr::include_graphics("./images/01/Arduino_logo.png")
 ```
 ]
 .center[[Arduino - Official Page](https://www.arduino.cc/)]]
@@ -351,12 +351,12 @@ knitr::include_graphics("./images/Arduino_logo.png")
 <br>
 .pull-left[
 ```{r, out.width="120%"}
-knitr::include_graphics("./images/moddle_1.png")
+knitr::include_graphics("./images/01/moodle_1.png")
 ```
 ]
 .pull-right[
 ```{r, out.width="150%"}
-knitr::include_graphics("./images/moddle_2.png")
+knitr::include_graphics("./images/01/moodle_2.png")
 ```
 ]
 ---
@@ -394,4 +394,8 @@ print_ref("LTspiceDesignCenter")
 
 ```
 ]
+---
+layout: false
+class: inverse, middle, center
 
+[**Próxima clase:** Conceptos Fundamentales - Parte 1](https://josuem.github.io/slides_EDyM/02_conceptos_fundamentales.html)

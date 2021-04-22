@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="Josué Meneses Díaz" />
     <meta name="author" content="josue.meneses@usach.cl" />
-    <meta name="date" content="2021-04-16" />
+    <meta name="date" content="2021-04-22" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
@@ -17,11 +17,6 @@
     <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-scribble/scribble.js"></script>
     <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
-    <script src="libs/clipboard/clipboard.min.js"></script>
-    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
-    <script src="libs/shareon/shareon.min.js"></script>
-    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
-    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
     <link rel="stylesheet" href="css/personal.css" type="text/css" />
   </head>
   <body>
@@ -33,9 +28,33 @@ class: center, middle, inverse, title-slide
 ### Josué Meneses Díaz
 ### <a href="mailto:josue.meneses@usach.cl" class="email">josue.meneses@usach.cl</a>
 ### Universidad de Santiago de Chile
-### 2021-04-16
+### 2021-04-22
 
 ---
+
+&lt;style type="text/css"&gt;
+.red{
+  opacity: 0.5;
+  color:red;
+}
+.fs-m{
+  font-size: 120%;
+  
+}
+.big{
+  font-size: 150%;
+}
+
+.center2 {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+&lt;/style&gt;
 
 
 
@@ -45,8 +64,8 @@ class: center, middle, inverse, title-slide
 --
 
 - Aprender a **diseñar** y **analizar** circuitos digitales:
-  - Circuitos combinacionales.
-  - Circuitos secuenciales.
+  - Diseño de circuitos combinacionales.
+  - Diseño de circuitos secuenciales.
 
 --
 - Conocer las caracteristicas generales de los microcontroladores (MCU)
@@ -79,35 +98,29 @@ Dentro de sus ventajas tenemos:
 
 # Análogo - Digital
 &lt;br&gt;
-&lt;img src="./images/analogo-digital.png" width="120%" /&gt;
+&lt;img src="./images/01/analogo-digital.png" width="120%" /&gt;
 ---
 # Introducción - Linea de Tiempo
 .panelset[.panel[.panel-name[1940]
-&lt;img src="./images/timeline-01.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/01/timeline-01.svg" width="70%" style="display: block; margin: auto;" /&gt;
 ]
 .panel[.panel-name[1950]
-&lt;img src="./images/timeline-02.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/01/timeline-02.svg" width="70%" style="display: block; margin: auto;" /&gt;
 ]
 .panel[.panel-name[1960]
-&lt;img src="./images/timeline-03.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/01/timeline-03.svg" width="70%" style="display: block; margin: auto;" /&gt;
 ]
 .panel[.panel-name[1970]
-&lt;img src="./images/timeline-04.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/01/timeline-04.svg" width="70%" style="display: block; margin: auto;" /&gt;
 ]
 .panel[.panel-name[1990]
-&lt;img src="./images/timeline-05.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/01/timeline-05.svg" width="70%" style="display: block; margin: auto;" /&gt;
 ]
 .panel[.panel-name[2000]
-&lt;img src="./images/timeline-06.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/01/timeline-06.svg" width="70%" style="display: block; margin: auto;" /&gt;
 ]]
 
-???
-1. **1940 :** Primer computador moderno construido mediante válvulas de vacío. De gran tamaño y bajo poder de computo. Exclusivo para universidades y militares por su coste, tamaño y complejidad de construcción.
-2. **1950:** Surge el transistor, reduciendo el tamaño, pero no el conste de los computadores.
-3. **1960:** El mayor apogeo de la electrónica digital ocurre con la creaciones de los circuitos integrados. Menos espacio: un bloque de 3x3mm equivale a 4-8 válvulas de vacío. La masificación de su construcción redujo costos y aplicaciones, permitiendo a los ingenieros optar a estos diseños, ampliando enormemente las aplicaciones.
-4. **1970:**  Surge el primer microprocesador, el **Intel 4004** de 4 bits (1971). Al ser un microprocesador requería de otros circuitos para funcionar. En la misma década, la empresa Texas Instrument Fabrico el primer microcontrolador llamado **TMS1000 (1974).**
-5. **1993:** Microchip crea el primer microcontrolador usando  **memorias EPPROM (PIC16x84) [4].** Atmel crea el primer MCU usando memoria Flash [5, 6].
-6. **2000:**  Con el nuevo milenio un gran numero de proyectos han surgido (y surgen) **opensource**. Destacamos Arduino, una plataforma de desarrollo que ha facilitado enormemente el prototipado y automatización de sistemas, por su simpleza y bajo conste [7]. **Raspberry Pi** es un proyecto[8]
+
 ---
 
 
@@ -147,6 +160,7 @@ Dentro de sus ventajas tenemos:
   - Aplicaciones
 ]
 
+--
 ---
 # Programa del Curso
 .pull-left[
@@ -182,12 +196,12 @@ A continuación se presentan una serie de programas que pueden ser utilizados pa
 
 .panelset[.panel[.panel-name[logisim-evolution]
 .pull-left[
-- Software libre
+- Software libre :
 - Recomendado para diseño de sistemas digitales. &lt;br&gt;
 ]
 .pull-right[
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="./images/ejemplo-logisim-evolution.jpg" alt="Ejemplo de programa realizado en logisim-evolution" width="70%" /&gt;
+&lt;div class="figure"&gt;
+&lt;img src="./images/01/ejemplo-logisim-evolution.jpg" alt="Ejemplo de programa realizado en logisim-evolution" width="410" /&gt;
 &lt;p class="caption"&gt;Ejemplo de programa realizado en logisim-evolution&lt;/p&gt;
 &lt;/div&gt;
 
@@ -196,13 +210,13 @@ A continuación se presentan una serie de programas que pueden ser utilizados pa
 
 .panel[.panel-name[LT-Spice]
 .pull-left[
-- Software gratuito, de la empresa Analog Devices
+- Software gratuito, de la empresa AnalogDevice
 - Utiliza Spice
 - Diferentes tipos de estudios: AC, DC, Transiente, Freq, etc.
 - Simulación Analógica y digital. &lt;br&gt;]
 .pull-right[
 &lt;br&gt;
-&lt;img src="./images/lt-spice-logo.png" width="160%" /&gt;
+&lt;img src="./images/01/lt-spice-logo.png" width="160%" /&gt;
 ]
 .center[[LT-Spice - Analog Devices](https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html#)]]
 
@@ -213,7 +227,7 @@ A continuación se presentan una serie de programas que pueden ser utilizados pa
   - Sistemas digitales
   - Microcontroladores &lt;br&gt;]
 .pull-right[
-&lt;img src="./images/ejemplo-simulide.jpeg" width="326" /&gt;
+&lt;img src="./images/01/ejemplo-simulide.jpeg" width="326" /&gt;
 ]
 
 .center[  
@@ -228,7 +242,7 @@ A continuación se presentan una serie de programas que pueden ser utilizados pa
 - Permite diseño de PCB
 - Posee simulación de Microcontroladores (MCU) &lt;br&gt;]
 .pull-right[
-&lt;img src="./images/PROTEUS-logo.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/01/PROTEUS-logo.jpg" width="80%" style="display: block; margin: auto;" /&gt;
 ]
 .center[[labcenter - Official Page](https://www.labcenter.com/)]]
 
@@ -240,7 +254,7 @@ A continuación se presentan una serie de programas que pueden ser utilizados pa
 - Permite diseño de PCB
 - Posee simulación de Microcontroladores (MCU) &lt;br&gt;]
 .pull-right[
-&lt;img src="./images/logo-Multisim.jpg" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/01/logo-Multisim.jpg" width="80%" style="display: block; margin: auto;" /&gt;
 ]
 .center[[National Instrument - Official Page](https://www.ni.com/en-us/support/downloads/software-products/download.multisim.html)]]
 ]
@@ -249,12 +263,12 @@ A continuación se presentan una serie de programas que pueden ser utilizados pa
 .panelset[
 .panel[.panel-name[MPLAB]
 .pull-left[
-- Gratuito, de la empresea Microchip
 - Permite programar y grabar en los microcontroladores PIC
+- Programa propietario gratuito
 - Permite programar en Ensamblador y C (mod)
 ]
 .pull-right[
-&lt;img src="./images/mplab-xide.png" width="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/01/mplab-xide.png" width="40%" style="display: block; margin: auto;" /&gt;
 ]
 .center[[MPLAB IDE - Official Page](https://www.ni.com/en-us/support/downloads/software-products/download.multisim.html)]
 .center[[MPLAB XC8](https://www.microchip.com/en-us/development-tools-tools-and-software/mplab-xc-compilers)]
@@ -262,13 +276,13 @@ A continuación se presentan una serie de programas que pueden ser utilizados pa
 
 .panel[.panel-name[Arduino]
 .pull-left[
-- Programa opensource (código abierto y gratuito)
-- Plantaforma de desarrollo para los microcontroladores ATmega y Cortex (firmware modificado)
-- Permite programar en C/C++ (mod, lenguaje Arduino)
+- Plantaforma de desarrollo para los microcontroladores ATmega
+- Programa opensource de código abierto
+- Permite programar en C (mod)
 ]
 
 .pull-right[
-&lt;img src="./images/Arduino_logo.png" width="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/01/Arduino_logo.png" width="40%" style="display: block; margin: auto;" /&gt;
 ]
 .center[[Arduino - Official Page](https://www.arduino.cc/)]]
 ]
@@ -291,49 +305,15 @@ A continuación se presentan una serie de programas que pueden ser utilizados pa
 ---
 
 # Plataforma Moodle
-
-&lt;img src="./images/moodle_1.png" width="100%" style="display: block; margin: auto;" /&gt;
-.center[
-[Link Plataforma del curso](https://uvirtual.usach.cl/moodle/course/view.php?id=17661)]
----
-# Laboratorios Remotos asíncronos
-.pull-left[
-## Arduino
-- Plataforma de desarrollo de código libre
-- Programado en C/C++ (mod)
-  - "Lenguaje Arduino"
-- Prototipado Modular
-- Por ahora lo usaremos como una **caja negra**
-
-&lt;img src="./images/Arduino-Uno.png" width="50%" style="display: block; margin: auto;" /&gt;
-]
---
-
-.pull-right[
-## Raspberry Pi
-- Son una serie de mini-computadores que funcionan sobre **GNU Linux**
-- Poseen comunicación con el exterior mediante GPIO
-
-## Anydesk
-- Programa Propietarios, gratuito para uso personal
-- Multiplataforma
-- VNC
-.center[
-[Página oficial - AnyDeks](https://anydesk.com/es/downloads)
-]]
-
----
-
-# Laboratorios Remotos asíncronos - Flujo de trabajo
-&lt;br&gt;&lt;br&gt;
-&lt;img src="./images/flujo_trabajo.svg" width="80%" style="display: block; margin: auto;" /&gt;
-
---
 &lt;br&gt;
-&lt;img src="./images/puesto_trabajo.png" width="25%" style="display: block; margin: auto;" /&gt;
-.center[pass: electro2021]
-
+.pull-left[
+&lt;img src="./images/01/moodle_1.png" width="120%" /&gt;
+]
+.pull-right[
+&lt;img src="./images/01/moodle_2.png" width="150%" /&gt;
+]
 ---
+
 # Bibliografía
 
 
@@ -388,7 +368,11 @@ Prentice Hall.&lt;/cite&gt;&lt;/p&gt;
 &lt;em&gt;LTspice | Design Center | Analog Devices&lt;/em&gt;.
 https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html.&lt;/cite&gt;&lt;/p&gt;
 ]
+---
+layout: false
+class: inverse, middle, center
 
+[**Próxima clase:** Conceptos Fundamentales - Parte 1](https://josuem.github.io/slides_EDyM/02_conceptos_fundamentales.html)
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
