@@ -9,6 +9,7 @@ institute: "Universidad de Santiago de Chile"
 date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
+    dev : "svg"
     css: 
       - default
       - css/personal.css # - metropolis
@@ -24,37 +25,11 @@ output:
       ratio: 16:9 # ratio: 4:3
       beforeInit: "macros.js"
 ---
-```{css echo=FALSE}
-.red{
-  opacity: 0.5;
-  color:red;
-}
-.fs-m{
-  font-size: 120%;
-  
-}
-.big{
-  font-size: 150%;
-}
-
-.center2 {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-```
-
 ```{r setup, include = FALSE}
 options(htmltools.dir.version = FALSE)
 library(knitr)
 library(tidyverse)
 library(xaringanExtra)
-library(nhsrtheme)
-library(NHSRdatasets)
 # set default options
 opts_chunk$set(echo=FALSE,
                collapse = TRUE,
@@ -62,129 +37,226 @@ opts_chunk$set(echo=FALSE,
                fig.height = 4,
                dpi = 300)
 
+knitr::opts_chunk$set(echo = FALSE, 
+                      fig.align = "center",
+                      dev = "svg")
 # set engines
 knitr::knit_engines$set("markdown")
 
 xaringanExtra::use_tile_view()
 xaringanExtra::use_panelset()
 xaringanExtra::use_scribble()
-
-# Configuración de Python
-Sys.setenv(RETICULATE_PYTHON = "E:/Users/Josue/anaconda3/python.exe")
-library(reticulate)
-
+xaringanExtra::use_tachyons()
 todo<-FALSE
 ```
 
-```{python config, echo=FALSE}
-import matplotlib.pyplot as plt
-import matplotlib
-import numpy as np
+# Señal Digital 
+.left-colum[
+.bg-washed-green.b--dark-green.ba.bw2.br4.ph2.font80[
+**Señal Digital:** Señal de tipo discreta, variante en el tiempo, compuesta por una serie de *pulsos lógicos* (cambios entre 0 y 1) utilizadas en circuitos digitales.
+]]
 
-matplotlib.use('Agg')
+--
+.right-colum[
+.panelset[
+.panel[.panel-name[Señal periódica/no periódica]
+<br>
+```{r , fig.align='center', out.width="100%", fig.cap="Pulso lógico no ideal. (Fundamental - T. Floyd)"}
+knitr::include_graphics("./images/02/ideal.svg")
 ```
+]
+
+.panel[.panel-name[Señal no-ideal]
+```{r , fig.align='center', out.width="50%", fig.cap="Pulso lógico no ideal. (Fundamental - T. Floyd)"}
+knitr::include_graphics("./images/02/non_ideal_floyd.svg")
+```
+]
+
+.panel[.panel-name[Señal no-ideal 2]
+```{r, out.width="60%", fig.cap="Pulso lógico no ideal. (Fundamental - T. Floyd)"}
+knitr::include_graphics("./images/02/non_ideal_floyd2.svg")
+```
+]
+]]
+
+???
+- La señal puede ser periódica (también conocida como **señal de reloj** *clk*)
+- o puede ser no-periodica (pulso de encendido, por ejemplo)
+- Tiene un tiempo tanto de subida como bajada
+  - Los tramos de subida son llamados **flanco de subida**
+  - Los tramos de bajada son llamados **flanco de bajada**
+- **Droop**: inclinarse, caer
+---
 
 # Objetivos
 - Introducir algunos conceptos básicos utilizados en electrónica digital:
   - Niveles Lógicos
   - Lógica positiva y negativa
   - Señal lógica
-- Aplicar el concepto de **señal lógica** a la comunicación serial Asíncrona (USART)
-
----
-# Motivación
-
----
-
-# Señal lógica
-## Caracteristicas
-
-.red[- Buscar imagen con las partes de la señal]
-
-???
-- La señal puede ser periódica (llamamos reloj o señal de reloj)
-- o puede ser no-periodica (pulso de encendido, por ejemplo)
-- Tiene un tiempo tanto de subida como bajada
-  - Los tramos de subida son llamados **flanco de subida**
-  - Los tramos de bajada son llamados **flanco de bajada**
+- Aplicar el concepto de **señal lógica** a la comunicación serial Asíncrona (UART)
 
 ---
 # Niveles Lógicos
 
-.pull-left[ ## Nivel lógico Alto
+.left-column[ 
+## Alto
 - 1 (uno lógico)
 - Verdadero
 - +5V (+3.3V)
 - Alto o HIGH
-]
 
---
-
-.pull-right[ ## Nivel lógico Bajo
+## Bajo
 - 0 (cero lógico)
 - Falso
 - GND
 - Bajo o LOW
 ]
-
+--
+.right-column[ 
+.panelset[
+.panel[.panel-name[Rangos]
+```{r, fig.cap="Logic level ranges of voltage for a digital circuit. Digital Fundamental - T. Floyd", out.width="30%", fig.align='center'}
+knitr::include_graphics("./images/02/niveles_logicos_floyd.svg")
+```
+]
+.panel[.panel-name[Tipos de lógica]
+<br><br>
+```{r, fig.cap="Niveles Lógicos. Tipos de lógicaDigital Fundamental - T. Floyd", out.width="100%", fig.align='center'}
+knitr::include_graphics("./images/02/high_low_floyd.svg")
+```
+]]
+]
 ???
 - En electrónica siempre trabajaremos con dos niveles lógicos (de aquí su naturaleza binaria). Podemos asignarle diversos nombres a cada uno de estos niveles: **1, Verdatero o True, Alto o High**
-
-
+  - Bit : **bi**nary digi**t**
+  - byte: 8 bits
+- Tenemos dos tipos de lógicas: 
+  - **lógica positiva**: 1: high, 0: Low (usada en el curso)
+  - **lógica negativa**: 1: Low, 0: High
 ---
 
 
-# Aplicación - Comunicación serial asíncrona (UART)
-UART -> **universally asynchronous receiver/transmitter** 
+# Aplicación 1 - Código ASCII
+.bg-washed-green.b--dark-green.ba.bw2.br4.ph2.font80[
+**ASCII : ** **A**merican **S**tandard Code for **I**nformation **I**nterchange
+]
 
+Sirve para describir:
+- letras imprimibles 
+- números, 
+- signos de puntuación 
+- códigos de control
+
+Esta compuesto por 7 pulsos digitales + 1 de verificación. 
+---
+class: clear
+
+```{r}
+knitr::include_url("http://sticksandstones.kstrom.com/appen.html", height = "650px")
+```
+
+---
+
+# Aplicación 2 - Comunicación Serial Asíncrona
+.center[UART -> **universally asynchronous receiver/transmitter**]
 .pull-left[
-## Ventajas
+```{r , fig.align='center'}
+knitr::include_graphics("./images/02/serial_paralelo_floyd.svg")
+```
+]
+--
+
+.pull-right[## Ventajas
 - Es una de las más simple 
   - Ampliamente utilizada en instrumentos
 - Permite enviar señales de larga distancia
 - Utiliza el mínimo de conexiones
-]
-.pull-right[
+
 ## Desventajas
 - Lenta transferencia de datos
 ]
+
+
+
 ---
-# Arduino
----
-# Programando Arduino
----
 
-# Bibliografía
-```{r, load_refs, echo=FALSE, results='hide', warning=FALSE, message=FALSE}
-library(RefManageR)
-bib <- ReadBib("./bibliography.bib", check = FALSE)
-ui <- "- "
-element <- list(check.entries = FALSE, 
-               style = "html", 
-               bib.style = "authoryear") 
-
-print_ref <- function(ref){
-  writeLines(ui)
-  print(bib[key = ref], .opts = element, encoding = "UTF-8")
-}
-```
-
-
-.font80[
-
-```{r, print_refs, echo=FALSE, results='asis', warning=FALSE, message=FALSE}
-
-print_ref("horowitz2015")
-print_ref("bignell1997")
-print_ref("mano2003")
-print_ref("mano2017")
-print_ref("karris2007")
-print_ref("angulousategui2003")
-print_ref("schilling1993")
-print_ref("floyd2006")
-print_ref("logisim-evolution2020")
-print_ref("LTspiceDesignCenter")
+# Aplicación 2 - Comunicación Serial Asíncrona
+.panelset[
+.panel[.panel-name[Tx/Rx]
+<br><br>
+```{r, out.width="50%"}
+knitr::include_graphics("./images/02/Tx_Rx.svg")
 
 ```
 ]
+.panel[.panel-name[Tipos]
+<br><br>
+```{r,out.width="90%"}
+knitr::include_graphics("./images/02/Tipos_UART.svg")
+```
+]
+.panel[.panel-name[Síncrono-asíncrono]
+<br><br>
+```{r,out.width="90%"}
+knitr::include_graphics("./images/02/sincrono_asincrono_UART.svg")
+
+```
+
+]
+]
+???
+- **Universal** Por que es un standar
+- **asynchronous** Porque la comunicación no utiliza un reloj digital (pulsos continuos)
+- **receiver/transmitter** Existe un receptor y emisor.
+
+---
+
+
+# Ejemplo 1: ASCII + Serial
+Encontrar la letra enviada
+
+<br>
+```{r , fig.align='center', out.width="80%"}
+knitr::include_graphics("./images/02/ejemplo_serial_A.svg")
+```
+
+<br>
+```{r}
+knitr::include_url("http://sticksandstones.kstrom.com/appen.html", height = "200px")
+```
+---
+# Ejemplo 2: ASCII + Serial
+Enviar la letra T mediante código ASCII
+
+<br>
+```{r , fig.align='center', out.width="80%"}
+knitr::include_graphics("./images/02/ejemplo_serial_A2.svg")
+```
+
+<br>
+```{r}
+knitr::include_url("http://sticksandstones.kstrom.com/appen.html", height = "200px")
+```
+---
+
+# Bibliografía
+.font100[
+- sección 1.1-1.2 (CONCEPTOS DIGITALES). Floyd, Thomas L. 2006. Fundamentos de Sistemas Digitales. Prentice Hall.
+
+- CHAPTER 10 - DIGITAL LOGIC, 10.1 Basic logic concepts. Horowitz, Paul, and Winfield Hill. 2015. The Art of Electronics. Cambridge Univ. Press.
+
+- 9.7 Código ASCII. Bignell, James W., Robert L. Donovan, and Gerardo Urbina Medel. 1997. Electrónica Digital.
+
+- Fischer, Eric. 2012. “The Evolution of Character Codes, 1874-1968.” Citeseerx. Ist.
+
+]
+
+---
+layout: false
+class: inverse, middle, center
+# **Lab 1:** Comunicación Serial
+--
+
+**Próxima clase:** Sistemas numéricos
+
 

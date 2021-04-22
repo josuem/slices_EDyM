@@ -1,0 +1,33 @@
+graph LR
+
+    A(Niveles Lógicos) --> B(Señal lógica)
+    B -->|Aplicación| ASCII(Código ASCII)
+    ASCII -->|Aplicación| COM
+
+    
+    LAB(Laboratorio)-->QUE(Que es Arduino?)
+    LAB --> IDE(IDE)
+    LAB-->P(Programación)
+
+    P--> E(Estructura básica)
+    P--> V(Variables)
+    P--> CO(Condicional)
+    P--> COM(Comunicación serial)
+    
+    COM 
+    COM --> COMANDOS
+    COMANDOS -->Serial(Serial.begin) 
+    COMANDOS -->Print(Serial.println and print)
+    COMANDOS -->Read(read and readString)
+    COMANDOS --> Available(Serial.available)
+
+    COM --> EJEMPLOS
+    EJEMPLOS -->|Ej. 1| EJ1(Enviar mensaje) 
+    EJ1 -->DEJ1(Contador segundos)
+    EJEMPLOS -->|Ej. 2| EJ2(Recibir mensaje) 
+    EJ2--> DEJ2(Pedir nombre)
+    
+
+    EXP1 --> Detalle(Cambio del delta del tiempo por serial)
+
+    %% https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggTFJcblxuICAgIEEoTml2ZWxlcyBMw7NnaWNvcykgLS0-IEIoU2XDsWFsIGzDs2dpY2EpXG4gICAgQiAtLT58QXBsaWNhY2nDs258IEMoQ8OzZGlnbyBBTkNJSSlcbiAgICBCIC0tPiBDT01cblxuICAgIFxuICAgIEwoTGFib3JhdG9yaW8pLS0-QVIoUXVlIGVzIEFyZHVpbm8_KVxuICAgIEFSIC0tPiBJREUoSURFKVxuICAgIElERS0tPlAoUHJvZ3JhbWFjacOzbilcblxuICAgIFAtLT4gRShFc3RydWN0dXJhIGLDoXNpY2EpXG4gICAgUC0tPiBWKFZhcmlhYmxlcylcbiAgICBQLS0-IENPKENvbmRpY2lvbmFsKVxuICAgIFAtLT4gQ09NKENvbXVuaWNhY2nDs24gc2VyaWFsKVxuICAgIFxuICAgIENPTSBcbiAgICBDT00gLS0-IENPTUFORE9TXG4gICAgQ09NQU5ET1MgLS0-U2VyaWFsKFNlcmlhbC5iZWdpbikgXG4gICAgQ09NQU5ET1MgLS0-UHJpbnQoU2VyaWFsLnByaW50bG4gYW5kIHByaW50KVxuICAgIENPTUFORE9TIC0tPlJlYWQocmVhZCBhbmQgcmVhZFN0cmluZylcbiAgICBDT01BTkRPUyAtLT4gQXZhaWxhYmxlKFNlcmlhbC5hdmFpbGFibGUpXG5cbiAgICBDT00gLS0-IEVKRU1QTE9TXG4gICAgRUpFTVBMT1MgLS0-fEVqLiAxfCBFSjEoRW52aWFyIG1lbnNhamUpIFxuICAgIEVKMSAtLT5ERUoxKENvbnRhZG9yIHNlZ3VuZG9zKVxuICAgIEVKRU1QTE9TIC0tPnxFai4gMnwgRUoyKFJlY2liaXIgbWVuc2FqZSkgXG4gICAgRUoyLS0-IERFSjIoUGVkaXIgbm9tYnJlKVxuICAgIFxuICAgIENPTSAtLT4gVEFSRUFcbiAgICBUQVJFQS0tPlRyKENhbWJpbyBkZWx0YSB0aWVtcG8gcG9yIHNlcmlhbClcblxuICAgICUlIGNvbWVudGFyaW8iLCJtZXJtYWlkIjp7fSwidXBkYXRlRWRpdG9yIjpmYWxzZX0

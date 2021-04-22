@@ -1,0 +1,86 @@
+---
+title: "LAB. 1 - Comunicación Serial"
+subtitle: "Electrónica digital y microcontroladores"
+author: 
+  - "Josué Meneses Díaz"
+  - "josue.meneses@usach.cl"
+session: "01"
+institute: "Universidad de Santiago de Chile"
+date: "`r Sys.Date()`"
+output:
+  xaringan::moon_reader:
+    dev : "svg"
+    css: 
+      - default
+      - css/personal.css # - metropolis
+      - metropolis-fonts  # css/mytheme.css, "css/mytheme-fonts.css"]
+    lib_dir: libs
+    seal: true
+    self_contained: false
+    nature:
+      highlightStyle: googlecode
+      highlightLines: true
+      countIncrementalSlides: true
+      # countdown: 3600000
+      ratio: 16:9 # ratio: 4:3
+      beforeInit: "macros.js"
+---
+```{r setup, include = FALSE}
+options(htmltools.dir.version = FALSE)
+library(knitr)
+library(tidyverse)
+library(xaringanExtra)
+# set default options
+opts_chunk$set(echo=FALSE,
+               collapse = TRUE,
+               fig.width = 7.252,
+               fig.height = 4,
+               dpi = 300)
+
+knitr::opts_chunk$set(echo = FALSE, 
+                      fig.align = "center",
+                      dev = "svg")
+# set engines
+knitr::knit_engines$set("markdown")
+
+xaringanExtra::use_tile_view()
+xaringanExtra::use_panelset()
+xaringanExtra::use_scribble()
+xaringanExtra::use_tachyons()
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,         #<<
+  mute_unhighlighted_code = TRUE  #<<
+)
+
+todo<-FALSE
+```
+
+# Arduino
+
+---
+# Estructura básica
+```{arduino, eval=FALSE, echo=TRUE}
+void setup() { #<<
+  // put your setup code here, to run once:
+
+}
+
+void loop() { #<<
+  // put your main code here, to run repeatedly:
+
+}
+```
+---
+
+# Sintexis
+
+---
+
+# Comunicación serial
+
+---
+
+# Tarea 1
+
+---
+

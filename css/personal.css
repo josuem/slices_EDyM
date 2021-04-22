@@ -4,7 +4,10 @@
   opacity: 0.5;
   color:red;
 }
-
+p.caption{
+  font-size: 15px;
+  
+}
 /*https://stackoverflow.com/questions/53510905/can-i-center-and-middle-a-figure-in-html-xaringan-r#53646874*/
 .center2 {
   margin: 0;

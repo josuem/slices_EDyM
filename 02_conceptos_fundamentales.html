@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="Josué Meneses Díaz" />
     <meta name="author" content="josue.meneses@usach.cl" />
-    <meta name="date" content="2021-04-14" />
+    <meta name="date" content="2021-04-21" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
@@ -17,6 +17,7 @@
     <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-scribble/scribble.js"></script>
     <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/personal.css" type="text/css" />
   </head>
   <body>
@@ -28,162 +29,206 @@ class: center, middle, inverse, title-slide
 ### Josué Meneses Díaz
 ### <a href="mailto:josue.meneses@usach.cl" class="email">josue.meneses@usach.cl</a>
 ### Universidad de Santiago de Chile
-### 2021-04-14
+### 2021-04-21
 
 ---
 
-&lt;style type="text/css"&gt;
-.red{
-  opacity: 0.5;
-  color:red;
-}
-.fs-m{
-  font-size: 120%;
-  
-}
-.big{
-  font-size: 150%;
-}
-
-.center2 {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 10%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-&lt;/style&gt;
 
 
+# Señal Digital 
+.left-colum[
+.bg-washed-green.b--dark-green.ba.bw2.br4.ph2.font80[
+**Señal Digital:** Señal de tipo discreta, variante en el tiempo, compuesta por una serie de *pulsos lógicos* (cambios entre 0 y 1) utilizadas en circuitos digitales.
+]]
 
+--
+.right-colum[
+.panelset[
+.panel[.panel-name[Señal periódica/no periódica]
+&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02/ideal.svg" alt="Pulso lógico no ideal. (Fundamental - T. Floyd)" width="100%" /&gt;
+&lt;p class="caption"&gt;Pulso lógico no ideal. (Fundamental - T. Floyd)&lt;/p&gt;
+&lt;/div&gt;
+]
 
+.panel[.panel-name[Señal no-ideal]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02/non_ideal_floyd.svg" alt="Pulso lógico no ideal. (Fundamental - T. Floyd)" width="50%" /&gt;
+&lt;p class="caption"&gt;Pulso lógico no ideal. (Fundamental - T. Floyd)&lt;/p&gt;
+&lt;/div&gt;
+]
+
+.panel[.panel-name[Señal no-ideal 2]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02/non_ideal_floyd2.svg" alt="Pulso lógico no ideal. (Fundamental - T. Floyd)" width="60%" /&gt;
+&lt;p class="caption"&gt;Pulso lógico no ideal. (Fundamental - T. Floyd)&lt;/p&gt;
+&lt;/div&gt;
+]
+]]
+
+???
+- La señal puede ser periódica (también conocida como **señal de reloj** *clk*)
+- o puede ser no-periodica (pulso de encendido, por ejemplo)
+- Tiene un tiempo tanto de subida como bajada
+  - Los tramos de subida son llamados **flanco de subida**
+  - Los tramos de bajada son llamados **flanco de bajada**
+- **Droop**: inclinarse, caer
+---
 
 # Objetivos
 - Introducir algunos conceptos básicos utilizados en electrónica digital:
   - Niveles Lógicos
   - Lógica positiva y negativa
   - Señal lógica
-- Aplicar el concepto de **señal lógica** a la comunicación serial Asíncrona (USART)
-
----
-# Motivación
-
----
-
-# Señal lógica
-## Caracteristicas
-
-.red[- Buscar imagen con las partes de la señal]
-
-???
-- La señal puede ser periódica (llamamos reloj o señal de reloj)
-- o puede ser no-periodica (pulso de encendido, por ejemplo)
-- Tiene un tiempo tanto de subida como bajada
-  - Los tramos de subida son llamados **flanco de subida**
-  - Los tramos de bajada son llamados **flanco de bajada**
+- Aplicar el concepto de **señal lógica** a la comunicación serial Asíncrona (UART)
 
 ---
 # Niveles Lógicos
 
-.pull-left[ ## Nivel lógico Alto
+.left-column[ 
+## Alto
 - 1 (uno lógico)
 - Verdadero
 - +5V (+3.3V)
 - Alto o HIGH
-]
 
---
-
-.pull-right[ ## Nivel lógico Bajo
+## Bajo
 - 0 (cero lógico)
 - Falso
 - GND
 - Bajo o LOW
 ]
-
+--
+.right-column[ 
+.panelset[
+.panel[.panel-name[Rangos]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02/niveles_logicos_floyd.svg" alt="Logic level ranges of voltage for a digital circuit. Digital Fundamental - T. Floyd" width="30%" /&gt;
+&lt;p class="caption"&gt;Logic level ranges of voltage for a digital circuit. Digital Fundamental - T. Floyd&lt;/p&gt;
+&lt;/div&gt;
+]
+.panel[.panel-name[Tipos de lógica]
+&lt;br&gt;&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02/high_low_floyd.svg" alt="Niveles Lógicos. Tipos de lógicaDigital Fundamental - T. Floyd" width="100%" /&gt;
+&lt;p class="caption"&gt;Niveles Lógicos. Tipos de lógicaDigital Fundamental - T. Floyd&lt;/p&gt;
+&lt;/div&gt;
+]]
+]
 ???
 - En electrónica siempre trabajaremos con dos niveles lógicos (de aquí su naturaleza binaria). Podemos asignarle diversos nombres a cada uno de estos niveles: **1, Verdatero o True, Alto o High**
-
-
+  - Bit : **bi**nary digi**t**
+  - byte: 8 bits
+- Tenemos dos tipos de lógicas: 
+  - **lógica positiva**: 1: high, 0: Low (usada en el curso)
+  - **lógica negativa**: 1: Low, 0: High
 ---
 
 
-# Aplicación - Comunicación serial asíncrona (UART)
-UART -&gt; **universally asynchronous receiver/transmitter** 
+# Aplicación 1 - Código ASCII
+.bg-washed-green.b--dark-green.ba.bw2.br4.ph2.font80[
+**ASCII : ** **A**merican **S**tandard Code for **I**nformation **I**nterchange
+]
 
+Sirve para describir:
+- letras imprimibles 
+- números, 
+- signos de puntuación 
+- códigos de control
+
+Esta compuesto por 7 pulsos digitales + 1 de verificación. 
+---
+class: clear
+
+&lt;iframe src="http://sticksandstones.kstrom.com/appen.html" width="100%" height="650px"&gt;&lt;/iframe&gt;
+
+---
+
+# Aplicación 2 - Comunicación Serial Asíncrona
+.center[UART -&gt; **universally asynchronous receiver/transmitter**]
 .pull-left[
-## Ventajas
+&lt;img src="./images/02/serial_paralelo_floyd.svg" style="display: block; margin: auto;" /&gt;
+]
+--
+
+.pull-right[## Ventajas
 - Es una de las más simple 
   - Ampliamente utilizada en instrumentos
 - Permite enviar señales de larga distancia
 - Utiliza el mínimo de conexiones
-]
-.pull-right[
+
 ## Desventajas
 - Lenta transferencia de datos
 ]
+
+
+
 ---
-# Arduino
+
+# Aplicación 2 - Comunicación Serial Asíncrona
+.panelset[
+.panel[.panel-name[Tx/Rx]
+&lt;br&gt;&lt;br&gt;
+&lt;img src="./images/02/Tx_Rx.svg" width="50%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[Tipos]
+&lt;br&gt;&lt;br&gt;
+&lt;img src="./images/02/Tipos_UART.svg" width="90%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[Síncrono-asíncrono]
+&lt;br&gt;&lt;br&gt;
+&lt;img src="./images/02/sincrono_asincrono_UART.svg" width="90%" style="display: block; margin: auto;" /&gt;
+
+]
+]
+???
+- **Universal** Por que es un standar
+- **asynchronous** Porque la comunicación no utiliza un reloj digital (pulsos continuos)
+- **receiver/transmitter** Existe un receptor y emisor.
+
 ---
-# Programando Arduino
+
+
+# Ejemplo 1: ASCII + Serial
+Encontrar la letra enviada
+
+&lt;br&gt;
+&lt;img src="./images/02/ejemplo_serial_A.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
+&lt;br&gt;
+&lt;iframe src="http://sticksandstones.kstrom.com/appen.html" width="100%" height="200px"&gt;&lt;/iframe&gt;
+---
+# Ejemplo 2: ASCII + Serial
+Enviar la letra T mediante código ASCII
+
+&lt;br&gt;
+&lt;img src="./images/02/ejemplo_serial_A2.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
+&lt;br&gt;
+&lt;iframe src="http://sticksandstones.kstrom.com/appen.html" width="100%" height="200px"&gt;&lt;/iframe&gt;
 ---
 
 # Bibliografía
+.font100[
+- sección 1.1-1.2 (CONCEPTOS DIGITALES). Floyd, Thomas L. 2006. Fundamentos de Sistemas Digitales. Prentice Hall.
 
+- CHAPTER 10 - DIGITAL LOGIC, 10.1 Basic logic concepts. Horowitz, Paul, and Winfield Hill. 2015. The Art of Electronics. Cambridge Univ. Press.
 
+- 9.7 Código ASCII. Bignell, James W., Robert L. Donovan, and Gerardo Urbina Medel. 1997. Electrónica Digital.
 
-.font80[
+- Fischer, Eric. 2012. “The Evolution of Character Codes, 1874-1968.” Citeseerx. Ist.
 
-- 
-&lt;p&gt;&lt;cite&gt;Horowitz, P. and W. Hill
-(2015).
-&lt;em&gt;The Art of Electronics&lt;/em&gt;.
-Cambridge Univ. Press.&lt;/cite&gt;&lt;/p&gt;
-- 
-&lt;p&gt;&lt;cite&gt;Bignell, J. W., R. L. Donovan, and G. Urbina Medel
-(1997).
-&lt;em&gt;Electrónica Digital&lt;/em&gt;.&lt;/cite&gt;&lt;/p&gt;
-- 
-&lt;p&gt;&lt;cite&gt;Mano, M. M.
-(2003).
-&lt;em&gt;Diseño Digital&lt;/em&gt;.
-Pearson Educación.&lt;/cite&gt;&lt;/p&gt;
-- 
-&lt;p&gt;&lt;cite&gt;Mano, M. M.
-(2017).
-&lt;em&gt;Digital Logic and Computer Design&lt;/em&gt;.
-Pearson Education India.&lt;/cite&gt;&lt;/p&gt;
-- 
-&lt;p&gt;&lt;cite&gt;Karris, S. T.
-(2007).
-&lt;em&gt;Digital Circuit Analysis and Design with Simulink Modeling and Introduction to CPLDs and FPGAs&lt;/em&gt;.
-Orchard Publications.&lt;/cite&gt;&lt;/p&gt;
-- 
-&lt;p&gt;&lt;cite&gt;Angulo Usategui, J. M. and I. Angulo Martínez
-(2003).
-&amp;ldquo;Microcontroladores PIC: Diseño Practico de Aplicaciones&amp;rdquo;.
-&lt;/p&gt;&lt;/cite&gt;&lt;/p&gt;
-- 
-&lt;p&gt;&lt;cite&gt;Schilling, D. L. and C. Belove
-(1993).
-&amp;ldquo;Circuitos Electrónicos: Discretos e Integrados&amp;rdquo;.
-&lt;/p&gt;&lt;/cite&gt;&lt;/p&gt;
-- 
-&lt;p&gt;&lt;cite&gt;Floyd, T. L.
-(2006).
-&lt;em&gt;Fundamentos de Sistemas Digitales&lt;/em&gt;.
-Prentice Hall.&lt;/cite&gt;&lt;/p&gt;
-- 
-&lt;p&gt;&lt;cite&gt;logisim-evolution
-(2020).
-&lt;em&gt;Logisim-Evolution&lt;/em&gt;.&lt;/cite&gt;&lt;/p&gt;
-- 
-&lt;p&gt;&lt;cite&gt;LTspice | Design Center | Analog Devices
-&lt;em&gt;LTspice | Design Center | Analog Devices&lt;/em&gt;.
-https://www.analog.com/en/design-center/design-tools-and-calculators/ltspice-simulator.html.&lt;/cite&gt;&lt;/p&gt;
 ]
+
+---
+layout: false
+class: inverse, middle, center
+# **Lab 1:** Comunicación Serial
+--
+
+**Próxima clase:** Sistemas numéricos
+
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
