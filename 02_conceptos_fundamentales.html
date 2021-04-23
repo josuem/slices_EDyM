@@ -35,55 +35,33 @@ class: center, middle, inverse, title-slide
 
 
 
-# Señal Digital 
-.left-colum[
-.bg-washed-green.b--dark-green.ba.bw2.br4.ph2.font80[
-**Señal Digital:** Señal de tipo discreta, variante en el tiempo, compuesta por una serie de *pulsos lógicos* (cambios entre 0 y 1) utilizadas en circuitos digitales.
-]]
-
---
-.right-colum[
-.panelset[
-.panel[.panel-name[Señal periódica/no periódica]
-&lt;br&gt;
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="./images/02/ideal.svg" alt="Pulso lógico no ideal. (Fundamental - T. Floyd)" width="100%" /&gt;
-&lt;p class="caption"&gt;Pulso lógico no ideal. (Fundamental - T. Floyd)&lt;/p&gt;
-&lt;/div&gt;
-]
-
-.panel[.panel-name[Señal no-ideal]
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="./images/02/non_ideal_floyd.svg" alt="Pulso lógico no ideal. (Fundamental - T. Floyd)" width="50%" /&gt;
-&lt;p class="caption"&gt;Pulso lógico no ideal. (Fundamental - T. Floyd)&lt;/p&gt;
-&lt;/div&gt;
-]
-
-.panel[.panel-name[Señal no-ideal 2]
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="./images/02/non_ideal_floyd2.svg" alt="Pulso lógico no ideal. (Fundamental - T. Floyd)" width="60%" /&gt;
-&lt;p class="caption"&gt;Pulso lógico no ideal. (Fundamental - T. Floyd)&lt;/p&gt;
-&lt;/div&gt;
-]
-]]
-
-???
-- La señal puede ser periódica (también conocida como **señal de reloj** *clk*)
-- o puede ser no-periodica (pulso de encendido, por ejemplo)
-- Tiene un tiempo tanto de subida como bajada
-  - Los tramos de subida son llamados **flanco de subida**
-  - Los tramos de bajada son llamados **flanco de bajada**
-- **Droop**: inclinarse, caer
----
-
 # Objetivos
+.pull-left[
+## Teoría
 - Introducir algunos conceptos básicos utilizados en electrónica digital:
   - Niveles Lógicos
   - Lógica positiva y negativa
   - Señal lógica
-- Aplicar el concepto de **señal lógica** a la comunicación serial Asíncrona (UART)
+- Estudiar aplicaciones de estos conceptos:
+  - Código ASCII
+  - Comunicación serial Asíncrona (UART)
+]
+
+--
+.pull-right[
+## Laboratorio
+- Introducción a la plataforma Arduino
+- Comunicarnos con Arduino mediante comunicación serial
+  - Ejemplos
+  
+&lt;br&gt;
+.bg-washed-green.b--dark-green.ba.bw2.br4.ph2.font80[
+- Instalen [**IDE Arduino**](https://www.arduino.cc/en/software) y [**SimulIde**](https://www.simulide.com/p/downloads.html)
+]
+]
 
 ---
+
 # Niveles Lógicos
 
 .left-column[ 
@@ -125,6 +103,47 @@ class: center, middle, inverse, title-slide
   - **lógica negativa**: 1: Low, 0: High
 ---
 
+
+# Señal Digital 
+.left-colum[
+.bg-washed-green.b--dark-green.ba.bw2.br4.ph2.font80[
+**Señal Digital:** Señal de tipo discreta, variante en el tiempo, compuesta por una serie de *pulsos lógicos* (cambios entre 0 y 1) utilizadas en circuitos digitales.
+]]
+
+--
+.right-colum[
+.panelset[
+.panel[.panel-name[Señal periódica/no periódica]
+&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02/ideal.svg" alt="Pulso lógico no ideal. (Fundamental - T. Floyd)" width="100%" /&gt;
+&lt;p class="caption"&gt;Pulso lógico no ideal. (Fundamental - T. Floyd)&lt;/p&gt;
+&lt;/div&gt;
+]
+
+.panel[.panel-name[Señal no-ideal]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02/non_ideal_floyd.svg" alt="Pulso lógico no ideal. (Fundamental - T. Floyd)" width="50%" /&gt;
+&lt;p class="caption"&gt;Pulso lógico no ideal. (Fundamental - T. Floyd)&lt;/p&gt;
+&lt;/div&gt;
+]
+
+.panel[.panel-name[Señal no-ideal 2]
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02/non_ideal_floyd2.svg" alt="Pulso lógico no ideal. (Fundamental - T. Floyd)" width="60%" /&gt;
+&lt;p class="caption"&gt;Pulso lógico no ideal. (Fundamental - T. Floyd)&lt;/p&gt;
+&lt;/div&gt;
+]
+]]
+
+???
+- La señal puede ser periódica (también conocida como **señal de reloj** *clk*)
+- o puede ser no-periodica (pulso de encendido, por ejemplo)
+- Tiene un tiempo tanto de subida como bajada
+  - Los tramos de subida son llamados **flanco de subida**
+  - Los tramos de bajada son llamados **flanco de bajada**
+- **Droop**: inclinarse, caer
+---
 
 # Aplicación 1 - Código ASCII
 .bg-washed-green.b--dark-green.ba.bw2.br4.ph2.font80[
@@ -210,7 +229,7 @@ Enviar la letra T mediante código ASCII
 
 # Bibliografía
 .font100[
-- sección 1.1-1.2 (CONCEPTOS DIGITALES). Floyd, Thomas L. 2006. Fundamentos de Sistemas Digitales. Prentice Hall.
+- Sección 1.1-1.2 (CONCEPTOS DIGITALES). Floyd, Thomas L. 2006. Fundamentos de Sistemas Digitales. Prentice Hall.
 
 - CHAPTER 10 - DIGITAL LOGIC, 10.1 Basic logic concepts. Horowitz, Paul, and Winfield Hill. 2015. The Art of Electronics. Cambridge Univ. Press.
 

@@ -1,12 +1,12 @@
 ---
 title: "LAB. 1 - Comunicación Serial"
 subtitle: "Electrónica digital y microcontroladores"
+session: "01"
+date: "`r Sys.Date()`"
 author: 
   - "Josué Meneses Díaz"
   - "josue.meneses@usach.cl"
-session: "01"
 institute: "Universidad de Santiago de Chile"
-date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
     dev : "svg"
@@ -25,37 +25,7 @@ output:
       ratio: 16:9 # ratio: 4:3
       beforeInit: "macros.js"
 ---
-```{r setup, include = FALSE}
-options(htmltools.dir.version = FALSE)
-library(knitr)
-library(tidyverse)
-library(xaringanExtra)
-library(icons)
-# set default options
-opts_chunk$set(echo=FALSE,
-               collapse = TRUE,
-               fig.width = 7.252,
-               fig.height = 4,
-               dpi = 300)
-
-knitr::opts_chunk$set(echo = FALSE, 
-                      fig.align = "center",
-                      dev = "svg")
-# set engines
-knitr::knit_engines$set("markdown")
-
-xaringanExtra::use_tile_view()
-xaringanExtra::use_panelset()
-xaringanExtra::use_scribble()
-xaringanExtra::use_tachyons()
-xaringanExtra::use_clipboard()
-
-xaringanExtra::use_extra_styles(
-  hover_code_line = TRUE,         #<<
-  mute_unhighlighted_code = TRUE  #<<
-)
-
-todo<-FALSE
+```{r, code = readLines("config.R"), include = FALSE}
 ```
 
 # Arduino
@@ -67,7 +37,6 @@ todo<-FALSE
   - Medición
   - Protopitado
   - etc.
-  - .red[What more?]
 ]  
 .pull-right[
 .pull-left[
@@ -110,8 +79,8 @@ void loop() { #<<
 .pull-right[
 - `void setup(){}`: Código de configuración. Ejecutado una sola vez.
 - `void loop()[]` : Loop principal. Se repite infinitamente!!!.
-- `\\`: Es utilizado para comentarios de una linea. 
-  - `\*  *\`  para comentarios multi-linea.
+- `//`: Es utilizado para comentarios de una linea. 
+  - `/*  */`  para comentarios multi-linea.
 ]
 
 --
@@ -169,7 +138,7 @@ String stringOne = "Hello String";
 
 # Condicional If else
 La instrucción if busca una condición y ejecuta la siguiente instrucción o conjunto de declaraciones si la condición es 'verdadera'.
-
+.font80[
 .pull-left[
 ### sintáxis
 ```{arduino, eval=FALSE, echo=TRUE}
@@ -177,7 +146,6 @@ if (condition) {
   //statement(s)
 }
 ```
-
 ```{arduino, eval=FALSE, echo=TRUE}
 x == y (x is equal to y)
 x != y (x is not equal to y)
@@ -189,22 +157,22 @@ x >= y (x is greater than or equal to y)
 ]
 .pull-right[
 ```{arduino, eval=FALSE, echo=TRUE}
-if (condition1) {
+if (condition1) {#<<
   // do Thing A
 }
-else if (condition2) {
+else if (condition2) {#<<
   // do Thing B
 }
-else {
+else {#<<
   // do Thing C
 }
 ```
-]
 .center[
 `r icon_style(fontawesome("link", style = "solid"), scale=1, fill="#8fd8be")` [If - Arduino](https://www.arduino.cc/reference/en/language/structure/control-structure/if/)
 `r icon_style(fontawesome("link", style = "solid"), scale=1, fill="#8fd8be")` [else - Arduino](https://www.arduino.cc/reference/en/language/structure/control-structure/else/)
 
-]
+]]]
+
 ---
 
 # Ciclo while
@@ -221,8 +189,8 @@ while (condition) {
 .pull-right[
 ### Ejemplo
 ```{arduino, eval=FALSE, echo=TRUE}
-var = 0;
-while (var < 200) {
+int var = 0;
+while (var < 200) { #<<
   // do something repetitive 200 times
   var++;
 }
@@ -248,7 +216,7 @@ for (initialization; condition; increment) {
 .pull-right[
 ### Ejemplo
 ```{arduino, eval=FALSE, echo=TRUE}
-for (int i = 0; i <= 255; i++) {
+for (int i = 0; i <= 255; i++) { #<<
   delay(10);
 }
 ```
@@ -263,8 +231,6 @@ for (int i = 0; i <= 255; i++) {
 # Funciones especiales - delay()
 Pausa el programa durante el tiempo (en milisegundos) especificado como parámetro. 
 
-
-
 ### Sintáxis
 ```{arduino, eval=FALSE, echo=TRUE}
 delay(ms) // = ms*delayMicroseconds()
@@ -274,29 +240,44 @@ delay(ms) // = ms*delayMicroseconds()
 ]
 ---
 
-# Funciones especiales - Serial
+# Funciones especiales - Serial.begin()
 Se utiliza para la comunicación entre la placa Arduino y una computadora u otros dispositivos. 
 Todas las placas Arduino tienen al menos un puerto serie.
-
+.pull-left[
 ### Sintaxis begin
 Serial.begin(speed) // en baudios o bit/s
 ```{arduino, eval=FALSE, echo=TRUE}
 void setup() {
-    Serial.begin(9600); // opens serial port, sets data rate to 9600 bps
+    Serial.begin(9600); // opens serial port, sets data rate to 9600 bps #<<
 }
 
 void loop() {
-  
+  //code  
 }
 ```
+]
+
+|Transmission rate      |
+|:---------------------:|
+|   **[baud]**                |
+| 4800	|
+| 9600	|
+| 19200	|
+| 38400	|
+| 57600	|
+| 115200|
 ---
+# Funciones especiales - Serial.flush(), .print()
+.pull-left[
 ### Sintáxis flush
+.font90[
 Espera a que se complete la transmisión de datos en serie salientes
 ```{arduino, eval=FALSE, echo=TRUE}
 Serial.flush()
 ```
 
 ### Sintáxis print/println
+
 **`print`**: Imprime datos en el puerto serie como texto ASCII legible por humanos. 
 **`println`**: Idem. pero al final envía un ENTER (ASCII 13, o '\r').
 
@@ -304,6 +285,10 @@ Serial.flush()
 Serial.print()
 Serial.println()
 ```
+]]
+
+.pull-right[
+
 #### Ejemplo
 ```{arduino, eval=FALSE, echo=TRUE}
 void setup() {
@@ -311,15 +296,15 @@ void setup() {
 }
 
 void loop() {
-  Serial.println("Hola mundo");
+  Serial.println("Hola mundo"); #<<
   delay(10);
 }
 ```
 
-
 [Serial - Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
 
 [Serial.begin()](https://www.arduino.cc/reference/en/language/functions/communication/serial/begin/)
+]
 
 ---
 
@@ -333,15 +318,18 @@ knitr::include_graphics("./images/02/ejemplo_1.svg")
 .center[.font120[10 min para realizarlo ]]
 ---
 
-# Funciones especiales - Serial 2
+# Funciones especiales - Serial.available()
+.pull-left[
 ### Syntáxis available
 Verifica si se encuentra disponibles el el buffer del puerto para ser leídos. 
-
 ```{arduino, eval=FALSE, echo=TRUE}
 Serial.available()
 ```
-
+]
+.pull-right[
 #### Ejemplo
+.font80[
+
 ```{arduino, eval=FALSE, echo=TRUE}
 void setup() {
   Serial.begin(9600); 
@@ -349,25 +337,28 @@ void setup() {
 
 void loop() {
   // reply only when you receive data:
-  if (Serial.available() > 0) {
+  if (Serial.available() > 0) { #<<
     // read the incoming byte:
     incomingByte = Serial.read();
-
-    // say what you got:
-    Serial.print("I received: ");
-    Serial.println(incomingByte, DEC); //
   }
 }
 ```
-
+]]
+---
+# Funciones especiales - Serial.read() .readString()
+.pull-left[
 ### Sintáxis read
 Lee datos seriales entrantes. Los datos son leídos con el número ASCII de la entrada.
-```{arduino, eval=FALSE, echo=TRUE}
-Serial.read()
-```
+
 ### Sintáxis readString()
 Lee datos seriales entrantes directamente como String. 
+```{arduino, eval=FALSE, echo=TRUE}
+Serial.read()
+Serial.readString()
+```
 
+]
+.pull-right[
 #### Ejemplo
 ```{arduino, eval=FALSE, echo=TRUE}
 void setup() {
@@ -376,12 +367,12 @@ void setup() {
 
 void loop() {
   if (Serial.available() > 0) {
-    Serial.println( Serial.readString());
+    Serial.println( Serial.readString()); #<<
     Serial.print("Enviaste: ");
   }
 }
 ```
-
+]
 
 ---
 
@@ -394,11 +385,13 @@ knitr::include_graphics("./images/02/ejemplo_2.svg")
 
 
 ---
-# Tarea 1
+# Laboratorio 1
+.font120[
 - Realizar un "reloj digital" utilizando comunicación serial, donde el usuario pueda cambiar el tiempo mostrado en consola.
+<br>
 --
-Enviar:
+### Enviar:
 - Diagrama de flujo del programa.
 - Código .ino final.
----
-
+<br>
+]

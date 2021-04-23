@@ -1,12 +1,12 @@
 ---
 title: "Conceptos fundamentales - Parte 1"
 subtitle: "Electrónica digital y microcontroladores"
+session: "01"
+date: "`r Sys.Date()`"
 author: 
   - "Josué Meneses Díaz"
   - "josue.meneses@usach.cl"
-session: "01"
 institute: "Universidad de Santiago de Chile"
-date: "`r Sys.Date()`"
 output:
   xaringan::moon_reader:
     dev : "svg"
@@ -25,78 +25,36 @@ output:
       ratio: 16:9 # ratio: 4:3
       beforeInit: "macros.js"
 ---
-```{r setup, include = FALSE}
-options(htmltools.dir.version = FALSE)
-library(knitr)
-library(tidyverse)
-library(xaringanExtra)
-# set default options
-opts_chunk$set(echo=FALSE,
-               collapse = TRUE,
-               fig.width = 7.252,
-               fig.height = 4,
-               dpi = 300)
-
-knitr::opts_chunk$set(echo = FALSE, 
-                      fig.align = "center",
-                      dev = "svg")
-# set engines
-knitr::knit_engines$set("markdown")
-
-xaringanExtra::use_tile_view()
-xaringanExtra::use_panelset()
-xaringanExtra::use_scribble()
-xaringanExtra::use_tachyons()
-
-todo<-FALSE
+```{r, code = readLines("config.R"), include = FALSE}
 ```
-
-# Señal Digital 
-.left-colum[
-.bg-washed-green.b--dark-green.ba.bw2.br4.ph2.font80[
-**Señal Digital:** Señal de tipo discreta, variante en el tiempo, compuesta por una serie de *pulsos lógicos* (cambios entre 0 y 1) utilizadas en circuitos digitales.
-]]
-
---
-.right-colum[
-.panelset[
-.panel[.panel-name[Señal periódica/no periódica]
-<br>
-```{r , fig.align='center', out.width="100%", fig.cap="Pulso lógico no ideal. (Fundamental - T. Floyd)"}
-knitr::include_graphics("./images/02/ideal.svg")
-```
-]
-
-.panel[.panel-name[Señal no-ideal]
-```{r , fig.align='center', out.width="50%", fig.cap="Pulso lógico no ideal. (Fundamental - T. Floyd)"}
-knitr::include_graphics("./images/02/non_ideal_floyd.svg")
-```
-]
-
-.panel[.panel-name[Señal no-ideal 2]
-```{r, out.width="60%", fig.cap="Pulso lógico no ideal. (Fundamental - T. Floyd)"}
-knitr::include_graphics("./images/02/non_ideal_floyd2.svg")
-```
-]
-]]
-
-???
-- La señal puede ser periódica (también conocida como **señal de reloj** *clk*)
-- o puede ser no-periodica (pulso de encendido, por ejemplo)
-- Tiene un tiempo tanto de subida como bajada
-  - Los tramos de subida son llamados **flanco de subida**
-  - Los tramos de bajada son llamados **flanco de bajada**
-- **Droop**: inclinarse, caer
----
 
 # Objetivos
+.pull-left[
+## Teoría
 - Introducir algunos conceptos básicos utilizados en electrónica digital:
   - Niveles Lógicos
   - Lógica positiva y negativa
   - Señal lógica
-- Aplicar el concepto de **señal lógica** a la comunicación serial Asíncrona (UART)
+- Estudiar aplicaciones de estos conceptos:
+  - Código ASCII
+  - Comunicación serial Asíncrona (UART)
+]
+
+--
+.pull-right[
+## Laboratorio
+- Introducción a la plataforma Arduino
+- Comunicarnos con Arduino mediante comunicación serial
+  - Ejemplos
+  
+<br>
+.bg-washed-green.b--dark-green.ba.bw2.br4.ph2.font80[
+- Instalen [**IDE Arduino**](https://www.arduino.cc/en/software) y [**SimulIde**](https://www.simulide.com/p/downloads.html)
+]
+]
 
 ---
+
 # Niveles Lógicos
 
 .left-column[ 
@@ -136,6 +94,44 @@ knitr::include_graphics("./images/02/high_low_floyd.svg")
   - **lógica negativa**: 1: Low, 0: High
 ---
 
+
+# Señal Digital 
+.left-colum[
+.bg-washed-green.b--dark-green.ba.bw2.br4.ph2.font80[
+**Señal Digital:** Señal de tipo discreta, variante en el tiempo, compuesta por una serie de *pulsos lógicos* (cambios entre 0 y 1) utilizadas en circuitos digitales.
+]]
+
+--
+.right-colum[
+.panelset[
+.panel[.panel-name[Señal periódica/no periódica]
+<br>
+```{r , fig.align='center', out.width="100%", fig.cap="Pulso lógico no ideal. (Fundamental - T. Floyd)"}
+knitr::include_graphics("./images/02/ideal.svg")
+```
+]
+
+.panel[.panel-name[Señal no-ideal]
+```{r , fig.align='center', out.width="50%", fig.cap="Pulso lógico no ideal. (Fundamental - T. Floyd)"}
+knitr::include_graphics("./images/02/non_ideal_floyd.svg")
+```
+]
+
+.panel[.panel-name[Señal no-ideal 2]
+```{r, out.width="60%", fig.cap="Pulso lógico no ideal. (Fundamental - T. Floyd)"}
+knitr::include_graphics("./images/02/non_ideal_floyd2.svg")
+```
+]
+]]
+
+???
+- La señal puede ser periódica (también conocida como **señal de reloj** *clk*)
+- o puede ser no-periodica (pulso de encendido, por ejemplo)
+- Tiene un tiempo tanto de subida como bajada
+  - Los tramos de subida son llamados **flanco de subida**
+  - Los tramos de bajada son llamados **flanco de bajada**
+- **Droop**: inclinarse, caer
+---
 
 # Aplicación 1 - Código ASCII
 .bg-washed-green.b--dark-green.ba.bw2.br4.ph2.font80[
@@ -241,7 +237,7 @@ knitr::include_url("https://www.rapidtables.com/code/text/ascii-table.html", hei
 
 # Bibliografía
 .font100[
-- sección 1.1-1.2 (CONCEPTOS DIGITALES). Floyd, Thomas L. 2006. Fundamentos de Sistemas Digitales. Prentice Hall.
+- Sección 1.1-1.2 (CONCEPTOS DIGITALES). Floyd, Thomas L. 2006. Fundamentos de Sistemas Digitales. Prentice Hall.
 
 - CHAPTER 10 - DIGITAL LOGIC, 10.1 Basic logic concepts. Horowitz, Paul, and Winfield Hill. 2015. The Art of Electronics. Cambridge Univ. Press.
 
