@@ -360,7 +360,6 @@ knitr::include_graphics("./images/01/moodle_2.png")
 ```
 ]
 ---
-
 # Bibliografía
 ```{r, load_refs, echo=FALSE, results='hide', warning=FALSE, message=FALSE}
 library(RefManageR)
