@@ -153,7 +153,7 @@ Esta compuesto por 7 pulsos digitales + 1 de verificación.
 class: clear
 
 ```{r}
-knitr::include_url("http://sticksandstones.kstrom.com/appen.html", height = "650px")
+knitr::include_url("https://www.rapidtables.com/code/text/ascii-table.html", height = "650px")
 ```
 
 ---
