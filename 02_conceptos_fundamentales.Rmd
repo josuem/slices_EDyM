@@ -220,10 +220,9 @@ Encontrar la letra enviada
 ```{r , fig.align='center', out.width="80%"}
 knitr::include_graphics("./images/02/ejemplo_serial_A.svg")
 ```
-
 <br>
 ```{r}
-knitr::include_url("http://sticksandstones.kstrom.com/appen.html", height = "200px")
+knitr::include_url("https://www.rapidtables.com/code/text/ascii-table.html", height = "200px")
 ```
 ---
 # Ejemplo 2: ASCII + Serial
@@ -236,7 +235,7 @@ knitr::include_graphics("./images/02/ejemplo_serial_A2.svg")
 
 <br>
 ```{r}
-knitr::include_url("http://sticksandstones.kstrom.com/appen.html", height = "200px")
+knitr::include_url("https://www.rapidtables.com/code/text/ascii-table.html", height = "200px")
 ```
 ---
 
