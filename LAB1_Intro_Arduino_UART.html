@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="Josué Meneses Díaz" />
     <meta name="author" content="josue.meneses@usach.cl" />
-    <meta name="date" content="2021-04-22" />
+    <meta name="date" content="2021-04-23" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
@@ -34,135 +34,11 @@ class: center, middle, inverse, title-slide
 ### Josué Meneses Díaz
 ### <a href="mailto:josue.meneses@usach.cl" class="email">josue.meneses@usach.cl</a>
 ### Universidad de Santiago de Chile
-### 2021-04-22
+### 2021-04-23
 
 ---
 
 
-
-# Ejemplo 1 - Reloj simple
-Escribir un código que permita enviar por serial un valor de tiempo cada segundo.
-
-
-&lt;img src="./images/02/ejemplo_1.svg" style="display: block; margin: auto;" /&gt;
-.center[.font120[10 min para realizarlo ]]
----
-
-# Funciones especiales - Serial 2
-### Syntáxis available
-Verifica si se encuentra disponibles el el buffer del puerto para ser leídos. 
-
-
-```arduino
-Serial.available()
-```
-
-#### Ejemplo
-
-```arduino
-void setup() {
-  Serial.begin(9600); 
-}
-
-void loop() {
-  // reply only when you receive data:
-  if (Serial.available() &gt; 0) {
-    // read the incoming byte:
-    incomingByte = Serial.read();
-
-    // say what you got:
-    Serial.print("I received: ");
-    Serial.println(incomingByte, DEC); //
-  }
-}
-```
-
-### Sintáxis read
-Lee datos seriales entrantes. Los datos son leídos con el número ASCII de la entrada.
-
-```arduino
-Serial.read()
-```
-### Sintáxis readString()
-Lee datos seriales entrantes directamente como String. 
-
-#### Ejemplo
-
-```arduino
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  if (Serial.available() &gt; 0) {
-    Serial.println( Serial.readString());
-    Serial.print("Enviaste: ");
-  }
-}
-```
-
-
----
-
-# Ejemplo 2 - Preguntar nombre
-Escribir un código que pregunte tu nombre y lo devuelva
-&lt;img src="./images/02/ejemplo_2.svg" width="55%" style="display: block; margin: auto;" /&gt;
-
-
-
----
-# Funciones especiales - Serial
-Se utiliza para la comunicación entre la placa Arduino y una computadora u otros dispositivos. 
-Todas las placas Arduino tienen al menos un puerto serie.
-
-### Sintaxis begin
-Serial.begin(speed) // en baudios o bit/s
-
-```arduino
-void setup() {
-    Serial.begin(9600); // opens serial port, sets data rate to 9600 bps
-}
-
-void loop() {
-  
-}
-```
----
-### Sintáxis flush
-Espera a que se complete la transmisión de datos en serie salientes
-
-```arduino
-Serial.flush()
-```
-
-### Sintáxis print/println
-**`print`**: Imprime datos en el puerto serie como texto ASCII legible por humanos. 
-**`println`**: Idem. pero al final envía un ENTER (ASCII 13, o '\r').
-
-
-```arduino
-Serial.print()
-Serial.println()
-```
-#### Ejemplo
-
-```arduino
-void setup() {
-  Serial.begin(9600);
-}
-
-void loop() {
-  Serial.println("Hola mundo");
-  delay(10);
-}
-```
-
-
-[Serial - Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
-
-[Serial.begin()](https://www.arduino.cc/reference/en/language/functions/communication/serial/begin/)
-
----
 
 # Arduino
 .pull-left[
@@ -388,13 +264,136 @@ delay(ms) // = ms*delayMicroseconds()
 ]
 ---
 
+# Funciones especiales - Serial
+Se utiliza para la comunicación entre la placa Arduino y una computadora u otros dispositivos. 
+Todas las placas Arduino tienen al menos un puerto serie.
+
+### Sintaxis begin
+Serial.begin(speed) // en baudios o bit/s
+
+```arduino
+void setup() {
+    Serial.begin(9600); // opens serial port, sets data rate to 9600 bps
+}
+
+void loop() {
+  
+}
+```
+---
+### Sintáxis flush
+Espera a que se complete la transmisión de datos en serie salientes
+
+```arduino
+Serial.flush()
+```
+
+### Sintáxis print/println
+**`print`**: Imprime datos en el puerto serie como texto ASCII legible por humanos. 
+**`println`**: Idem. pero al final envía un ENTER (ASCII 13, o '\r').
+
+
+```arduino
+Serial.print()
+Serial.println()
+```
+#### Ejemplo
+
+```arduino
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  Serial.println("Hola mundo");
+  delay(10);
+}
+```
+
+
+[Serial - Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+
+[Serial.begin()](https://www.arduino.cc/reference/en/language/functions/communication/serial/begin/)
+
+---
+
+# Ejemplo 1 - Reloj simple
+Escribir un código que permita enviar por serial un valor de tiempo cada segundo.
+
+
+&lt;img src="./images/02/ejemplo_1.svg" style="display: block; margin: auto;" /&gt;
+.center[.font120[10 min para realizarlo ]]
+---
+
+# Funciones especiales - Serial 2
+### Syntáxis available
+Verifica si se encuentra disponibles el el buffer del puerto para ser leídos. 
+
+
+```arduino
+Serial.available()
+```
+
+#### Ejemplo
+
+```arduino
+void setup() {
+  Serial.begin(9600); 
+}
+
+void loop() {
+  // reply only when you receive data:
+  if (Serial.available() &gt; 0) {
+    // read the incoming byte:
+    incomingByte = Serial.read();
+
+    // say what you got:
+    Serial.print("I received: ");
+    Serial.println(incomingByte, DEC); //
+  }
+}
+```
+
+### Sintáxis read
+Lee datos seriales entrantes. Los datos son leídos con el número ASCII de la entrada.
+
+```arduino
+Serial.read()
+```
+### Sintáxis readString()
+Lee datos seriales entrantes directamente como String. 
+
+#### Ejemplo
+
+```arduino
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (Serial.available() &gt; 0) {
+    Serial.println( Serial.readString());
+    Serial.print("Enviaste: ");
+  }
+}
+```
+
+
+---
+
+# Ejemplo 2 - Preguntar nombre
+Escribir un código que pregunte tu nombre y lo devuelva
+&lt;img src="./images/02/ejemplo_2.svg" width="55%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
 # Tarea 1
 - Realizar un "reloj digital" utilizando comunicación serial, donde el usuario pueda cambiar el tiempo mostrado en consola.
-
+--
 Enviar:
 - Diagrama de flujo del programa.
 - Código .ino final.
----
 ---
 
     </textarea>

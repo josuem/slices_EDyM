@@ -255,7 +255,7 @@ knitr::include_url("http://sticksandstones.kstrom.com/appen.html", height = "200
 ---
 layout: false
 class: inverse, middle, center
-[# **Lab 1:** Comunicación Serial](https://josuem.github.io/slides_EDyM/LAB1_Intro_Arduino_UART.html)
+#[**Lab 1:** Comunicación Serial](https://josuem.github.io/slides_EDyM/LAB1_Intro_Arduino_UART.html)
 --
 
 **Próxima clase:** Sistemas numéricos
