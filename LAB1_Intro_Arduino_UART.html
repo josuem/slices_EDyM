@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="Josué Meneses Díaz" />
     <meta name="author" content="josue.meneses@usach.cl" />
-    <meta name="date" content="2021-04-21" />
+    <meta name="date" content="2021-04-22" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
@@ -18,6 +18,10 @@
     <script src="libs/xaringanExtra-scribble/scribble.js"></script>
     <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copy Code","success":"Copied!","error":"Press Ctrl+C to Copy"})</script>
     <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/personal.css" type="text/css" />
   </head>
@@ -30,40 +34,367 @@ class: center, middle, inverse, title-slide
 ### Josué Meneses Díaz
 ### <a href="mailto:josue.meneses@usach.cl" class="email">josue.meneses@usach.cl</a>
 ### Universidad de Santiago de Chile
-### 2021-04-21
+### 2021-04-22
 
 ---
 
 
+
+# Ejemplo 1 - Reloj simple
+Escribir un código que permita enviar por serial un valor de tiempo cada segundo.
+
+
+&lt;img src="./images/02/ejemplo_1.svg" style="display: block; margin: auto;" /&gt;
+.center[.font120[10 min para realizarlo ]]
+---
+
+# Funciones especiales - Serial 2
+### Syntáxis available
+Verifica si se encuentra disponibles el el buffer del puerto para ser leídos. 
+
+
+```arduino
+Serial.available()
+```
+
+#### Ejemplo
+
+```arduino
+void setup() {
+  Serial.begin(9600); 
+}
+
+void loop() {
+  // reply only when you receive data:
+  if (Serial.available() &gt; 0) {
+    // read the incoming byte:
+    incomingByte = Serial.read();
+
+    // say what you got:
+    Serial.print("I received: ");
+    Serial.println(incomingByte, DEC); //
+  }
+}
+```
+
+### Sintáxis read
+Lee datos seriales entrantes. Los datos son leídos con el número ASCII de la entrada.
+
+```arduino
+Serial.read()
+```
+### Sintáxis readString()
+Lee datos seriales entrantes directamente como String. 
+
+#### Ejemplo
+
+```arduino
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  if (Serial.available() &gt; 0) {
+    Serial.println( Serial.readString());
+    Serial.print("Enviaste: ");
+  }
+}
+```
+
+
+---
+
+# Ejemplo 2 - Preguntar nombre
+Escribir un código que pregunte tu nombre y lo devuelva
+&lt;img src="./images/02/ejemplo_2.svg" width="55%" style="display: block; margin: auto;" /&gt;
+
+
+
+---
+# Funciones especiales - Serial
+Se utiliza para la comunicación entre la placa Arduino y una computadora u otros dispositivos. 
+Todas las placas Arduino tienen al menos un puerto serie.
+
+### Sintaxis begin
+Serial.begin(speed) // en baudios o bit/s
+
+```arduino
+void setup() {
+    Serial.begin(9600); // opens serial port, sets data rate to 9600 bps
+}
+
+void loop() {
+  
+}
+```
+---
+### Sintáxis flush
+Espera a que se complete la transmisión de datos en serie salientes
+
+```arduino
+Serial.flush()
+```
+
+### Sintáxis print/println
+**`print`**: Imprime datos en el puerto serie como texto ASCII legible por humanos. 
+**`println`**: Idem. pero al final envía un ENTER (ASCII 13, o '\r').
+
+
+```arduino
+Serial.print()
+Serial.println()
+```
+#### Ejemplo
+
+```arduino
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  Serial.println("Hola mundo");
+  delay(10);
+}
+```
+
+
+[Serial - Arduino](https://www.arduino.cc/reference/en/language/functions/communication/serial/)
+
+[Serial.begin()](https://www.arduino.cc/reference/en/language/functions/communication/serial/begin/)
+
+---
 
 # Arduino
+.pull-left[
+- El ambiente Arduino es realmente C++, con bibliotecas de soporte, y además asume algunos parámetros relativos al microcontrolador, para simplificar el proceso de programación [[1]](https://arduino.cl/introduccion-a-los-tipos-de-dato-con-arduino/).
 
+- Plataforma de desarrollo que permite cargar programas para realizar tareas especificas:
+  - Automatización y control
+  - Medición
+  - Protopitado
+  - etc.
+  - .red[What more?]
+]  
+.pull-right[
+.pull-left[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src="./images/02/Arduino_logo.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+.pull-right[
+&lt;img src="./images/02/Arduino-Uno.png" width="100%" style="display: block; margin: auto;" /&gt;
+]
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+&lt;svg viewBox="0 0 512 512" style="position:relative;display:inline-block;top:.1em;fill:#8fd8be;height:1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; [Pagina oficial Arduino](https://www.arduino.cc/)
+]  
+
+
+???
+- Plataforma de desarrollo: posee todo lo necesario para implementar un MCU.
 ---
+
 # Estructura básica
+.pull-left[
 
 ```arduino
 *void setup() {
-  // put your setup code here, to run once:
+  // put your setup code here
 
 }
 
 *void loop() {
-  // put your main code here, to run repeatedly:
+  /* put your main code here, 
+  to run repeatedly:*/
 
 }
 ```
+]
+.pull-right[
+- `void setup(){}`: Código de configuración. Ejecutado una sola vez.
+- `void loop()[]` : Loop principal. Se repite infinitamente!!!.
+- `\\`: Es utilizado para comentarios de una linea. 
+  - `\*  *\`  para comentarios multi-linea.
+]
+
+--
+
+En realidad estas dos partes no son más que dos funciones
+.center[
+
+```arduino
+tipo nombre_funcion(variables){}
+void          setup()         {}
+void           main()         {}
+
+```
+]
 ---
 
-# Sintexis
+# Variables
+.font120[
+- Siempre tienen que ser declara, especificando, aunque sea una vez, su tipo.
+
+- Cada linea tiene que terminar en `;` (salvo las funciones).
+]
+
+--
+
+```arduino
+int x;      // Variable `x` declarada
+int n = 0;  // Variable `n` declarada y asignada 
+```
 
 ---
+# Tipos de variables
 
-# Comunicación serial
 
+```arduino
+void          // The void keyword is used only in function declarations. It indicates that the function is expected to return no information
+byte          // A byte stores an 8-bits unsigned number, from 0 to 255 (2^8-1).
+int           // 16-bits (2-byte).  Range of -32,768 to 32,767 (-2^15, 0, 2^15-1).
+unsigned int  // 0 to 65,535 ((2^16) - 1).
+long          // 32-bits (4 bytes), from -2,147,483,648 to 2,147,483,647.
+unsigned long // 0 to 4,294,967,295 (2^32 - 1).
+float         // -3.4028235E+38 to 3.4028235E+38 . They are stored as 32 bits (4 bytes).
+double        // Idem. to float on Arduino Uno. On Arduino Due, 8-byte (64 bit) precision.
+
+char          // A data type used to store a character value.
+char myChar = 'A';
+
+String        
+String stringOne = "Hello String"; 
+```
+
+
+.center[[Variable Declaration - Arduino.cc](https://www.arduino.cc/en/Reference/VariableDeclaration)]
+???
+- Entonces ustedes se preguntan ahora **¿Qué variables puedo utilizar?
+- Si en sus cursos de programación se preguntaron para que necesitamos saber tantos tipos de variables. Bueno en los MCU son muy importantes porque el espacio del programa tiene que ser óptimo.
+---
+
+# Condicional If else
+La instrucción if busca una condición y ejecuta la siguiente instrucción o conjunto de declaraciones si la condición es 'verdadera'.
+
+.pull-left[
+### sintáxis
+
+```arduino
+if (condition) {
+  //statement(s)
+}
+```
+
+
+```arduino
+x == y (x is equal to y)
+x != y (x is not equal to y)
+x &lt;  y (x is less than y)
+x &gt;  y (x is greater than y)
+x &lt;= y (x is less than or equal to y)
+x &gt;= y (x is greater than or equal to y)
+```
+]
+.pull-right[
+
+```arduino
+if (condition1) {
+  // do Thing A
+}
+else if (condition2) {
+  // do Thing B
+}
+else {
+  // do Thing C
+}
+```
+]
+.center[
+&lt;svg viewBox="0 0 512 512" style="position:relative;display:inline-block;top:.1em;fill:#8fd8be;height:1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; [If - Arduino](https://www.arduino.cc/reference/en/language/structure/control-structure/if/)
+&lt;svg viewBox="0 0 512 512" style="position:relative;display:inline-block;top:.1em;fill:#8fd8be;height:1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; [else - Arduino](https://www.arduino.cc/reference/en/language/structure/control-structure/else/)
+
+]
+---
+
+# Ciclo while
+Un ciclo while se repetirá de forma continua e infinita, hasta que la expresión dentro del paréntesis () se vuelva falsa. 
+.pull-left[
+### sintáxis
+
+
+```arduino
+while (condition) {
+  // statement(s)
+}
+```
+]
+.pull-right[
+### Ejemplo
+
+```arduino
+var = 0;
+while (var &lt; 200) {
+  // do something repetitive 200 times
+  var++;
+}
+```
+]
+
+.center[
+&lt;svg viewBox="0 0 512 512" style="position:relative;display:inline-block;top:.1em;fill:#8fd8be;height:1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; [while - Arduino](https://www.arduino.cc/reference/en/language/structure/control-structure/while/)
+]
+
+---
+# Ciclo For
+La instrucción for se usa para repetir un bloque de declaraciones entre llaves. Por lo general, se usa un contador de incrementos.
+
+.pull-left[
+### sintáxis
+
+```arduino
+for (initialization; condition; increment) {
+  // statement(s);
+}
+```
+]
+.pull-right[
+### Ejemplo
+
+```arduino
+for (int i = 0; i &lt;= 255; i++) {
+  delay(10);
+}
+```
+]
+
+.center[
+&lt;svg viewBox="0 0 512 512" style="position:relative;display:inline-block;top:.1em;fill:#8fd8be;height:1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; [for - Arduino](https://www.arduino.cc/reference/en/language/structure/control-structure/for/)
+
+]
+---
+
+# Funciones especiales - delay()
+Pausa el programa durante el tiempo (en milisegundos) especificado como parámetro. 
+
+
+
+### Sintáxis
+
+```arduino
+delay(ms) // = ms*delayMicroseconds()
+```
+.center[
+&lt;svg viewBox="0 0 512 512" style="position:relative;display:inline-block;top:.1em;fill:#8fd8be;height:1em;" xmlns="http://www.w3.org/2000/svg"&gt;  &lt;path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"&gt;&lt;/path&gt;&lt;/svg&gt; [delay()](https://www.arduino.cc/reference/en/language/functions/time/delay/)
+]
 ---
 
 # Tarea 1
+- Realizar un "reloj digital" utilizando comunicación serial, donde el usuario pueda cambiar el tiempo mostrado en consola.
 
+Enviar:
+- Diagrama de flujo del programa.
+- Código .ino final.
+---
 ---
 
     </textarea>

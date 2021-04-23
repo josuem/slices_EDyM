@@ -1,8 +1,12 @@
 /* TODO
 - Crear variables de control para cambiar los tamaños de letras dentro del documento*/
+.remark-code-line-highlighted { 
+  background-color: #8fd8be; /*rgba(136, 57, 138, 0.3); */
+}
 .red{
   opacity: 0.5;
-  color:red;
+  color: white;
+  background: red; 
 }
 p.caption{
   font-size: 15px;
