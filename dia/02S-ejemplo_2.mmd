@@ -1,17 +1,24 @@
-graph TD
-subgraph  setup
-    void("void setup()")-->A-->t
-    A["Serial.begin(9600);"]
-    t["String nombre = '' '';"]
+graph TB
+  %% Setup
+  subgraph  setup
+      void("void setup()")
+      A["Serial.begin(9600);"]
+      t["String nombre = '' '';"]
+      void-->A; A --> t
+  end
+  %% loop
+  subgraph loop    
+      loop["void loop()"]
+      available{"Serial.available"}
+      name1["nombre = Serial.readString()"]
+      msn1["Serial.print(''Enviaste'': );"]
+      msn2["Serial.println(nombre);"]
+      loop ----> available
+      available --> |si| name1
+      available --> |no| loop
+      name1 --> msn1
+      msn1 -->msn2
+      msn2 ----> loop
 end
-subgraph main    
-    main["void main()"]-->|serial listo?|available
-    available{"Serial.available"}
-    
-    available-->|no|main
-    available-->|si| name1["nombre = Serial.readString()"]
-    name1-->msn1["Serial.print(''Enviaste'': );"]
-    msn1 --> msn2["Serial.println(nombre);"]
-    msn2 -->main
-end
+
 

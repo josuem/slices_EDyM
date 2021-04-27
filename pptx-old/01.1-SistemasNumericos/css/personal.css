@@ -1,25 +1,5 @@
-:root {
-  /*http://tachyons.io/
-  http://tachyons.io/docs/table-of-styles/*/
-	--dark-blue: #00449e;
-	--washed-blue: #f6fffe;
-	--lightest-blue: #cdecff;
-	
-}
-
 /* TODO
 - Crear variables de control para cambiar los tamaños de letras dentro del documento*/
-.ejemplo{
-  border-color:var(--dark-blue);
-  background-color:var(--lightest-blue);
-  border-style:solid;
-  padding:0.05rem 0.25rem 0.05rem 1rem;
-  border-width:.125rem;
-  border-radius:0.5rem;
-  
-  /*border-width:1px;*/
-}
-
 .remark-code-line-highlighted { 
   background-color: #8fd8be; /*rgba(136, 57, 138, 0.3); */
 }
