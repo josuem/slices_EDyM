@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="author" content="Josué Meneses Díaz" />
     <meta name="author" content="josue.meneses@usach.cl" />
-    <meta name="date" content="2021-04-28" />
+    <meta name="date" content="2021-05-06" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
@@ -29,11 +29,19 @@
 # Objetivos 
 
 - Reconocer los distintos sistemas numéricos existentes y utilizados en electrónica digital.
+  - Decimal
+  - Binario
+  - Octal
+  - Hexadecimal
+--
 
-- Realizar conversiones entre distintos sistemas numéricos.
+- Realizar conversiones entre los distintos sistemas numéricos.
+  - Sistema -&gt; Decimal
+  - Sistema -&gt; Binario
 
+???
+Próxima sesión o continuación:
 - Operaciones matemáticas básicas utilizando el sistema binario.
-
 ---
 exclude: true
 # Introducción 
@@ -53,6 +61,7 @@ Sistemas que veremos:
 - Formada 0 1 2 3 4 5 6 7 8 9
 
 Generalizando
+
 Sea el número decimal
 
 &lt;table&gt;
@@ -81,9 +90,10 @@ Sea el número decimal
 \end{align*}`
 
 ]
+
+--
+
 .fl.w-60.pa2[
-
-
 `\begin{align*}
 D &amp; = A_n\cdot 10^n +A_{n-1}\cdot 10^{n-1}+...+A_{1}\cdot 10^{1}+A_{0}\cdot 10^{0}\\
   &amp; = \sum_{k=0}^n A_k \cdot 10^k
@@ -105,6 +115,8 @@ $$
 
 3. Si se llega al último número del sistema, para su sucesor, se agrega una columna a la izq. y se reinicia la cuenta
 decimal.]
+
+--
 
 .fl.w-60.pa2[
 .bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
@@ -165,6 +177,9 @@ decimal.]
 &lt;/tbody&gt;
 &lt;/table&gt;
 ]
+
+--
+
 &lt;br&gt;&lt;br&gt;&lt;br&gt;
 .pull-right[
 &lt;img src="./images/03/ej1_binario.svg" width="25%" style="display: block; margin: auto;" /&gt;
@@ -179,10 +194,16 @@ Cada dígito de un número en binario es llamado **bit**.
 Bit es la contracción de **Bi**nary  Digi**t**
 ]
 &lt;br&gt;
+
+--
+
 .bg-washed-green.b--dark-green.ba.bw2.br4.ph2.font110[
 El primer dígito a la izquierda es llamado **MSB**
 El primer dígito a la derecha es llamado **LSB**
 ]
+
+--
+
 .font80[
 ¿Cuántos números puedo formar con 2 bits?
 
@@ -204,7 +225,7 @@ Cuando se trabaja con distintos sistemas numéricos se acostumbra a colocar un s
 Por lo tanto `\(2_{10}=10_2\)` ]]
 
 Otras formas 
-- `\(3_10=11_2=(11)_2=0b11\)`
+- `\(3_{10}=11_2=(11)_2=0b11\)`
 ---
 # Conversión binario a decimal
 .fl.w-40.pa2[
@@ -219,6 +240,9 @@ $$
 \Longrightarrow \sum_{k=0}^n b_k \cdot \text{2}^k
 $$
 ]
+
+--
+
 .fl.w-60.pa2[
 .bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80.w-100[
 **Ejemplo 2** Transformar el número `\(1011_2\)` a sistema decimal.
@@ -229,7 +253,7 @@ $$
 ???
 `\(1011_2=11_{10}\)`
 ---
-# Conversión Decimal a Binario, Método 1
+# Conversión decimal a binario, Método 1
 .fl.w-40.pa2.font80[
 1. Anotar las potencias de 2 hasta **sobrepasar el valor a transformar**.
 
@@ -239,6 +263,8 @@ $$
   
 3. Repetir el paso 2 y 3 hasta que el resto es cero.
 ]
+
+--
 
 .fl.w-60.pa1[
 .bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
@@ -286,8 +312,14 @@ $$
 &lt;/tbody&gt;
 &lt;/table&gt;
 ]
+
+???
+
+&lt;img src="./images/03/ej3_sol.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+
 ---
-# Conversión Decimal a Binario - Método 2
+# Conversión decimal a binario, Método 2
 .fl.w-40.pa2.font80[
 1. Divide el número reiteradas veces por 2, ignorando los residuos, hasta que el cociente sea 0.
 
@@ -301,7 +333,6 @@ $$
 **Ejemplo 4.** Convertir el número `\(101_{10}\)` a binario utilizando el método 2.
 ]
 
-&lt;br&gt;
 &lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
@@ -315,8 +346,8 @@ $$
    &lt;td style="text-align:center;"&gt; `\(\qquad \qquad \qquad \qquad \qquad \qquad\)` &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 3 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\;\)` &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
@@ -348,9 +379,14 @@ $$
 `\begin{align}
   &amp;\\
 \end{align}`
+
+???
+
+&lt;img src="./images/03/ej4_sol.png" width="80%" style="display: block; margin: auto;" /&gt;
+
 ---
 
-#  Sistema Octal 
+# Sistema Octal 
 .fl.w-40.pa2.font80[
 - Utiliza los números 0 1 2 3 4 5 6 7
 Sea el número octal:
@@ -419,16 +455,18 @@ $$
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-]
 `\begin{align}
-  &amp;\\
+  &amp; \\
 \end{align}`
+]
+
+--
 
 .fl.w-30.pa2.middle[
 &lt;img src="./images/03/ej1_octal.svg" width="35%" style="display: block; margin: auto;" /&gt;
 ]
 ---
-# Sistema octal - Ejemplo
+# Sistema Octal - Ejemplo
 .bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
 **Ejemplo 5 -** Convertir el número `\(6405_8\)` a sistema decimal.]
 
@@ -467,8 +505,11 @@ $$
   &amp;\\
 \end{align}`
 
+???
+
+&lt;img src="./images/03/ej5_sol.png" width="80%" style="display: block; margin: auto;" /&gt;
 ---
-#  Conversión Binario a Octal y Octal a Binario
+# Conversión Binario a Octal y Octal a Binario
 .fl.w-40.pa2[
 
 &lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
@@ -534,6 +575,8 @@ $$
 &lt;/table&gt;
 ]
 
+--
+
 .fl.w-60.pa2[
 .bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
 **Ejemplo 6.** Convertir el número `\(10111101_2\)` a octal.]
@@ -547,8 +590,10 @@ $$
 
 
 
+???
+&lt;img src="./images/03/ej6-7_sol.png" width="100%" style="display: block; margin: auto;" /&gt;
 ---
-#  Sistema Hexadecimal 
+# Sistema Hexadecimal 
 .fl.w-40.pa2.font80[
 Basado en 16 números y letras : 
 0 1 2 3 4 5 6 7 8 9 A B C D E F
@@ -713,10 +758,10 @@ $$
  &lt;/thead&gt;
 &lt;tbody&gt;
   &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; `\(\cdot 16^3\)` &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; `\(\cdot 16^2\)` &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; `\(\cdot 16^1\)` &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; `\(\cdot 16^0\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad \cdot 16^3\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad \cdot 16^2\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad \cdot 16^1\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad \cdot 16^0\)` &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
@@ -732,6 +777,9 @@ $$
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+`\begin{align}
+  &amp; \\
+\end{align}`
 
 ???
 |A|6|F|0|
@@ -870,15 +918,21 @@ $$
 &lt;/tbody&gt;
 &lt;/table&gt;
 ]
+
+--
+
 .fl.w-60.pa2.font80[
 
 .bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2[
 **Ejemplo 8.** Convertir el número `\(𝟏𝟏𝟏𝟏𝟎𝟎𝟎𝟎𝟎𝟎𝟏𝟏𝟏𝟎_2\)` a sistema hexadecimal.
 ]
 
+
+
 $$
 𝟏𝟏-𝟏𝟏𝟎𝟎-𝟎𝟎𝟎𝟎-𝟏𝟏𝟏𝟎_2
 $$
+
 
 &lt;table class="table" style="font-size: 15px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
@@ -904,11 +958,13 @@ $$
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-
+`\begin{align}
+  &amp; \\
+\end{align}`
 ]
 
 ---
-#  Decimal codificado en Binario (BCD) 
+# Decimal codificado en Binario (BCD) 
 .fl.w-30.pa2.font90[
 - Es un sistema utilizado en los sistema digitales.
 - Cada dígito está almacenado en 4 bits.
@@ -964,6 +1020,8 @@ $$
 &lt;/table&gt;
 ]
 
+--
+
 .fl.w-50.pa2.font80[
 .bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2[
 **Ejemplo 8.** Convertir el número `\(3906_{10}\)` a codificación BCD.
@@ -976,7 +1034,7 @@ $$
 ]
 
 ---
-#  Resumen  
+# Resumen  
 .fl.w-50.pa2[
 - Sistema numérico 
   - Decimal
@@ -997,7 +1055,7 @@ $$
 ]
 
 ---
-#  Referencias y Material Complementario 
+# Referencias y Material Complementario 
 - Cap. 1 - Sistemas numéricos. Secciones 11-14. Bignell, James W., et al. Electrónica Digital.
 - Cap. 1 - Sistemas binarios. Secciones 1-1 hasta 1-7. Mano, M. Morris. Diseño digital . Pearson Education.
 

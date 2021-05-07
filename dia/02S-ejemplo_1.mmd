@@ -1,15 +1,15 @@
 graph TD
-subgraph Bloque setup
-  void("void setup()")-->A-->t
-  A["Serial.begin(9600);"]
-  t["int t = 0;"]
-end
 subgraph Bloque main
-  main1["void main()"]-->|imprimo <br> por serial|t1
+  main1["void loop()"]
   t1["Serial.print(t)"]-->|Esperamos 1s|delay("delay(1000)")
   delay-->t2(t = t+1)
   t2-->main1
+  main1-->|imprimo <br> por serial|t1
+end
+  subgraph Bloque setup
+  void("void setup()")-->A
+  A-->t
+  A["Serial.begin(9600);"]
+  t["int t = 0;"]
 end
   
-  
-  // https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbiAgICB2b2lkKFwidm9pZCBzZXR1cCgpXCIpLS0-QS0tPnRcbiAgICBBW1wiU2VyaWFsLmJlZ2luKDk2MDApO1wiXVxuICAgIHRbXCJpbnQgdCA9IDA7XCJdXG5cbiAgICBtYWluW1widm9pZCBtYWluKClcIl0tLT58aW1wcmltbyA8YnI-IHBvciBzZXJpYWx8dDFcbiAgICB0MVtcIlNlcmlhbC5wcmludCh0KVwiXS0tPnxFc3BlcmFtb3MgMXN8ZGVsYXkoXCJkZWxheSgxMDAwKVwiKVxuICAgIGRlbGF5LS0-dDIodCA9IHQrMSlcbiAgICB0Mi0tPm1haW5cbiAgICAiLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9LCJ1cGRhdGVFZGl0b3IiOmZhbHNlfQ

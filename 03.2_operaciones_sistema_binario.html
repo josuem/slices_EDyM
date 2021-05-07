@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Sistemas numéricos - Operaciones binarias</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Josué Meneses Díaz" />
+    <meta name="author" content="josue.meneses@usach.cl" />
+    <meta name="date" content="2021-05-06" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/personal.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Sistemas numéricos - Operaciones binarias
+## Electrónica digital y microcontroladores
+### Josué Meneses Díaz
+### <a href="mailto:josue.meneses@usach.cl" class="email">josue.meneses@usach.cl</a>
+### Universidad de Santiago de Chile
+### 2021-05-06
+
+---
+
+
+#  Objetivos 
+- Operaciones matemáticas básicas utilizando el sistema binario.
+  - Suma binaria
+  - Resta binaria
+  - Multiplicación binaria
+  - División binaria
+
+---
+#  Operaciones Binarias - Suma 
+.fl.w-40.pa2[
+Para realizar la sumas en el sistema binario simplemente necesitamos recordar cuatro
+posibles casos
+
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; OPERACIÓN &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; ACARREO &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; SUMA &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 0+0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 0+1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 1+0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt; 1+1 &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;font-weight: bold;color: white !important;background-color: #D7261E !important;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.fl.w-60.pa2[
+
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+  **Ejemplo 1.** Realizar la suma binaria de los números `\(11110_2\)` y `\(1100_2\)`
+  ]
+  
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; ACARREO &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;   &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; + &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+`\begin{align}
+  &amp; \\
+\end{align}`
+
+]
+
+
+
+---
+#  Operaciones Binarias - Suma 2
+.fl.w-50.pa2[
+También podemos realizar el análisis mediante
+
+&lt;table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; ACARREO &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;   &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; `\(\Leftarrow A\)` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; + &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; `\(\Leftarrow B\)` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+`\begin{align}
+  &amp; \\
+\end{align}`
+
+.fl.w-50.pa2[
+- A = 5 bits
+- B = 5 bits
+- R = 6 bits
+]
+.fl.w-50.pa2[
+Si `\(max(\text{bits A o B})=n\)` `\(\Longrightarrow max(\text{bits }R=n+1)\)`
+]
+
+]
+
+.fl.w-50.pa2[
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Entrada&lt;/div&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Salida&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Acarreo de entrada &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; A &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; B &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Suma &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Acarreo Salida &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+`\begin{align}
+  &amp; \\
+\end{align}`
+]
+
+---
+#  Operaciones Binarias - Resta
+.fl.w-40.pa2[
+Siguiendo con la notación anterior:
+
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; A &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; B &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Diferencia &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Préstamo &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.fl.w-60.pa2[
+
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+  **Ejemplo 2.** Restar los números binarios `\(11010_2\)` y `\(1100_2\)`
+  ]
+  
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; Préstamo &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt;   &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; - &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+`\begin{align}
+  &amp; \\
+\end{align}`
+
+]
+---
+#  Operaciones Binarias - Resta con Acarreo
+.fl.w-40.pa2[
+Siguiendo con la notación anterior:
+
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; A &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; B &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Acarreo &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Diferencia &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.fl.w-60.pa2[
+
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+  **Ejemplo 3.** Restar los números binarios `\(1010011_2\)` y `\(10011001_2\)` usando acarreo en el sustraendo
+  ]
+  
+&lt;br&gt;&lt;br&gt;
+&lt;table class="table" style="font-size: 25px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 1 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 0 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 0 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 1 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 1 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 0 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 0 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; 1 &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; Acarreo &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; - &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;color: black !important;background-color: rgba(250, 250, 250, 1) !important;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+`\begin{align}
+  &amp; \\
+\end{align}`
+
+]
+---
+
+#  Operaciones Binarias - Resta, Complemento a 1
+.fl.w-40.pa2.font80[
+- El sustrayendo tiene que tener los mismos bit que el minuendo.
+- Se realiza el complemento del sustrayendo.
+- Se realiza la suma entre el minuendo y el complemento del sustrayendo.
+- Si se presenta un rebasamiento la respuesta es positiva. Luego el rebasamiento es sumado al resultado sin el termino de rebasamiento. Esto es llamado **acarreo circular** 
+]
+
+.fl.w-60.pa2[
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+**Ejemplo 4** Sumar los números binarios `\(11010_2\)` y `\(1100_2\)` mediante complemento a 1
+
+
+
+]
+
+
+
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+#  Operaciones Binarias - Resta, Complemento a 2
+.fl.w-40.pa2[
+- El sustrayendo tiene que tener los mismos bit que el minuendo.
+- Se realiza el complemento del sustrayendo.
+- +1 al sustrayendo.
+- Se realiza la suma, en caso de bit por acarreo circular se omite.
+
+.b--dark-orange.ba.bw2.br4.ph2.font80[
+.center[**Método Rápido:**]
+- Dejar sin cambio los bit hasta el primer 1 (de izq. a der.)
+- Complementar los siguientes
+]]
+
+.fl.w-60.pa2[
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+**Ejemplo 5** Sumar los números binarios `\(11010_2\)` y `\(1100_2\)` mediante complemento a 2
+]
+
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt;   &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; - &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+#  Operaciones Binarias - Multiplicación
+.fl.w-40.pa2[
+La tabla resumen de la multiplicación es:
+
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:left;"&gt; A &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; B &lt;/th&gt;
+   &lt;th style="text-align:left;"&gt; Multiplicación &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 0 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:left;"&gt; 1 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+.fl.w-60.pa2[
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+**Ejemplo 6** Multiplicar los números `\(1011_2\)` y `\(101_2\)`
+]
+
+$$
+  1\qquad0\qquad1\qquad1 \times 1\qquad0\qquad1
+$$
+]
+
+
+---
+#  Operaciones Binarias - División
+.fl.w-50.pa2[
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+**Ejemplo 7** Dividir los números `\(110_2\)` y `\(11_2\)`
+]
+$$
+1\quad1\quad0\quad :\quad1\quad1\quad =
+$$
+]
+
+.fl.w-50.pa2[
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+**Ejemplo 8** Dividir los números `\(101010_2\)` y `\(110_2\)`
+]
+$$
+1\quad0\quad1\quad0\quad1\quad0\quad :\quad1\quad1\quad0\quad =
+$$
+]
+
+---
+#  Resumen - Operaciones Binarias
+- Suma
+  -   Acarreo
+- Resta
+  - Método Directo
+    - Complemento a 1
+    - Complemento a 2
+- Multiplicación
+- División
+
+---
+#  Simulación 1 
+
+- LT Spice : Prueba con 74283. Se?al de prueba.
+- Logisim : Prueba con 74283. Suma de 4 bits.
+
+---
+#  Referencias y Material Complementario 
+- Cap. 1 - Sistemas numéricos. Secciones 11-14. Bignell, James W., et al. Electrónica Digital.
+- Cap. 1 - Sistemas binarios. Secciones 1-1 hasta 1-7. Mano, M. Morris. Diseño digital . Pearson Education.
+
+## Profundizar
+- Cha. 2 - Operations in Binary, Octal, and Hexadecimal Systems . Section 2.1 y 2.3. Karris, Steven T. Digital
+- Circuit analysis and design with Simulink modeling and introduction to CPLDs and FPGAs . Orchard Publications 
+---
+class: inverse, middle, center
+
+[**Próxima clase:** Conceptos fundamentales (2)]()
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "googlecode",
+"highlightLines": true,
+"countIncrementalSlides": true,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
