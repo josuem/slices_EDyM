@@ -315,13 +315,13 @@ Escribir un código que permita enviar por serial un valor de tiempo cada segund
 ```{r , fig.cap=""}
 knitr::include_graphics("./images/02/ejemplo_1.svg")
 ```
-.center[.font120[10 min para realizarlo ]]
+.center[.font120[15 min para realizarlo ]]
 ---
 
 # Funciones especiales - Serial.available()
 .pull-left[
 ### Syntáxis available
-Verifica si se encuentra disponibles el el buffer del puerto para ser leídos. 
+Entrega si se encuentran datos disponibles el buffer del puerto para ser leídos. 
 ```{arduino, eval=FALSE, echo=TRUE}
 Serial.available()
 ```
@@ -367,8 +367,8 @@ void setup() {
 
 void loop() {
   if (Serial.available() > 0) {
-    Serial.println( Serial.readString()); #<<
     Serial.print("Enviaste: ");
+    Serial.println( Serial.readString()); #<<
   }
 }
 ```
@@ -378,20 +378,24 @@ void loop() {
 
 # Ejemplo 2 - Preguntar nombre
 Escribir un código que pregunte tu nombre y lo devuelva
-```{r , out.width="55%", fig.cap=""}
+```{r , out.width="45%", fig.cap=""}
 knitr::include_graphics("./images/02/ejemplo_2.svg")
 ```
-
 
 
 ---
 # Laboratorio 1
 .font120[
-- Realizar un "reloj digital" utilizando comunicación serial, donde el usuario pueda cambiar el tiempo mostrado en consola.
+- Realizar un "reloj digital" utilizando comunicación serial, donde el usuario pueda cambiar $\Delta t$ del tiempo mostrado en consola.
 <br>
 --
 ### Enviar:
 - Diagrama de flujo del programa.
 - Código .ino final.
+
+.center[
+Subir el **un** archivo comprimido con el nombre:<br>
+**lab1_NOMBRE.rar/zip**
+]
 <br>
 ]

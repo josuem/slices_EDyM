@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Sistemas numéricos</title>
+    <title>Sistemas numéricos - Parte 1</title>
     <meta charset="utf-8" />
     <meta name="author" content="Josué Meneses Díaz" />
     <meta name="author" content="josue.meneses@usach.cl" />
-    <meta name="date" content="2021-05-06" />
+    <meta name="date" content="2021-05-07" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
@@ -18,12 +18,23 @@
     <script src="libs/xaringanExtra-scribble/scribble.js"></script>
     <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
     <script src="libs/kePrint/kePrint.js"></script>
     <link href="libs/lightable/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/personal.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Sistemas numéricos - Parte 1
+## Electrónica digital y microcontroladores
+### Josué Meneses Díaz
+### <a href="mailto:josue.meneses@usach.cl" class="email">josue.meneses@usach.cl</a>
+### Universidad de Santiago de Chile
+### 2021-05-07
+
+---
 
 
 # Objetivos 
@@ -128,6 +139,9 @@ decimal.]
 ???
 1. números de la base
 `\(\text{decimal} \Rightarrow 0\; 1\; 2\; 3\; 4\; 5\; 6\; 7\; 8\; 9\)`
+
+&lt;img src="./images/03/ej1_sol.png" width="80%" style="display: block; margin: auto;" /&gt;
+
 ---
 # Sistema Binario
 .pull-left[
@@ -252,6 +266,9 @@ $$
 
 ???
 `\(1011_2=11_{10}\)`
+
+&lt;img src="./images/03/ej2_sol.png" width="80%" style="display: block; margin: auto;" /&gt;
+
 ---
 # Conversión decimal a binario, Método 1
 .fl.w-40.pa2.font80[
@@ -782,7 +799,7 @@ $$
 \end{align}`
 
 ???
-|A|6|F|0|
+&lt;img src="./images/03/ej8_sol.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
 # Conversión sistema Binario a Hexadecimal
@@ -924,7 +941,7 @@ $$
 .fl.w-60.pa2.font80[
 
 .bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2[
-**Ejemplo 8.** Convertir el número `\(𝟏𝟏𝟏𝟏𝟎𝟎𝟎𝟎𝟎𝟎𝟏𝟏𝟏𝟎_2\)` a sistema hexadecimal.
+**Ejemplo 9.** Convertir el número `\(𝟏𝟏𝟏𝟏𝟎𝟎𝟎𝟎𝟎𝟎𝟏𝟏𝟏𝟎_2\)` a sistema hexadecimal.
 ]
 
 
@@ -932,37 +949,10 @@ $$
 $$
 𝟏𝟏-𝟏𝟏𝟎𝟎-𝟎𝟎𝟎𝟎-𝟏𝟏𝟏𝟎_2
 $$
-
-
-&lt;table class="table" style="font-size: 15px; margin-left: auto; margin-right: auto;"&gt;
- &lt;thead&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:center;"&gt; `\(\cdot 16^3\)` &lt;/th&gt;
-   &lt;th style="text-align:center;"&gt; `\(\cdot 16^2\)` &lt;/th&gt;
-   &lt;th style="text-align:center;"&gt; `\(\cdot 16^1\)` &lt;/th&gt;
-   &lt;th style="text-align:center;"&gt; `\(\cdot 16^0\)` &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-`\begin{align}
-  &amp; \\
-\end{align}`
 ]
 
+???
+&lt;img src="./images/03/ej9_sol.png" width="80%" style="display: block; margin: auto;" /&gt;
 ---
 # Decimal codificado en Binario (BCD) 
 .fl.w-30.pa2.font90[
@@ -1024,15 +1014,17 @@ $$
 
 .fl.w-50.pa2.font80[
 .bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2[
-**Ejemplo 8.** Convertir el número `\(3906_{10}\)` a codificación BCD.
+**Ejemplo 10.** Convertir el número `\(3906_{10}\)` a codificación BCD.
 ]
 &lt;br&gt; &lt;br&gt; &lt;br&gt; &lt;br&gt;
 
 .bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2[
-**Ejemplo 9** Convertir el número `\(𝟏𝟏𝟎𝟏𝟎𝟎𝟏𝟎𝟎𝟏_{𝑩𝑪𝑫}\)` a decimal.
+**Ejemplo 11** Convertir el número `\(𝟏𝟏𝟎𝟏𝟎𝟎𝟏𝟎𝟎𝟏_{𝑩𝑪𝑫}\)` a decimal.
 ]
 ]
+???
 
+&lt;img src="./images/03/ej10-11_sol.png" width="80%" style="display: block; margin: auto;" /&gt;
 ---
 # Resumen  
 .fl.w-50.pa2[
