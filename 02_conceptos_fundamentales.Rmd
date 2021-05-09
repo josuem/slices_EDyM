@@ -2,7 +2,7 @@
 title: "Conceptos fundamentales - Parte 1"
 subtitle: "Electrónica digital y microcontroladores"
 session: "01"
-date: "`r Sys.Date()`"
+date: "2021-04-23"
 author: 
   - "Josué Meneses Díaz"
   - "josue.meneses@usach.cl"

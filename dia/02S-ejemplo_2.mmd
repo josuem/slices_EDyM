@@ -13,11 +13,14 @@ graph TB
       msn1 -->msn2
       msn2 ----> loop
 end
+subgraph variables
+    t["String nombre = '' '';"]
+end
   %% Setup
   subgraph  setup
       void("void setup()")
       A["Serial.begin(9600);"]
-      t["String nombre = '' '';"]
-      void-->A; A --> t
+      void-->A
   end
+
 

@@ -6,7 +6,7 @@ author:
   - "josue.meneses@usach.cl"
 session: "00"
 institute: "Universidad de Santiago de Chile"
-date: "`r Sys.Date()`"
+date: "2021-04-16"
 output:
   xaringan::moon_reader:
     css: 

@@ -2,7 +2,7 @@
 title: "LAB. 1 - Comunicación Serial"
 subtitle: "Electrónica digital y microcontroladores"
 session: "01"
-date: "`r Sys.Date()`"
+date: "2021-05-07"
 author: 
   - "Josué Meneses Díaz"
   - "josue.meneses@usach.cl"
@@ -90,7 +90,7 @@ En realidad estas dos partes no son más que dos funciones
 ```{arduino, eval=FALSE, echo=TRUE}
 tipo nombre_funcion(variables){}
 void          setup()         {}
-void           main()         {}
+void           loop()         {}
 
 ```
 ]
@@ -395,7 +395,9 @@ knitr::include_graphics("./images/02/ejemplo_2.svg")
 
 .center[
 Subir el **un** archivo comprimido con el nombre:<br>
-**lab1_NOMBRE.rar/zip**
+**lab1_NOMBRE.rar/zip** <br>
+[Link de entrega - Lab. 1](https://uvirtual.usach.cl/moodle/mod/assign/view.php?id=340515)
 ]
 <br>
+
 ]
