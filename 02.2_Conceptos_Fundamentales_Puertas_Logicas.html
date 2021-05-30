@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Conceptos Fundamentales - Puertas Lógicas</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Josué Meneses Díaz" />
+    <meta name="author" content="josue.meneses@usach.cl" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <script src="libs/kePrint/kePrint.js"></script>
+    <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/personal.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Conceptos Fundamentales - Puertas Lógicas
+## Electrónica digital y microcontroladores
+### Josué Meneses Díaz
+### <a href="mailto:josue.meneses@usach.cl" class="email">josue.meneses@usach.cl</a>
+### Universidad de Santiago de Chile
+### 28-05-2021
+
+---
+
+
+#  Objetivos 
+- Introducir los conceptos básicos relacionados con la electrónica digital.
+- Definir las puertas lógicas básicas, su tabla de verdad, su símbolo y operador Lógico.
+- Equivalentes Lógicos y Ampliación de puertas.
+
+---
+
+# Tabla de Verdad y Función Booleana
+.fl.w-50.pa2[
+
+## Función booleana
+Si `\(x,y \in \{0,1\} \rightarrow f=f(x,y) \in \{0,1\}\)`
+
+- Puede ser representa mediante una tabla de verdad.
+- Las tablas de verdad son una forma de descripción funcional explícita del sistema digital. 
+
+Cantidad de combinación posibles:
+$$
+2^n
+$$
+]
+
+--
+
+.fl.w-50.pa2[
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+**Ejemplo** Anotar la tabla de verdad para la función `\(F(A,B,C)=Y\)`
+]
+&lt;br&gt;
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="3"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Entrada&lt;/div&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Salida&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; A &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; B &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; C &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\(F(A,B,C)=Y\)` &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+`\begin{align}
+  &amp; \\
+\end{align}`
+
+
+]
+
+
+
+---
+
+# Puertas Lógicas
+Las compuertas básicas son:
+- NOT (inversor)
+- AND
+- NAND
+- OR
+- NOR
+
+---
+
+# Puertas NOT (Inversor) 1
+.fl.w-40.pa2[
+
+Circuito Equivalente
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02.2/equivalente_NOT.png" alt="Circuito Equivalente Puerta NOT/Inversor" width="80%" /&gt;
+&lt;p class="caption"&gt;Circuito Equivalente Puerta NOT/Inversor&lt;/p&gt;
+&lt;/div&gt;
+
+
+]
+
+.fl.w-60.pa2[
+Tabla de verdad Puerta NOT
+&lt;br&gt;
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Entrada&lt;/div&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Salida&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; X &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Y &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+`\begin{align}
+  &amp; \\
+\end{align}`
+
+
+&lt;img src="./images/02.2/NOT.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# Puertas NOT (Inversor) 2
+.fl.w-40.pa2[
+&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02.2/equivalente_NOT.png" alt="Circuito Equivalente Puerta NOT/Inversor" width="80%" /&gt;
+&lt;p class="caption"&gt;Circuito Equivalente Puerta NOT/Inversor&lt;/p&gt;
+&lt;/div&gt;
+]
+
+.fl.w-60.pa2[
+&lt;br&gt;&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02.2/circuito_NOT.png" alt="Puerta NOT usando Transistor BJT NPN" width="50%" /&gt;
+&lt;p class="caption"&gt;Puerta NOT usando Transistor BJT NPN&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+---
+# Puertas NOT (Inversor) 3
+.fl.w-40.pa2[
+&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02.2/NOT-7404.png" alt="Diagrama del 7404. Hex inverting Gates" width="80%" /&gt;
+&lt;p class="caption"&gt;Diagrama del 7404. Hex inverting Gates&lt;/p&gt;
+&lt;/div&gt;
+]
+
+.fl.w-60.pa2[
+&lt;br&gt;&lt;br&gt;
+&lt;img src="./images/02.2/NOTNOT.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+&lt;br&gt;
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Entrada&lt;/div&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Salida 1&lt;/div&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Salida 2&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; X &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\(\overline{Y}\)` &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\(\overline{\overline{Y}}\)` &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+`\begin{align}
+  &amp; \\
+\end{align}`
+
+]
+
+---
+
+# Puertas OR
+.fl.w-40.pa2[
+
+Circuito Equivalente:
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02.2/equivalente_OR.png" alt="Circuito Equivalente Puerta Or" width="80%" /&gt;
+&lt;p class="caption"&gt;Circuito Equivalente Puerta Or&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+.fl.w-60.pa2[
+Tabla de verdad Puerta NOT
+&lt;br&gt;
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Entrada&lt;/div&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Salida&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; In 1 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; In 2 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Y &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+`\begin{align}
+  &amp; \\
+\end{align}`
+
+]
+
+&lt;img src="./images/02.2/OR.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+---
+# Puertas AND
+.fl.w-40.pa2[
+
+Circuito Equivalente:
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02.2/equivalente_AND.png" alt="Circuito Equivalente Puerta And" width="80%" /&gt;
+&lt;p class="caption"&gt;Circuito Equivalente Puerta And&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+.fl.w-60.pa2[
+Tabla de verdad Puerta And
+&lt;br&gt;
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Entrada&lt;/div&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Salida&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; In 1 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; In 2 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; Y &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+`\begin{align}
+  &amp; \\
+\end{align}`
+
+]
+
+&lt;img src="./images/02.2/AND.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+---
+
+
+
+
+
+
+# Puertas NOR 1
+.fl.w-40.pa2[
+
+Circuito Equivalente
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02.2/equivalente_NOR.png" alt="Circuito Equivalente Puerta Nor" width="80%" /&gt;
+&lt;p class="caption"&gt;Circuito Equivalente Puerta Nor&lt;/p&gt;
+&lt;/div&gt;
+
+
+]
+
+.fl.w-60.pa2[
+Tabla de verdad Puerta Nor
+&lt;br&gt;
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Entrada&lt;/div&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Salida&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; In 1 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; In 1 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\(Y\)` &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\(\bar{Y}\)` &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+`\begin{align}
+  &amp; \\
+\end{align}`
+
+
+&lt;img src="./images/02.2/NOR.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# Puertas NOR 2
+.fl.w-40.pa2[
+&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02.2/equivalente_NOT.png" alt="Circuito Equivalente Puerta NOT/Inversor" width="80%" /&gt;
+&lt;p class="caption"&gt;Circuito Equivalente Puerta NOT/Inversor&lt;/p&gt;
+&lt;/div&gt;
+]
+
+.fl.w-60.pa2[
+&lt;br&gt;&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02.2/circuito_NOT.png" alt="Puerta NOT usando Transistor BJT NPN" width="50%" /&gt;
+&lt;p class="caption"&gt;Puerta NOT usando Transistor BJT NPN&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+---
+# Puertas NOR 3
+.fl.w-40.pa2[
+&lt;br&gt;
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02.2/NOT-7404.png" alt="Diagrama del 7404. Hex inverting Gates" width="80%" /&gt;
+&lt;p class="caption"&gt;Diagrama del 7404. Hex inverting Gates&lt;/p&gt;
+&lt;/div&gt;
+]
+
+.fl.w-60.pa2[
+&lt;br&gt;&lt;br&gt;
+&lt;img src="./images/02.2/NOTNOT.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+&lt;br&gt;
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Entrada&lt;/div&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Salida 1&lt;/div&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Salida 2&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; X &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\(\overline{Y}\)` &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\(\overline{\overline{Y}}\)` &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+`\begin{align}
+  &amp; \\
+\end{align}`
+
+
+]
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# Puertas NAND 1
+.fl.w-40.pa2[
+
+Circuito Equivalente
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02.2/equivalente_NAND.png" alt="Circuito Equivalente Puerta Nor" width="80%" /&gt;
+&lt;p class="caption"&gt;Circuito Equivalente Puerta Nor&lt;/p&gt;
+&lt;/div&gt;
+]
+
+.fl.w-60.pa2[
+Tabla de verdad Puerta Nand
+&lt;br&gt;
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Entrada&lt;/div&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Salida&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; In 1 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; In 1 &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\(Y\)` &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\(\bar{Y}\)` &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+`\begin{align}
+  &amp; \\
+\end{align}`
+
+
+&lt;img src="./images/02.2/NAND.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+
+# Equivalentes lógicos 1
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+**Ejemplo 1** Encontrar la tabla de verdad al *juntar* las entradas de una puerta **NAND** y **NOR**
+]
+
+.fl.w-50.pa2[
+&lt;img src="./images/02.2/ej1_a.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Entrada&lt;/div&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Salida&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; A &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; A &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\(\bar{A}\)` &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+]
+.fl.w-50.pa2[
+&lt;img src="./images/02.2/ej1_a.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
+ &lt;thead&gt;
+&lt;tr&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="2"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Entrada&lt;/div&gt;&lt;/th&gt;
+&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Salida&lt;/div&gt;&lt;/th&gt;
+&lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;th style="text-align:center;"&gt; A &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; A &lt;/th&gt;
+   &lt;th style="text-align:center;"&gt; `\(\bar{A}\)` &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+]
+
+---
+
+# Equivalentes lógicos 2
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+**Ejemplo 2** Encontrar la tabla de verdad de las siguientes conexiones. ¿A qué equivalen?
+]
+.fl.w-50.pa2[
+&lt;img src="./images/02.2/ej2_a.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+.fl.w-50.pa2[
+&lt;img src="./images/02.2/ej2_b.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+---
+
+# Equivalentes lógicos 3
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+**Ejemplo 3** ¿Cómo implementaría el siguiente circuito utilizando sólo puertas NAND?
+]
+
+&lt;img src="./images/02.2/ej3.png" width="100%" style="display: block; margin: auto;" /&gt;
+---
+
+# Equivalentes lOgicvos 4
+.bg-gold.b--dark-red.ba.bw2.br4.ph2.font80[
+.center[**IMPORTANTE**]
+
+
+]
+
+
+---
+
+# Ampliación de una Puerta - And
+
+---
+# Ampliación de una Puerta - Or
+
+---
+# Ampliación de una Puerta - Nor
+
+---
+# Ampliación de una Puerta - NAnd
+
+---
+# Resumen
+.fl.w-50.pa2[
+
+- Función Lógica y Tablas de Verdad
+- Puertas Lógicas
+  - NOT
+  - AND y NAND
+  - OR y NOR
+]
+
+.fl.w-50.pa2[
+- NAND y NOR son puertas universales
+- Extensión de Puertas
+
+]
+
+---
+# Simulación 1.
+Logisim :
+- Construir una puerta AND de 4-entradas utilizando solo puertas NOR de 2-entradas.
+- Construir una puerta OR de 4-entradas utilizando solo puertas NAND de 2-entradas.
+
+Investigar como usar los modelos como librarías entro del programa.
+
+**Si el trabajo es en parejas, subir el archivo con el nombre de los integrantes.**
+---
+
+#  Referencias y Material Complementario 
+- Capítulo 2 – Compuertas lógicas. Bignell, James W., et al. Electrónica digital.
+- Capítulo 2.7 Compuertas Lógicas Digitales. Mano, M. Morris. 2003. Diseño Digital. Pearson Educación.
+
+- Chapter 3 – Boolean Algebra and Digital Logic Gates. Section 3.1 to 3-2. Rafiquzzaman, Mohamed. Fundamentals of digital logic and microcomputer design. John Wiley &amp; Sons.
+
+## Profundizar
+- Cha. 2 - Operations in Binary, Octal, and Hexadecimal Systems . Section 2.1 y 2.3. Karris, Steven T. Digital
+- Capítulo 3 - Puertas Lógicas. Floyd, Thomas L. 2006. Fundamentos de Sistemas Digitales. Prentice Hall.
+
+---
+class: inverse, middle, center
+
+[**Próxima clase:** Algebra Booleana]()
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "googlecode",
+"highlightLines": true,
+"countIncrementalSlides": true,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

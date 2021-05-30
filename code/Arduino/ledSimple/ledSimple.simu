@@ -1,0 +1,33 @@
+<circuit animate="0" noLinAcc="5" type="simulide_0.4" Speed_sps="1000000" reactStep="50" Simu_Step_nS="1000" Speed_per="100">
+
+Unique  Id: Ground-114: 
+Circuit Id: Ground-114
+<item valLabRot="0" y="-372" labely="8" objectName="Ground-114" hflip="1" labelx="-16" vflip="1" circRot="nan" circPos="0,0" labelrot="0" boardRot="-1000000" x="-628" itemtype="Ground" boardPos="-1e+06,-1e+06" rotation="0" mainComp="false" Show_id="false" valLabely="0" valLabelx="0" id="Ground-114"/>
+
+Unique  Id: Led-112: 
+Circuit Id: Led-112
+<item valLabRot="0" Color="0" y="-412" Resistance="0.59999999999999998" MaxCurrent="0.029999999999999999" labely="-24" objectName="Led-112" hflip="1" labelx="-16" vflip="1" circRot="2.9268812491950784e-316" circPos="0,0" labelrot="0" boardRot="-1000000" x="-576" itemtype="Led" boardPos="-1e+06,-1e+06" rotation="-180" mainComp="false" Show_id="false" valLabely="0" Grounded="false" valLabelx="0" id="Led-112" Threshold="2.3999999999999999"/>
+
+Unique  Id: Resistor-110: 
+Circuit Id: Resistor-110
+<item valLabRot="0" y="-412" Resistance="510" Unit=" Ω" labely="-20" objectName="Resistor-110" hflip="1" labelx="-12" vflip="1" Show_res="true" circRot="0" circPos="0,0" labelrot="0" boardRot="-1000000" x="-524" itemtype="Resistor" boardPos="-1e+06,-1e+06" rotation="0" mainComp="false" Show_id="false" valLabely="6" valLabelx="-16" id="Resistor-110"/>
+
+Unique  Id: Uno-1: 
+Circuit Id: Uno-1
+<item valLabRot="-90" y="-428" Logic_Symbol="false" labely="-20" objectName="Uno-1" hflip="1" labelx="0" vflip="1" circRot="4.8858365153599874e-316" circPos="0,0" labelrot="0" boardRot="-1000000" BoardId="" x="-472" itemtype="Subcircuit" boardPos="-1e+06,-1e+06" rotation="0" mainComp="false" Show_id="true" valLabely="111" valLabelx="77" id="Uno-1">
+  <mainCompProps Logic_Symbol="false" Init_gdb="false" Program="../../../../../bin/ledSimple.hex" Auto_Load="false" Mhz="16"/>
+ </item>
+
+Unique  Id: Connector-111: 
+Circuit Id: Connector-111
+<item valLabRot="0" y="-412" labely="-24" objectName="Connector-111" hflip="1" labelx="-16" vflip="1" circRot="0" circPos="0,0" endpinid="Uno-1-PD0" labelrot="0" pointList="-508,-412,-464,-412" boardRot="-1000000" enodeid="enode-111" x="-508" startpinid="Resistor-110-rPin" itemtype="Connector" boardPos="-1e+06,-1e+06" rotation="0" mainComp="false" Show_id="false" valLabely="0" valLabelx="0" id="Connector-111"/>
+
+Unique  Id: Connector-113: 
+Circuit Id: Connector-113
+<item valLabRot="0" y="-412" labely="-24" objectName="Connector-113" hflip="1" labelx="-16" vflip="1" circRot="0" circPos="0,0" endpinid="Led-112-lPin" labelrot="0" pointList="-540,-412,-560,-412" boardRot="-1000000" enodeid="enode-113" x="-540" startpinid="Resistor-110-lPin" itemtype="Connector" boardPos="-1e+06,-1e+06" rotation="0" mainComp="false" Show_id="false" valLabely="0" valLabelx="0" id="Connector-113"/>
+
+Unique  Id: Connector-115: 
+Circuit Id: Connector-115
+<item valLabRot="0" y="-388" labely="-24" objectName="Connector-115" hflip="1" labelx="-16" vflip="1" circRot="0" circPos="0,0" endpinid="Led-112-rPin" labelrot="0" pointList="-628,-388,-628,-412,-592,-412" boardRot="-1000000" enodeid="enode-115" x="-628" startpinid="Ground-114-Gnd" itemtype="Connector" boardPos="-1e+06,-1e+06" rotation="0" mainComp="false" Show_id="false" valLabely="0" valLabelx="0" id="Connector-115"/>
+ 
+</circuit>

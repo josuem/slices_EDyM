@@ -1,0 +1,9 @@
+<circuit Speed_sps="1000000" Speed_per="100" type="simulide_0.4" Simu_Step_nS="1000" animate="0" reactStep="50" noLinAcc="5">
+
+Unique  Id: Uno-1: 
+Circuit Id: Uno-1
+<item x="-341" Show_id="true" boardRot="-1000000" valLabRot="-90" hflip="1" valLabelx="77" labely="-20" BoardId="" rotation="0" boardPos="-1e+06,-1e+06" labelrot="0" valLabely="111" labelx="0" circPos="0,0" vflip="1" itemtype="Subcircuit" objectName="Uno-1" y="-462" id="Uno-1" mainComp="false" Logic_Symbol="false" circRot="-3.7031358378474235e+304">
+  <mainCompProps Auto_Load="false" Logic_Symbol="false" Program="../../../../../../../Documents/Arduino/contador/contador.ino.standard.hex" Init_gdb="false" Mhz="16"/>
+ </item>
+ 
+</circuit>

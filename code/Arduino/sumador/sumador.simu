@@ -1,0 +1,9 @@
+<circuit noLinAcc="5" type="simulide_0.4" reactStep="50" Speed_sps="1000000" Simu_Step_nS="1000" animate="0" Speed_per="100">
+
+Unique  Id: Uno-1: 
+Circuit Id: Uno-1
+<item labelx="0" BoardId="" objectName="Uno-1" circRot="5.075653374472061e-316" rotation="0" vflip="1" mainComp="false" boardPos="-1e+06,-1e+06" boardRot="-1000000" valLabely="111" hflip="1" id="Uno-1" labelrot="0" x="-426" valLabelx="77" y="-468" itemtype="Subcircuit" Logic_Symbol="false" circPos="0,0" Show_id="true" labely="-20" valLabRot="-90">
+  <mainCompProps Init_gdb="false" Logic_Symbol="false" Mhz="16" Program="../../../../../bin/sumador.hex" Auto_Load="false"/>
+ </item>
+ 
+</circuit>

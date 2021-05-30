@@ -5,7 +5,6 @@
     <meta charset="utf-8" />
     <meta name="author" content="Josué Meneses Díaz" />
     <meta name="author" content="josue.meneses@usach.cl" />
-    <meta name="date" content="2021-05-07" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
@@ -19,6 +18,11 @@
     <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
     <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/shareon/shareon.min.css" rel="stylesheet" />
+    <script src="libs/shareon/shareon.min.js"></script>
+    <link href="libs/xaringanExtra-shareagain/shareagain.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-shareagain/shareagain.js"></script>
     <script src="libs/kePrint/kePrint.js"></script>
     <link href="libs/lightable/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/personal.css" type="text/css" />
@@ -32,14 +36,14 @@ class: center, middle, inverse, title-slide
 ### Josué Meneses Díaz
 ### <a href="mailto:josue.meneses@usach.cl" class="email">josue.meneses@usach.cl</a>
 ### Universidad de Santiago de Chile
-### 2021-05-07
+### 14-05-2021
 
 ---
 
 
 # Objetivos 
 
-- Reconocer los distintos sistemas numéricos existentes y utilizados en electrónica digital.
+- Estudiar los distintos sistemas numéricos existentes y utilizados en electrónica digital.
   - Decimal
   - Binario
   - Octal
@@ -49,6 +53,10 @@ class: center, middle, inverse, title-slide
 - Realizar conversiones entre los distintos sistemas numéricos.
   - Sistema -&gt; Decimal
   - Sistema -&gt; Binario
+--
+
+- Aprender un sistema especial en electrónica digital:
+  - Binario codificado en decimal (BCD)
 
 ???
 Próxima sesión o continuación:
@@ -70,8 +78,6 @@ Sistemas que veremos:
 .fl.w-40.pa2[
 - Base o radical 10
 - Formada 0 1 2 3 4 5 6 7 8 9
-
-Generalizando
 
 Sea el número decimal
 
@@ -103,6 +109,7 @@ Sea el número decimal
 ]
 
 --
+Generalizando
 
 .fl.w-60.pa2[
 `\begin{align*}
@@ -225,8 +232,11 @@ El primer dígito a la derecha es llamado **LSB**
 
 En general:
 - Cantidad de números : `\(2^n\)` números
-- Último número       : `\(2^n+-1\)`
+- Último número       : `\(2^n-1\)`
 ]
+???
+Most significant bit
+Least Significant Bit
 ---
 class: clear
 
@@ -1056,6 +1066,10 @@ $$
 ## Profundizar
 - Cha. 2 - Operations in Binary, Octal, and Hexadecimal Systems . Section 2.1 ? 2.3. Karris, Steven T. Digital
 - Circuit analysis and design with Simulink modeling and introduction to CPLDs and FPGAs . Orchard Publications 
+
+---
+# Lab 2.1 Conversor de sistemas numéricos
+Realizar un programa que entregue la conversión de un número entero en los 4 sistemas numéricos vistos (decimal, binario, octal y hex.).
 
 ---
 class: inverse, middle, center

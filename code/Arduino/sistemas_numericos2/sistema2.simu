@@ -1,0 +1,13 @@
+<circuit noLinAcc="5" type="simulide_0.4" Speed_per="100" Speed_sps="1000000" reactStep="50" animate="0" Simu_Step_nS="1000">
+
+Unique  Id: Uno-1: 
+Circuit Id: Uno-1
+<item id="Uno-1" mainComp="false" circPos="0,0" itemtype="Subcircuit" boardRot="-1000000" BoardId="" Show_id="true" valLabelx="77" x="-444" valLabRot="-90" valLabely="111" boardPos="-1e+06,-1e+06" labelrot="0" labelx="0" hflip="1" rotation="0" Logic_Symbol="false" circRot="nan" labely="-20" vflip="1" y="-348" objectName="Uno-1">
+  <mainCompProps Auto_Load="false" Program="../../../../../bin/sistemas_numericos2.hex" Logic_Symbol="false" Mhz="16" Init_gdb="false"/>
+ </item>
+
+Unique  Id: SerialPort-112: 
+Circuit Id: SerialPort-112
+<item id="SerialPort-112" mainComp="false" circPos="0,0" itemtype="SerialPort" boardRot="-1000000" Auto_Open="false" StopBits="1" Show_id="false" valLabelx="0" x="228" BaudRate="9600" valLabRot="0" valLabely="0" FlowControl="0" boardPos="-1e+06,-1e+06" labelrot="0" labelx="-34" hflip="1" rotation="0" Mcu_Uart="1" Port_Name="" DataBits="8" circRot="-3.2463889938544978e+267" Parity="0" labely="-20" vflip="1" Mcu_Id="atmega328-3" y="4" objectName="SerialPort-112"/>
+ 
+</circuit>

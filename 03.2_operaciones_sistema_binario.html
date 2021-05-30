@@ -5,7 +5,6 @@
     <meta charset="utf-8" />
     <meta name="author" content="Josué Meneses Díaz" />
     <meta name="author" content="josue.meneses@usach.cl" />
-    <meta name="date" content="2021-05-06" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
@@ -18,6 +17,7 @@
     <script src="libs/xaringanExtra-scribble/scribble.js"></script>
     <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
     <script src="libs/kePrint/kePrint.js"></script>
     <link href="libs/lightable/lightable.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/personal.css" type="text/css" />
@@ -31,17 +31,22 @@ class: center, middle, inverse, title-slide
 ### Josué Meneses Díaz
 ### <a href="mailto:josue.meneses@usach.cl" class="email">josue.meneses@usach.cl</a>
 ### Universidad de Santiago de Chile
-### 2021-05-06
+### 28-05-2021
 
 ---
 
 
 #  Objetivos 
-- Operaciones matemáticas básicas utilizando el sistema binario.
+&lt;br&gt; &lt;br&gt;
+- Estudiar las operaciones matemáticas básicas utilizando el sistema binario.
   - Suma binaria
+  
   - Resta binaria
+  
   - Multiplicación binaria
+  
   - División binaria
+  
 
 ---
 #  Operaciones Binarias - Suma 
@@ -125,8 +130,9 @@ posibles casos
 
 ]
 
+???
 
-
+&lt;img src="./images/03.2/solucion_ej1.png" width="80%" style="display: block; margin: auto;" /&gt;
 ---
 #  Operaciones Binarias - Suma 2
 .fl.w-50.pa2[
@@ -272,6 +278,9 @@ Si `\(max(\text{bits A o B})=n\)` `\(\Longrightarrow max(\text{bits }R=n+1)\)`
 \end{align}`
 ]
 
+???
+
+&lt;img src="./images/03.2/solucion_ej1.2.png" width="80%" style="display: block; margin: auto;" /&gt;
 ---
 #  Operaciones Binarias - Resta
 .fl.w-40.pa2[
@@ -357,6 +366,9 @@ Siguiendo con la notación anterior:
 \end{align}`
 
 ]
+
+???
+&lt;img src="./images/03.2/solucion_ej2.png" width="80%" style="display: block; margin: auto;" /&gt;
 ---
 #  Operaciones Binarias - Resta con Acarreo
 .fl.w-40.pa2[
@@ -388,7 +400,7 @@ Siguiendo con la notación anterior:
    &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
    &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
    &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
+   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
   &lt;/tr&gt;
   &lt;tr&gt;
    &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
@@ -451,6 +463,10 @@ Siguiendo con la notación anterior:
 \end{align}`
 
 ]
+
+???
+
+&lt;img src="./images/03.2/solucion_ej3.png" width="80%" style="display: block; margin: auto;" /&gt;
 ---
 
 #  Operaciones Binarias - Resta, Complemento a 1
@@ -465,11 +481,9 @@ Siguiendo con la notación anterior:
 .bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
 **Ejemplo 4** Sumar los números binarios `\(11010_2\)` y `\(1100_2\)` mediante complemento a 1
 
-
-
 ]
 
-
+&lt;br&gt;
 
 &lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
@@ -502,7 +516,9 @@ Siguiendo con la notación anterior:
 &lt;/tbody&gt;
 &lt;/table&gt;
 ]
+???
 
+&lt;img src="./images/03.2/solucion_ej4.png" width="80%" style="display: block; margin: auto;" /&gt;
 ---
 #  Operaciones Binarias - Resta, Complemento a 2
 .fl.w-40.pa2[
@@ -513,7 +529,7 @@ Siguiendo con la notación anterior:
 
 .b--dark-orange.ba.bw2.br4.ph2.font80[
 .center[**Método Rápido:**]
-- Dejar sin cambio los bit hasta el primer 1 (de izq. a der.)
+- Dejar sin cambio los bit hasta el primer 1 (de der. a izq. )
 - Complementar los siguientes
 ]]
 
@@ -522,6 +538,7 @@ Siguiendo con la notación anterior:
 **Ejemplo 5** Sumar los números binarios `\(11010_2\)` y `\(1100_2\)` mediante complemento a 2
 ]
 
+&lt;br&gt;
 &lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
   &lt;tr&gt;
@@ -623,6 +640,9 @@ $$
 $$
 ]
 
+???
+&lt;img src="./images/03.2/solucion_ej7-8.png" width="80%" style="display: block; margin: auto;" /&gt;
+
 ---
 #  Resumen - Operaciones Binarias
 - Suma
@@ -635,12 +655,7 @@ $$
 - División
 
 ---
-#  Simulación 1 
 
-- LT Spice : Prueba con 74283. Se?al de prueba.
-- Logisim : Prueba con 74283. Suma de 4 bits.
-
----
 #  Referencias y Material Complementario 
 - Cap. 1 - Sistemas numéricos. Secciones 11-14. Bignell, James W., et al. Electrónica Digital.
 - Cap. 1 - Sistemas binarios. Secciones 1-1 hasta 1-7. Mano, M. Morris. Diseño digital . Pearson Education.
@@ -651,7 +666,9 @@ $$
 ---
 class: inverse, middle, center
 
-[**Próxima clase:** Conceptos fundamentales (2)]()
+[Lab. 3 - pines Digitales en Arduino]() &lt;br&gt;&lt;br&gt;
+[**Próxima clase:** Conceptos fundamentales (2) - Puertas Lógicas]() &lt;br&gt;
+Repasar funcionamiento de transistor BJT en **corte** y **saturación**.
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

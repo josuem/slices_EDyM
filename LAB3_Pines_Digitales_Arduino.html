@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Lab. 3 - Pines digitales en Arduino</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Josué Meneses Díaz" />
+    <meta name="author" content="josue.meneses@usach.cl" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script src="libs/fabric/fabric.min.js"></script>
+    <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-scribble/scribble.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/personal.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Lab. 3 - Pines digitales en Arduino
+## Electrónica digital y microcontroladores
+### Josué Meneses Díaz
+### <a href="mailto:josue.meneses@usach.cl" class="email">josue.meneses@usach.cl</a>
+### Universidad de Santiago de Chile
+### 28-05-2021
+
+---
+
+
+# Objetivos
+&lt;br&gt; &lt;br&gt;
+- Aprender a manipular los pines digitales de las tarjetas Arduino.
+
+- Comprender el uso de funciones en Arduino.
+
+- Entender que son las resistencias de Pull-up y Pull-down.
+
+---
+# Pines digitales
+Una de las características más importantes de un MCU es su *capacidad de comunicarse con el exterior*.
+.fl.w-40.pa2.font80[
+
+- Configuración de perisféricos
+- Comunicación entre equipos
+
+Para ellos utilizamos los **pines digitales**:
+- Pueden ser configurados como entradas y salidas.
+- Los reconocemos con el nombre de *Dxx* donde **xx** es un número.
+- **Solo pueden tomar valores Lógicos (1 y 0).*
+]
+.fl.w-30.pa2[
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/lab2/arduinoUNO.jpg" alt="Conexiones Arduino UNO" width="50%" /&gt;
+&lt;p class="caption"&gt;Conexiones Arduino UNO&lt;/p&gt;
+&lt;/div&gt;
+]
+.fl.w-30.pa2[
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/lab2/esquemaArduino.png" alt="Esquema Arduino UNO" width="50%" /&gt;
+&lt;p class="caption"&gt;Esquema Arduino UNO&lt;/p&gt;
+&lt;/div&gt;
+]
+
+
+???
+**Periférico** es la denominación genérica para designar al aparato o dispositivo auxiliar e independiente conectado a la placa base de una computadora.
+
+Se consideran periféricos a las unidades o dispositivos de hardware a través de los cuales el ordenador se comunica con el exterior, y también a los sistemas que almacenan o archivan la información, sirviendo de memoria auxiliar de la memoria principal.
+
+[pinMode - Arduino](https://www.arduino.cc/reference/en/language/functions/digital-io/pinmode/)
+---
+# pinMode()
+`pinMode()`: Configura el comportamiento de un pin digital del Arduino.
+.fl.w-50.pa2[
+## Sintaxis
+
+```arduino
+pinMode(pin, modo)
+```
+
+- `pin` número del pin del Arduino
+- `modo` INPUT o OUTPUT
+]
+.fl.w-50.pa2[
+
+## Ejemplo
+
+```arduino
+void setup(){
+  // D0 como pin de salida
+  pinMode(0, OUTPUT); 
+}
+
+```
+]
+---
+# digitalWrite() y digitalRead()
+.pull-left[
+## digitalWrite()
+Permite *enviar* **valores lógicos** por los pines digitales de una Tarjeta Arduino previa configuración mediante `pinMode`.
+
+### Sintaxis
+
+```arduino
+digitalWrite(PIN_DIGITAL, ESTADO);
+```
+**ESTADO**: HIGH, LOW
+]
+.pull-right[
+## digitalRead()
+Permite *recibir* **valores lógicos** por los pines digitales de una Tarjeta Arduino previa configuración mediante `pinMode`.
+
+### Sintaxis
+
+```arduino
+digitalRead(PIN_DIGITAL);
+```
+**ESTADO**: HIGH, LOW
+]
+&lt;br&gt;
+.center.font70[
+[digitalWrite - Arduino](https://www.arduino.cc/reference/en/language/functions/digital-io/digitalwrite/) &lt;br&gt;
+[digitalRead - Arduino](https://www.arduino.cc/reference/en/language/functions/digital-io/digitalread/)
+]
+---
+
+# Encendido led 1
+&lt;br&gt; &lt;br&gt;
+&lt;img src="./images/lab2/ejemploLedAnalogo.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+&lt;br&gt;&lt;br&gt;
+.red.center[5 min para crear el programa]
+---
+# Encendido led 2
+.fl.w-40.pa2[
+
+&lt;img src="./images/lab2/onLed.png" width="60%" style="display: block; margin: auto;" /&gt;
+
+
+```arduino
+void setup(){
+  pinMode(10, OUTPUT);
+}
+
+void loop(){
+  // Encendemos D0
+  digitalWrite(10, HIGH);
+  delay(1000); 
+  // Apagamos D0
+  digitalWrite(10, LOW);
+  delay(1000);
+}
+
+```
+]
+.fl.w-60.pa2[
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/lab2/diagramaLedSimple.svg" alt="Diagrama de flujo de led simple" width="80%" /&gt;
+&lt;p class="caption"&gt;Diagrama de flujo de led simple&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
+???
+*ver corriente máxima de led*
+
+$$
+V=IR\\
+I=\frac{5V}{220}\\
+I=22.7mA
+$$
+- Limite por `\(40mA\)` por pin con máximo combinado de `\(200mA\)`
+---
+# Creacion de funciones en Arduino (c/c++)
+Los bloques usados hasta el momento no son más que funciones en c. en general podemos crear las funciones que necesitemos para simplificar nuestros programas
+.fl.w-60.pa2[
+
+## Sintaxis
+
+
+```arduino
+tipo nombre_funcion(tipo var1, tipo var2, ...){
+  // contenido de la función
+  return variable_tipo_definida; 
+}
+
+```
+]
+.fl.w-40.pa2.font70[
+
+## Ejemplo
+
+```arduino
+void loop(){
+  int a = 10;
+  int b = 20;
+
+  Serial.println(sum(a,b));
+}
+
+int sum(int x, int y){
+  return x+y;
+}
+```
+]
+---
+# Encendido led 3
+Usando funciones el cádigo es mucho más legible
+.pull-left[
+
+```arduino
+void setup(){
+  pinMode(0, OUTPUT);
+}
+
+void loop(){
+ encender_led(2000);
+ apagar_led(1000);
+}
+```
+]
+.pull-right[
+
+```arduino
+void encender_led(int t){
+  digitalWrite(0, HIGH);
+  delay(t);
+}
+
+void apagar_led(int t){
+  digitalWrite(0, LOW);
+  delay(t);
+}
+```
+]
+
+---
+# Resistencias pull-up y pull-down
+- Son resistencia que **limitar las corrientes utilizadas en los pines**. Eliminan posibles ruidos externos (pines conectados antenas)
+
+.fl.w-40.pa2[
+
+## Resistencia de Pull-up
+Son las resistencias que son conectadas a la **fuente de alimentación**.
+
+## Resistencia de Pull-down
+Son las resistencias que son conectadas a **tierra (GND)**.
+]
+.fl.w-60.pa2[
+
+&lt;img src="./images/lab2/resistenciasPull.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Semáforo
+.fl.w-50.pa2[
+Confeccionar un programa que simule un semáforo peatonal y vehicular mediante el encendido de 5 led. 
+
+- Los **pines digitales del 2 al 4** para el semáforo vehicular.
+
+- Los **pines digitales 10 y 11** como semáforo peatonal.
+
+- Utilice el tiempo entre cada luz de `\(2s\)`. 
+]
+
+.fl.w-50.pa2[
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/lab2/semaforo.png" alt="Esquema simulación semáforos." width="80%" /&gt;
+&lt;p class="caption"&gt;Esquema simulación semáforos.&lt;/p&gt;
+&lt;/div&gt;
+]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script src="macros.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "googlecode",
+"highlightLines": true,
+"countIncrementalSlides": true,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
