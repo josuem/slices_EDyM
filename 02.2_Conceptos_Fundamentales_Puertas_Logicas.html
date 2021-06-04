@@ -238,14 +238,16 @@ Tabla de verdad Puerta NOT
 
 # Ejemplo 
 Queremos configurar un transistor que se comporte en corte y luego en saturación:
-
-&lt;img src="./images/02.2/circuito_NOT.png" width="55%" style="display: block; margin: auto;" /&gt;
-
+.fl.w-60.pa2[
+&lt;img src="./images/02.2/circuito_NOT.png" width="35%" style="display: block; margin: auto;" /&gt;
+]
+.fl.w-40.pa2[
 Utilizamos un transistor BJT NPN 2N2222. Desde su datasheet, obtenemos los valores para saturarlo:
 
 `$$V_{CE (sat)}=0.25V$$`
 `$$I_C=10mA$$`
 `$$I_B=0.5mA$$`
+]
 
 ---
 
@@ -372,9 +374,16 @@ Tabla de verdad Puerta NOT
   &amp; \\
 \end{align}`
 
+&lt;img src="./images/02.2/OR.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+**Tarea** Construir circuito con transistor NPN para puerta OR
+
+**Ver comportamiento en Logisim-evolution**
+
+
 ]
 
-&lt;img src="./images/02.2/OR.png" width="40%" style="display: block; margin: auto;" /&gt;
+
 
 ---
 # Puertas AND
@@ -430,9 +439,14 @@ Tabla de verdad Puerta And
   &amp; \\
 \end{align}`
 
+&lt;img src="./images/02.2/AND.png" width="40%" style="display: block; margin: auto;" /&gt;
+**Tarea** Construir circuito con transistor NPN para puerta AND
+
+**Ver comportamiento en Logisim-evolution**
 ]
 
-&lt;img src="./images/02.2/AND.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+
 
 ---
 
@@ -440,6 +454,7 @@ Tabla de verdad Puerta And
 .fl.w-40.pa2[
 
 Circuito Equivalente
+&lt;br&gt;&lt;br&gt;
 
 &lt;div class="figure" style="text-align: center"&gt;
 &lt;img src="./images/02.2/equivalente_NOR.png" alt="Circuito Equivalente Puerta Nor" width="80%" /&gt;
@@ -505,22 +520,12 @@ Tabla de verdad Puerta Nor
 ---
 
 # Puertas NOR 2
-.fl.w-40.pa2[
-&lt;br&gt;
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="./images/02.2/equivalente_NOT.png" alt="Circuito Equivalente Puerta NOT/Inversor" width="80%" /&gt;
-&lt;p class="caption"&gt;Circuito Equivalente Puerta NOT/Inversor&lt;/p&gt;
-&lt;/div&gt;
-]
-
-.fl.w-60.pa2[
 &lt;br&gt;&lt;br&gt;
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="./images/02.2/circuito_NOT.png" alt="Puerta NOT usando Transistor BJT NPN" width="50%" /&gt;
+&lt;img src="./images/02.2/circuito_NOR.png" alt="Puerta NOT usando Transistor BJT NPN" width="65%" /&gt;
 &lt;p class="caption"&gt;Puerta NOT usando Transistor BJT NPN&lt;/p&gt;
 &lt;/div&gt;
 
-]
 
 ---
 # Puertas NOR 3
@@ -588,7 +593,6 @@ Tabla de verdad Puerta Nor
 # Puertas NAND 1
 .fl.w-40.pa2[
 
-Circuito Equivalente
 
 &lt;div class="figure" style="text-align: center"&gt;
 &lt;img src="./images/02.2/equivalente_NAND.png" alt="Circuito Equivalente Puerta Nor" width="80%" /&gt;
@@ -647,7 +651,13 @@ Tabla de verdad Puerta Nand
 &lt;img src="./images/02.2/NAND.png" width="40%" style="display: block; margin: auto;" /&gt;
 
 ]
+---
 
+# Puertas NAND 2
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02.2/circuito_NAND.png" alt="Puerta NOT usando Transistor BJT NPN" width="40%" /&gt;
+&lt;p class="caption"&gt;Puerta NOT usando Transistor BJT NPN&lt;/p&gt;
+&lt;/div&gt;
 
 ---
 
