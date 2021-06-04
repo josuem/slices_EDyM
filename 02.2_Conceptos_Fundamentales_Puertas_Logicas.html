@@ -31,14 +31,17 @@ class: center, middle, inverse, title-slide
 ### Josué Meneses Díaz
 ### <a href="mailto:josue.meneses@usach.cl" class="email">josue.meneses@usach.cl</a>
 ### Universidad de Santiago de Chile
-### 28-05-2021
+### 04-06-2021
 
 ---
 
 
 #  Objetivos 
+&lt;br&gt; &lt;br&gt;
 - Introducir los conceptos básicos relacionados con la electrónica digital.
+
 - Definir las puertas lógicas básicas, su tabla de verdad, su símbolo y operador Lógico.
+
 - Equivalentes Lógicos y Ampliación de puertas.
 
 ---
@@ -139,7 +142,6 @@ $$
 
 
 ---
-
 # Puertas Lógicas
 Las compuertas básicas son:
 - NOT (inversor)
@@ -149,7 +151,6 @@ Las compuertas básicas son:
 - NOR
 
 ---
-
 # Puertas NOT (Inversor) 1
 .fl.w-40.pa2[
 
@@ -196,7 +197,55 @@ Tabla de verdad Puerta NOT
 &lt;img src="./images/02.2/NOT.png" width="40%" style="display: block; margin: auto;" /&gt;
 
 ]
+---
 
+# Transistor BJT
+.fl.w-60.pa2[
+
+&lt;br&gt; &lt;br&gt;
+&lt;img src="./images/02.2/grifo-transistor.jpg" width="65%" style="display: block; margin: auto;" /&gt;
+]
+
+.fl.w-40.pa2[
+## Tres regiones
+- Corte
+- Activa
+- Saturación
+- (Ruptura)
+
+]
+
+---
+# Transistor BJT - Tabla resumen
+.fl.w-40.pa2[
+&lt;img src="./images/02.2/corte_saturación.svg" width="85%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="./images/02.2/npn.png" width="20%" style="display: block; margin: auto;" /&gt;
+
+
+]
+&lt;br&gt; &lt;br&gt;
+
+.fl.w-60.pa2[
+&lt;img src="./images/02.2/tabla regiones bjt.svg" width="85%" style="display: block; margin: auto;" /&gt;
+
+&lt;br&gt;
+
+&lt;img src="./images/02.2/zonas trabajo transistor.jpg" width="50%" style="display: block; margin: auto;" /&gt;
+
+]
+---
+
+# Ejemplo 
+Queremos configurar un transistor que se comporte en corte y luego en saturación:
+
+&lt;img src="./images/02.2/circuito_NOT.png" width="55%" style="display: block; margin: auto;" /&gt;
+
+Utilizamos un transistor BJT NPN 2N2222. Desde su datasheet, obtenemos los valores para saturarlo:
+
+`$$V_{CE (sat)}=0.25V$$`
+`$$I_C=10mA$$`
+`$$I_B=0.5mA$$`
 
 ---
 
@@ -266,6 +315,9 @@ Tabla de verdad Puerta NOT
 ]
 
 ---
+
+
+
 
 # Puertas OR
 .fl.w-40.pa2[
@@ -383,11 +435,6 @@ Tabla de verdad Puerta And
 &lt;img src="./images/02.2/AND.png" width="40%" style="display: block; margin: auto;" /&gt;
 
 ---
-
-
-
-
-
 
 # Puertas NOR 1
 .fl.w-40.pa2[
@@ -684,35 +731,42 @@ Tabla de verdad Puerta Nand
 &lt;img src="./images/02.2/ej2_b.png" width="80%" style="display: block; margin: auto;" /&gt;
 ]
 ---
+# Equivalentes lógicvos 3
+.bg-gold.b--dark-red.ba.bw2.br4.ph2.font80[
+.center[**IMPORTANTE**]
+Las puertas lógicas **NAND** y **NOR** son módulos universales.
+  
+  Podemos construir cualquier puerta utilizando solamente una de ellas.
+  
+  .fl.w-50.pa2[
+&lt;img src="./images/02.2/NAND.png" width="40%" style="display: block; margin: auto;" /&gt;
 
-# Equivalentes lógicos 3
+&lt;img src="./images/02.2/NOR.png" width="40%" style="display: block; margin: auto;" /&gt;
+
+  ]
+]
+
+
+---
+# Equivalentes lógicos 4
 .bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
 **Ejemplo 3** ¿Cómo implementaría el siguiente circuito utilizando sólo puertas NAND?
 ]
 
-&lt;img src="./images/02.2/ej3.png" width="100%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/02.2/ej3.png" width="85%" style="display: block; margin: auto;" /&gt;
 ---
 
-# Equivalentes lOgicvos 4
-.bg-gold.b--dark-red.ba.bw2.br4.ph2.font80[
-.center[**IMPORTANTE**]
 
-
-]
-
-
----
 
 # Ampliación de una Puerta - And
+&lt;img src="./images/02.2/extensionOr.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
 # Ampliación de una Puerta - Or
-
+&lt;img src="./images/02.2/extensionOr.png" width="80%" style="display: block; margin: auto;" /&gt;
 ---
-# Ampliación de una Puerta - Nor
-
----
-# Ampliación de una Puerta - NAnd
+# Ampliación de una Puerta - Nor y  Nand
+&lt;img src="./images/02.2/extensionNand.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
 # Resumen
@@ -753,6 +807,25 @@ Investigar como usar los modelos como librarías entro del programa.
 - Capítulo 3 - Puertas Lógicas. Floyd, Thomas L. 2006. Fundamentos de Sistemas Digitales. Prentice Hall.
 
 ---
+
+## Lab. 4
+.fl.w-60.pa2.font80[
+Para este laboratorio se utilizará un circuito conectado a un Arduino UNO sobre la raspberry Pi del curso.
+
+Tiene que encontrar que puerta lógica se encuentra integrada en el IC (circuito integrado) mostrado en la figura, sabiendo que esta puerta es de la familia 74xx.
+
+Para ello tiene que confeccionar un programa sobre la plataforma Arduino UNO que permita posterior confeccionar una tabla de verdad en base a los valores obtenidos mediante UART. 
+
+]
+
+.fl.w-40.pa2[
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02.2/LAB4.png" alt="Esquema conexiones entre IC y Arudino UNO." width="60%" /&gt;
+&lt;p class="caption"&gt;Esquema conexiones entre IC y Arudino UNO.&lt;/p&gt;
+&lt;/div&gt;
+
+]
+
 class: inverse, middle, center
 
 [**Próxima clase:** Algebra Booleana]()
