@@ -241,6 +241,7 @@ Queremos configurar un transistor que se comporte en corte y luego en saturació
 .fl.w-60.pa2[
 &lt;img src="./images/02.2/circuito_NOT.png" width="35%" style="display: block; margin: auto;" /&gt;
 ]
+
 .fl.w-40.pa2[
 Utilizamos un transistor BJT NPN 2N2222. Desde su datasheet, obtenemos los valores para saturarlo:
 
@@ -374,7 +375,8 @@ Tabla de verdad Puerta NOT
   &amp; \\
 \end{align}`
 
-&lt;img src="./images/02.2/OR.png" width="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/02.2/OR.png" width="80%" style="display: block; margin: auto;" /&gt;
+
 
 **Tarea** Construir circuito con transistor NPN para puerta OR
 
@@ -382,7 +384,6 @@ Tabla de verdad Puerta NOT
 
 
 ]
-
 
 
 ---
@@ -394,7 +395,6 @@ Circuito Equivalente:
 &lt;img src="./images/02.2/equivalente_AND.png" alt="Circuito Equivalente Puerta And" width="80%" /&gt;
 &lt;p class="caption"&gt;Circuito Equivalente Puerta And&lt;/p&gt;
 &lt;/div&gt;
-
 ]
 
 .fl.w-60.pa2[
@@ -439,7 +439,8 @@ Tabla de verdad Puerta And
   &amp; \\
 \end{align}`
 
-&lt;img src="./images/02.2/AND.png" width="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/02.2/AND.png" width="80%" style="display: block; margin: auto;" /&gt;
+
 **Tarea** Construir circuito con transistor NPN para puerta AND
 
 **Ver comportamiento en Logisim-evolution**
@@ -577,26 +578,15 @@ Tabla de verdad Puerta Nor
 
 ---
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 # Puertas NAND 1
 .fl.w-40.pa2[
 
+Circuito equivalente
+&lt;br&gt;&lt;br&gt;
 
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="./images/02.2/equivalente_NAND.png" alt="Circuito Equivalente Puerta Nor" width="80%" /&gt;
-&lt;p class="caption"&gt;Circuito Equivalente Puerta Nor&lt;/p&gt;
+&lt;img src="./images/02.2/equivalente_NAND.png" alt="Circuito Equivalente Puerta Nand" width="80%" /&gt;
+&lt;p class="caption"&gt;Circuito Equivalente Puerta Nand&lt;/p&gt;
 &lt;/div&gt;
 ]
 
@@ -655,7 +645,7 @@ Tabla de verdad Puerta Nand
 
 # Puertas NAND 2
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="./images/02.2/circuito_NAND.png" alt="Puerta NOT usando Transistor BJT NPN" width="40%" /&gt;
+&lt;img src="./images/02.2/circuito_NAND.png" alt="Puerta NOT usando Transistor BJT NPN" width="30%" /&gt;
 &lt;p class="caption"&gt;Puerta NOT usando Transistor BJT NPN&lt;/p&gt;
 &lt;/div&gt;
 
@@ -668,7 +658,7 @@ Tabla de verdad Puerta Nand
 ]
 
 .fl.w-50.pa2[
-&lt;img src="./images/02.2/ej1_a.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/02.2/ej1_a.png" width="70%" style="display: block; margin: auto;" /&gt;
 
 &lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
@@ -698,7 +688,7 @@ Tabla de verdad Puerta Nand
 
 ]
 .fl.w-50.pa2[
-&lt;img src="./images/02.2/ej1_a.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/02.2/ej1_a.png" width="70%" style="display: block; margin: auto;" /&gt;
 
 &lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
@@ -734,27 +724,30 @@ Tabla de verdad Puerta Nand
 **Ejemplo 2** Encontrar la tabla de verdad de las siguientes conexiones. ¿A qué equivalen?
 ]
 .fl.w-50.pa2[
-&lt;img src="./images/02.2/ej2_a.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/02.2/ej2_a.png" width="70%" style="display: block; margin: auto;" /&gt;
 ]
 
 .fl.w-50.pa2[
-&lt;img src="./images/02.2/ej2_b.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/02.2/ej2_b.png" width="70%" style="display: block; margin: auto;" /&gt;
 ]
 ---
 # Equivalentes lógicvos 3
+.fl.w-60.pa2[
+
 .bg-gold.b--dark-red.ba.bw2.br4.ph2.font80[
 .center[**IMPORTANTE**]
 Las puertas lógicas **NAND** y **NOR** son módulos universales.
   
   Podemos construir cualquier puerta utilizando solamente una de ellas.
-  
+]
+
+.fl.w-40.pa2[  
   .fl.w-50.pa2[
 &lt;img src="./images/02.2/NAND.png" width="40%" style="display: block; margin: auto;" /&gt;
 
 &lt;img src="./images/02.2/NOR.png" width="40%" style="display: block; margin: auto;" /&gt;
 
-  ]
-]
+]]]
 
 
 ---
@@ -763,19 +756,22 @@ Las puertas lógicas **NAND** y **NOR** son módulos universales.
 **Ejemplo 3** ¿Cómo implementaría el siguiente circuito utilizando sólo puertas NAND?
 ]
 
-&lt;img src="./images/02.2/ej3.png" width="85%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/02.2/ej3.png" width="65%" style="display: block; margin: auto;" /&gt;
+
 ---
 
 
 
 # Ampliación de una Puerta - And
-&lt;img src="./images/02.2/extensionOr.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/02.2/extensionAnd.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
 # Ampliación de una Puerta - Or
 &lt;img src="./images/02.2/extensionOr.png" width="80%" style="display: block; margin: auto;" /&gt;
 ---
 # Ampliación de una Puerta - Nor y  Nand
+&lt;br&gt;&lt;br&gt;
+
 &lt;img src="./images/02.2/extensionNand.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
@@ -818,7 +814,7 @@ Investigar como usar los modelos como librarías entro del programa.
 
 ---
 
-## Lab. 4
+# Lab. 4
 .fl.w-60.pa2.font80[
 Para este laboratorio se utilizará un circuito conectado a un Arduino UNO sobre la raspberry Pi del curso.
 
