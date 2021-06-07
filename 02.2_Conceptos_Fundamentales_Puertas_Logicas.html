@@ -7,7 +7,6 @@
     <meta name="author" content="josue.meneses@usach.cl" />
     <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
-    <link href="libs/remark-css/metropolis-fonts.css" rel="stylesheet" />
     <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
     <script src="libs/tile-view/tile-view.js"></script>
     <link href="libs/panelset/panelset.css" rel="stylesheet" />
@@ -15,11 +14,13 @@
     <script src="libs/fabric/fabric.min.js"></script>
     <link href="libs/xaringanExtra-scribble/scribble.css" rel="stylesheet" />
     <script src="libs/xaringanExtra-scribble/scribble.js"></script>
-    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30}) })</script>
+    <script>document.addEventListener('DOMContentLoaded', function() { window.xeScribble = new Scribble({"pen_color":["#FF0000"],"pen_size":3,"eraser_size":30,"palette":[]}) })</script>
     <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
     <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
     <script src="libs/kePrint/kePrint.js"></script>
     <link href="libs/lightable/lightable.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/fira_sans.css" type="text/css" />
+    <link rel="stylesheet" href="css/fira_code.css" type="text/css" />
     <link rel="stylesheet" href="css/personal.css" type="text/css" />
   </head>
   <body>
@@ -36,7 +37,7 @@ class: center, middle, inverse, title-slide
 ---
 
 
-#  Objetivos 
+# Objetivos 
 &lt;br&gt; &lt;br&gt;
 - Introducir los conceptos básicos relacionados con la electrónica digital.
 
@@ -153,14 +154,12 @@ Las compuertas básicas son:
 ---
 # Puertas NOT (Inversor) 1
 .fl.w-40.pa2[
-
 Circuito Equivalente
 
 &lt;div class="figure" style="text-align: center"&gt;
 &lt;img src="./images/02.2/equivalente_NOT.png" alt="Circuito Equivalente Puerta NOT/Inversor" width="80%" /&gt;
 &lt;p class="caption"&gt;Circuito Equivalente Puerta NOT/Inversor&lt;/p&gt;
 &lt;/div&gt;
-
 
 ]
 
@@ -194,7 +193,7 @@ Tabla de verdad Puerta NOT
 \end{align}`
 
 
-&lt;img src="./images/02.2/NOT.png" width="40%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/02.2/NOT.png" width="60%" style="display: block; margin: auto;" /&gt;
 
 ]
 ---
@@ -208,6 +207,7 @@ Tabla de verdad Puerta NOT
 
 .fl.w-40.pa2[
 ## Tres regiones
+&lt;br&gt; &lt;br&gt;
 - Corte
 - Activa
 - Saturación
@@ -238,12 +238,15 @@ Tabla de verdad Puerta NOT
 
 # Ejemplo 
 Queremos configurar un transistor que se comporte en corte y luego en saturación:
+&lt;br&gt;
 .fl.w-60.pa2[
-&lt;img src="./images/02.2/circuito_NOT.png" width="35%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/02.2/circuito_NOT.png" width="55%" style="display: block; margin: auto;" /&gt;
+
 ]
 
-.fl.w-40.pa2[
-Utilizamos un transistor BJT NPN 2N2222. Desde su datasheet, obtenemos los valores para saturarlo:
+.fl.w-40.pa2.font80[
+- Utilizamos un transistor BJT NPN 2N2222. 
+- De su datasheet, obtenemos los valores para saturarlo:
 
 `$$V_{CE (sat)}=0.25V$$`
 `$$I_C=10mA$$`
@@ -324,7 +327,6 @@ Utilizamos un transistor BJT NPN 2N2222. Desde su datasheet, obtenemos los valor
 
 # Puertas OR
 .fl.w-40.pa2[
-
 Circuito Equivalente:
 &lt;div class="figure" style="text-align: center"&gt;
 &lt;img src="./images/02.2/equivalente_OR.png" alt="Circuito Equivalente Puerta Or" width="80%" /&gt;
@@ -333,8 +335,8 @@ Circuito Equivalente:
 
 ]
 
-.fl.w-60.pa2[
-Tabla de verdad Puerta NOT
+.fl.w-20.pa2[
+Tabla de verdad
 &lt;br&gt;
 &lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
@@ -375,30 +377,35 @@ Tabla de verdad Puerta NOT
   &amp; \\
 \end{align}`
 
-&lt;img src="./images/02.2/OR.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+&lt;br&gt;&lt;br&gt;
+.fl.w-40.pa2[
+&lt;img src="./images/02.2/OR.png" width="60%" style="display: block; margin: auto;" /&gt;
+]
 
 
+.fl.w-50.h-60.font70.center[
 **Tarea** Construir circuito con transistor NPN para puerta OR
 
 **Ver comportamiento en Logisim-evolution**
-
-
 ]
+
+
 
 
 ---
 # Puertas AND
 .fl.w-40.pa2[
-
 Circuito Equivalente:
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="./images/02.2/equivalente_AND.png" alt="Circuito Equivalente Puerta And" width="80%" /&gt;
-&lt;p class="caption"&gt;Circuito Equivalente Puerta And&lt;/p&gt;
+&lt;img src="./images/02.2/equivalente_AND.png" alt="Circuito Equivalente Puerta Or" width="80%" /&gt;
+&lt;p class="caption"&gt;Circuito Equivalente Puerta Or&lt;/p&gt;
 &lt;/div&gt;
+
 ]
 
-.fl.w-60.pa2[
-Tabla de verdad Puerta And
+.fl.w-20.pa2[
+Tabla de verdad
 &lt;br&gt;
 &lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
@@ -439,14 +446,18 @@ Tabla de verdad Puerta And
   &amp; \\
 \end{align}`
 
-&lt;img src="./images/02.2/AND.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+&lt;br&gt;&lt;br&gt;
+.fl.w-40.pa2[
+&lt;img src="./images/02.2/AND.png" width="60%" style="display: block; margin: auto;" /&gt;
+]
 
+
+.fl.w-50.h-60.font70.center[
 **Tarea** Construir circuito con transistor NPN para puerta AND
 
 **Ver comportamiento en Logisim-evolution**
 ]
-
-
 
 
 ---
@@ -465,8 +476,8 @@ Circuito Equivalente
 
 ]
 
-.fl.w-60.pa2[
-Tabla de verdad Puerta Nor
+.fl.w-20.pa2[
+Tabla de verdad
 &lt;br&gt;
 &lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
@@ -511,17 +522,18 @@ Tabla de verdad Puerta Nor
 `\begin{align}
   &amp; \\
 \end{align}`
-
-
-&lt;img src="./images/02.2/NOR.png" width="40%" style="display: block; margin: auto;" /&gt;
-
 ]
 
+.fl.w-40.pa2.center[
+&lt;br&gt; &lt;br&gt; &lt;br&gt; &lt;br&gt;
+&lt;img src="./images/02.2/NOR.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
 
 ---
 
 # Puertas NOR 2
-&lt;br&gt;&lt;br&gt;
+&lt;br&gt;
 &lt;div class="figure" style="text-align: center"&gt;
 &lt;img src="./images/02.2/circuito_NOR.png" alt="Puerta NOT usando Transistor BJT NPN" width="65%" /&gt;
 &lt;p class="caption"&gt;Puerta NOT usando Transistor BJT NPN&lt;/p&gt;
@@ -590,7 +602,7 @@ Circuito equivalente
 &lt;/div&gt;
 ]
 
-.fl.w-60.pa2[
+.fl.w-20.pa2[
 Tabla de verdad Puerta Nand
 &lt;br&gt;
 &lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
@@ -637,20 +649,21 @@ Tabla de verdad Puerta Nand
   &amp; \\
 \end{align}`
 
-
-&lt;img src="./images/02.2/NAND.png" width="40%" style="display: block; margin: auto;" /&gt;
+]
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+.fl.w-40.pa2[
+&lt;img src="./images/02.2/NAND.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ]
 ---
 
 # Puertas NAND 2
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="./images/02.2/circuito_NAND.png" alt="Puerta NOT usando Transistor BJT NPN" width="30%" /&gt;
-&lt;p class="caption"&gt;Puerta NOT usando Transistor BJT NPN&lt;/p&gt;
+&lt;img src="./images/02.2/circuito_NAND.png" alt="Puerta NAND usando Transistor BJT NPN" width="30%" /&gt;
+&lt;p class="caption"&gt;Puerta NAND usando Transistor BJT NPN&lt;/p&gt;
 &lt;/div&gt;
 
 ---
-
 
 # Equivalentes lógicos 1
 .bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
@@ -658,7 +671,7 @@ Tabla de verdad Puerta Nand
 ]
 
 .fl.w-50.pa2[
-&lt;img src="./images/02.2/ej1_a.png" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/02.2/ej1_a.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 &lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
@@ -685,10 +698,13 @@ Tabla de verdad Puerta Nand
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+`\begin{align}
+  &amp; \\
+\end{align}`
 
 ]
 .fl.w-50.pa2[
-&lt;img src="./images/02.2/ej1_a.png" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/02.2/ej1_b.png" width="50%" style="display: block; margin: auto;" /&gt;
 
 &lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
  &lt;thead&gt;
@@ -715,6 +731,10 @@ Tabla de verdad Puerta Nand
   &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
+`\begin{align}
+  &amp; \\
+\end{align}`
+
 ]
 
 ---
@@ -724,44 +744,45 @@ Tabla de verdad Puerta Nand
 **Ejemplo 2** Encontrar la tabla de verdad de las siguientes conexiones. ¿A qué equivalen?
 ]
 .fl.w-50.pa2[
-&lt;img src="./images/02.2/ej2_a.png" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/02.2/ej2_a.png" width="50%" style="display: block; margin: auto;" /&gt;
 ]
 
 .fl.w-50.pa2[
-&lt;img src="./images/02.2/ej2_b.png" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/02.2/ej2_b.png" width="50%" style="display: block; margin: auto;" /&gt;
 ]
 ---
-# Equivalentes lógicvos 3
-.fl.w-60.pa2[
 
+# Equivalentes lógicos 3
 .bg-gold.b--dark-red.ba.bw2.br4.ph2.font80[
 .center[**IMPORTANTE**]
 Las puertas lógicas **NAND** y **NOR** son módulos universales.
   
   Podemos construir cualquier puerta utilizando solamente una de ellas.
 ]
+&lt;br&gt; &lt;br&gt;
 
-.fl.w-40.pa2[  
-  .fl.w-50.pa2[
-&lt;img src="./images/02.2/NAND.png" width="40%" style="display: block; margin: auto;" /&gt;
+.fl.w-50.pa2[  
+&lt;img src="./images/02.2/NAND.png" width="70%" style="display: block; margin: auto;" /&gt;
 
-&lt;img src="./images/02.2/NOR.png" width="40%" style="display: block; margin: auto;" /&gt;
+]
 
-]]]
+.fl.w-50.pa2[
+&lt;img src="./images/02.2/NOR.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+]
 
 
 ---
 # Equivalentes lógicos 4
 .bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
-**Ejemplo 3** ¿Cómo implementaría el siguiente circuito utilizando sólo puertas NAND?
+**Ejemplo 3** ¿Cómo implementaría el siguiente circuito utilizando **sólo puertas NAND**?
+]
+.fl.w-50.pa2[
+&lt;br&gt;
+&lt;img src="./images/02.2/ej3.png" width="80%" style="display: block; margin: auto;" /&gt;
 ]
 
-&lt;img src="./images/02.2/ej3.png" width="65%" style="display: block; margin: auto;" /&gt;
-
 ---
-
-
-
 # Ampliación de una Puerta - And
 &lt;img src="./images/02.2/extensionAnd.png" width="80%" style="display: block; margin: auto;" /&gt;
 
@@ -793,17 +814,21 @@ Las puertas lógicas **NAND** y **NOR** son módulos universales.
 
 ---
 # Simulación 1.
-Logisim :
+## Logisim :
 - Construir una puerta AND de 4-entradas utilizando solo puertas NOR de 2-entradas.
 - Construir una puerta OR de 4-entradas utilizando solo puertas NAND de 2-entradas.
 
+### Complementario
 Investigar como usar los modelos como librarías entro del programa.
 
+&lt;br&gt;
+.center.red[
 **Si el trabajo es en parejas, subir el archivo con el nombre de los integrantes.**
+]
 ---
 
-#  Referencias y Material Complementario 
-- Capítulo 2 – Compuertas lógicas. Bignell, James W., et al. Electrónica digital.
+# Referencias y Material Complementario 
+- Capítulo 2 – Compuertas lógicas. Bignell, James W., et.al. Electrónica digital.
 - Capítulo 2.7 Compuertas Lógicas Digitales. Mano, M. Morris. 2003. Diseño Digital. Pearson Educación.
 
 - Chapter 3 – Boolean Algebra and Digital Logic Gates. Section 3.1 to 3-2. Rafiquzzaman, Mohamed. Fundamentals of digital logic and microcomputer design. John Wiley &amp; Sons.
@@ -814,8 +839,8 @@ Investigar como usar los modelos como librarías entro del programa.
 
 ---
 
-# Lab. 4
-.fl.w-60.pa2.font80[
+# Lab. 4 ¿Qué puerta es?
+.fl.w-40.pa2.font80[
 Para este laboratorio se utilizará un circuito conectado a un Arduino UNO sobre la raspberry Pi del curso.
 
 Tiene que encontrar que puerta lógica se encuentra integrada en el IC (circuito integrado) mostrado en la figura, sabiendo que esta puerta es de la familia 74xx.
@@ -824,21 +849,22 @@ Para ello tiene que confeccionar un programa sobre la plataforma Arduino UNO que
 
 ]
 
-.fl.w-40.pa2[
+.fl.w-60.pa2[
+&lt;br&gt;
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="./images/02.2/LAB4.png" alt="Esquema conexiones entre IC y Arudino UNO." width="60%" /&gt;
+&lt;img src="./images/02.2/LAB4.png" alt="Esquema conexiones entre IC y Arudino UNO." width="90%" /&gt;
 &lt;p class="caption"&gt;Esquema conexiones entre IC y Arudino UNO.&lt;/p&gt;
 &lt;/div&gt;
 
 ]
 
+---
 class: inverse, middle, center
 
 [**Próxima clase:** Algebra Booleana]()
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
-<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
-<script src="macros.js"></script>
+<script src="libs/remark-latest.min.js"></script>
 <script>var slideshow = remark.create({
 "highlightStyle": "googlecode",
 "highlightLines": true,
