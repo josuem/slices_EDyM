@@ -218,7 +218,7 @@ Tabla de verdad Puerta NOT
 ---
 # Transistor BJT - Tabla resumen
 .fl.w-40.pa2[
-&lt;img src="./images/02.2/corte_saturación.svg" width="85%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/02.2/corte_saturacion.svg" width="85%" style="display: block; margin: auto;" /&gt;
 
 &lt;img src="./images/02.2/npn.png" width="20%" style="display: block; margin: auto;" /&gt;
 
@@ -252,7 +252,9 @@ Queremos configurar un transistor que se comporte en corte y luego en saturació
 `$$I_C=10mA$$`
 `$$I_B=0.5mA$$`
 ]
-
+???
+- Si no existe `\(I_B\)` entonces la salida HIGH
+- Si existe `\(I_B\)` entonces la salida LOW
 ---
 
 # Puertas NOT (Inversor) 2
@@ -322,9 +324,6 @@ Queremos configurar un transistor que se comporte en corte y luego en saturació
 
 ---
 
-
-
-
 # Puertas OR
 .fl.w-40.pa2[
 Circuito Equivalente:
@@ -381,6 +380,8 @@ Tabla de verdad
 &lt;br&gt;&lt;br&gt;
 .fl.w-40.pa2[
 &lt;img src="./images/02.2/OR.png" width="60%" style="display: block; margin: auto;" /&gt;
+&lt;br&gt;
+&lt;img src="./images/02.2/7432.png" width="60%" style="display: block; margin: auto;" /&gt;
 ]
 
 
@@ -398,8 +399,8 @@ Tabla de verdad
 .fl.w-40.pa2[
 Circuito Equivalente:
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="./images/02.2/equivalente_AND.png" alt="Circuito Equivalente Puerta Or" width="80%" /&gt;
-&lt;p class="caption"&gt;Circuito Equivalente Puerta Or&lt;/p&gt;
+&lt;img src="./images/02.2/equivalente_AND.png" alt="Circuito Equivalente Puerta And" width="80%" /&gt;
+&lt;p class="caption"&gt;Circuito Equivalente Puerta And&lt;/p&gt;
 &lt;/div&gt;
 
 ]
@@ -450,6 +451,9 @@ Tabla de verdad
 &lt;br&gt;&lt;br&gt;
 .fl.w-40.pa2[
 &lt;img src="./images/02.2/AND.png" width="60%" style="display: block; margin: auto;" /&gt;
+&lt;br&gt;
+
+&lt;img src="./images/02.2/7408.png" width="60%" style="display: block; margin: auto;" /&gt;
 ]
 
 
@@ -525,9 +529,10 @@ Tabla de verdad
 ]
 
 .fl.w-40.pa2.center[
-&lt;br&gt; &lt;br&gt; &lt;br&gt; &lt;br&gt;
+&lt;br&gt; &lt;br&gt;
 &lt;img src="./images/02.2/NOR.png" width="80%" style="display: block; margin: auto;" /&gt;
 
+&lt;img src="./images/02.2/7402.svg" width="65%" style="display: block; margin: auto;" /&gt;
 ]
 
 ---
@@ -535,61 +540,11 @@ Tabla de verdad
 # Puertas NOR 2
 &lt;br&gt;
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="./images/02.2/circuito_NOR.png" alt="Puerta NOT usando Transistor BJT NPN" width="65%" /&gt;
-&lt;p class="caption"&gt;Puerta NOT usando Transistor BJT NPN&lt;/p&gt;
+&lt;img src="./images/02.2/circuito_NOR.png" alt="Puerta NOR usando Transistor BJT NPN" width="65%" /&gt;
+&lt;p class="caption"&gt;Puerta NOR usando Transistor BJT NPN&lt;/p&gt;
 &lt;/div&gt;
 
-
 ---
-# Puertas NOR 3
-.fl.w-40.pa2[
-&lt;br&gt;
-&lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="./images/02.2/NOT-7404.png" alt="Diagrama del 7404. Hex inverting Gates" width="80%" /&gt;
-&lt;p class="caption"&gt;Diagrama del 7404. Hex inverting Gates&lt;/p&gt;
-&lt;/div&gt;
-]
-
-.fl.w-60.pa2[
-&lt;br&gt;&lt;br&gt;
-&lt;img src="./images/02.2/NOTNOT.png" width="70%" style="display: block; margin: auto;" /&gt;
-
-&lt;br&gt;
-&lt;table class="table" style="font-size: 18px; margin-left: auto; margin-right: auto;"&gt;
- &lt;thead&gt;
-&lt;tr&gt;
-&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Entrada&lt;/div&gt;&lt;/th&gt;
-&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Salida 1&lt;/div&gt;&lt;/th&gt;
-&lt;th style="border-bottom:hidden;padding-bottom:0; padding-left:3px;padding-right:3px;text-align: center; " colspan="1"&gt;&lt;div style="border-bottom: 1px solid #ddd; padding-bottom: 5px; "&gt;Salida 2&lt;/div&gt;&lt;/th&gt;
-&lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;th style="text-align:center;"&gt; X &lt;/th&gt;
-   &lt;th style="text-align:center;"&gt; `\(\overline{Y}\)` &lt;/th&gt;
-   &lt;th style="text-align:center;"&gt; `\(\overline{\overline{Y}}\)` &lt;/th&gt;
-  &lt;/tr&gt;
- &lt;/thead&gt;
-&lt;tbody&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 1 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-   &lt;td style="text-align:center;"&gt; 0 &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt;  &lt;/td&gt;
-   &lt;td style="text-align:center;"&gt; `\(\qquad\)` &lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-`\begin{align}
-  &amp; \\
-\end{align}`
-
-
-]
-
----
-
 # Puertas NAND 1
 .fl.w-40.pa2[
 
@@ -650,9 +605,11 @@ Tabla de verdad Puerta Nand
 \end{align}`
 
 ]
-&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;br&gt;
 .fl.w-40.pa2[
 &lt;img src="./images/02.2/NAND.png" width="80%" style="display: block; margin: auto;" /&gt;
+&lt;br&gt;
+&lt;img src="./images/02.2/7400.svg" width="60%" style="display: block; margin: auto;" /&gt;
 
 ]
 ---
@@ -862,6 +819,8 @@ Para ello tiene que confeccionar un programa sobre la plataforma Arduino UNO que
 class: inverse, middle, center
 
 [**Próxima clase:** Algebra Booleana]()
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="libs/remark-latest.min.js"></script>
