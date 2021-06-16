@@ -1,0 +1,37 @@
+snippet [
+	[${1:label}](${2:location})
+
+snippet ![
+	![${1:label}](${2:location})
+
+snippet r
+	```{r ${1:label}, ${2:options}}
+	${0}
+	```
+
+snippet rcpp
+	```{r, engine='Rcpp'}
+	#include <Rcpp.h>
+	using namespace Rcpp;
+	
+	${0}
+	
+	```
+# Pertonal Snippet
+snippet br
+	<br>
+
+snippet brr
+	<br> <br>
+	
+snippet fl
+	.fl.w-$1.pa2[$0]
+	
+snippet importante
+	.bg-gold.b--dark-red.ba.bw2.br4.ph2.font80[$0]
+	
+snippet ejemplo
+	.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[$0]
+	
+snippet center
+	.center[$0]
