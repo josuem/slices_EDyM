@@ -55,7 +55,10 @@ class: center, middle, inverse, title-slide
 ]
 
 .fl.w-50.pa2[
-AGREGAR FIGURA CON 74XX
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/02.2/7402.png" alt="Esquema Puerta lógica 7402" width="60%" /&gt;
+&lt;p class="caption"&gt;Esquema Puerta lógica 7402&lt;/p&gt;
+&lt;/div&gt;
 ]
 ---
 # Descripción Estructural
@@ -68,33 +71,63 @@ AGREGAR FIGURA CON 74XX
 **Ejemplo** Encontrar una expresión en la salida de las puertas (Y)
 ]
 
-AGREGAR ESQUEMA DE LAS PUERTAS
+&lt;img src="./images/04.1/ejemplo1.png" width="60%" style="display: block; margin: auto;" /&gt;
 
 ]
-
+???
+$$
+f(A,B,C)=A\cdot B\cdot \bar{C}+\bar{A}\cdot B\cdot C
+$$
 ---
 # Tipos de descripciones
 .fl.w-50.pa2[
 ## Descripción Estructural
-
+&lt;img src="./images/04.1/ejemplo1.png" width="60%" style="display: block; margin: auto;" /&gt;
+&lt;br&gt; &lt;br&gt;
+$$
+f(A,B,C)=A\cdot B\cdot \bar{C}+\bar{A}\cdot B\cdot C
+$$
 ]
+
+
 .fl.w-50.pa2[
 ## Descripción Funcional
+.panelset[
+.panel[.panel-name[Tabla]
+&lt;img src="./images/04.1/tb1.svg" width="80%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[sol]
+&lt;img src="./images/04.1/tb1_resp.svg" width="80%" style="display: block; margin: auto;" /&gt;
+]]
 ]
 
 ---
-### ¿Cómo pasamos de una descripción funcional a estructural?
-### ¿Cómo deducimos una función booleana desde una tabla de verdad?
+class: clear, center, middle
 
-- Algebra booleana
-- Minitérminos/Maxitérminos
+.font120[**¿Cómo podemos pasar de una descripción funcional a una estructural?**]
+
+--
+
+.font120[**¿Cómo podemos deducimos una función booleana desde una tabla de verdad?**]
+
+--
+.fl.w-40.pa2[
+- Minitérminos/Maxitérminos   
 - Mapas de Karnaugh (k-maps)
+]
+.fl.w-60.pa2[
+&lt;img src="./images/04.1/esquema1.svg" width="60%" style="display: block; margin: auto;" /&gt;
+
+]
+
 ---
 class: inverse, middle, center
 # Algebra booleana
-
 ---
 # Teoremas Booleanos
+Son los teoremas que conocemos de álgebra, ahora aplicados sobre circuitos lógicos.
+&lt;img src="./images/04.1/teoremas_booleanos.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
 ---
 # Teoremas de De Morgan
 ---
@@ -102,7 +135,7 @@ class: inverse, middle, center
 ---
 class: inverse, middle, center
 
-[**Próxima clase:** Algebra Booleana]()
+[**Próxima clase:** Lógica Combinacional - Aplicaciones]()
 
 
     </textarea>
@@ -112,7 +145,8 @@ class: inverse, middle, center
 "highlightStyle": "googlecode",
 "highlightLines": true,
 "countIncrementalSlides": true,
-"ratio": "16:9"
+"ratio": "16:9",
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>`\n"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
