@@ -41,17 +41,19 @@ class: center, middle, inverse, title-slide
   - Teoremas Booleanos
   - Teoremas De Morgan
 - Métodos de Diseño para Circuitos combinacionales 
-  - Método 1. Algebra Booleana
-  - Método 2. Minterm/Maxterm
-  - Mapas de Karnaugh
+  - Algebra Booleana
+  - Método 1. Minterm/Maxterm
+  - Método 2. Mapas de Karnaugh
 
 ---
 # Logica combinacional
 .fl.w-50.pa2[
+&lt;br&gt; &lt;br&gt;
 - Es aquel circuito lógico que implementa una o varias funciones lógicas.
   - Entradas 0, 1 -&gt; Salidas  0, 1
+&lt;br&gt;
 - Las salidas solo dependen de las entradas del sistema.
-  - NO TIENE MEMORIA
+  - **NO TIENE MEMORIA**
 ]
 
 .fl.w-50.pa2[
@@ -100,7 +102,8 @@ $$
 &lt;img src="./images/04.1/tb1_resp.svg" width="80%" style="display: block; margin: auto;" /&gt;
 ]]
 ]
-
+???
+&lt;img src="./images/04.1/tb1_resp.svg" width="80%" style="display: block; margin: auto;" /&gt;
 ---
 class: clear, center, middle
 
@@ -123,14 +126,469 @@ class: clear, center, middle
 ---
 class: inverse, middle, center
 # Algebra booleana
+
 ---
 # Teoremas Booleanos
 Son los teoremas que conocemos de álgebra, ahora aplicados sobre circuitos lógicos.
-&lt;img src="./images/04.1/teoremas_booleanos.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
+.fl.w-60.pa2[
+
+&lt;img src="./images/04.1/teoremas_booleanos.svg" width="140%" style="display: block; margin: auto;" /&gt;
+]
 
 ---
 # Teoremas de De Morgan
+## T1. `\(\overline{A\cdot B}=\bar{A}+\bar{B}\)`
+.fl.w-60.pa2[
+.panelset[.panel[.panel-name[DeMorgan 1]
+&lt;img src="./images/04.1/tbDeMorgan_T1.svg" width="80%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[sol]
+&lt;img src="./images/04.1/tbDeMorgan_T1_sol.svg" width="80%" style="display: block; margin: auto;" /&gt;
+]
+]]
+
+.fl.w-40.pa2[
+&lt;img src="./images/04.1/DeMorgan_T1.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+???
+&lt;img src="./images/04.1/tbDeMorgan_T1_sol.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
 ---
+# Teoremas de De Morgan
+## T2. `\(\overline{ A+B}=\bar{A}\cdot \bar{B}\)`
+.fl.w-60.pa2[
+.panelset[.panel[.panel-name[DeMorgan 2]
+&lt;img src="./images/04.1/tbDeMorgan_T2.svg" width="80%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[sol]
+&lt;img src="./images/04.1/tbDeMorgan_T2_sol.svg" width="80%" style="display: block; margin: auto;" /&gt;
+]
+]]
+
+.fl.w-40.pa2[
+&lt;img src="./images/04.1/DeMorgan_T2.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+???
+&lt;img src="./images/04.1/tbDeMorgan_T2_sol.svg" width="80%" style="display: block; margin: auto;" /&gt;
+---
+# Teoremas de De Morgan - Procedimiento
+.fl.w-40.pa2[
+1. Complementar toda la expresión
+2. Cambiar la función entre cada termino
+3. Complementar cada término
+]
+.fl.w-60.pa2[
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+**Ejemplo** Aplicar los teoremas de De Morgan a la expresión `\(𝐴+𝐵\)`. Dibuje ambos esquemas equivalentes.
+]
+.panelset[.panel[.panel-name[desarrollo]
+
+]
+.panel[.panel-name[sol]
+
+`\begin{aligned}
+  f(A,B)&amp;=A+B=\overline{\bar{A}\cdot \bar{B}}\\
+  (1) &amp;\: \overline{A+B}\\
+  (2)&amp;\: \overline{A\cdot B}\\
+  (3)&amp;\: \overline{\bar{A}\cdot \bar{B}}\\
+\end{aligned}`
+
+]]]
+???
+`\begin{aligned}
+  f(A,B)&amp;=A+B=\overline{\bar{A}\cdot \bar{B}}\\
+  (1) &amp;\: \overline{A+B}\\
+  (2)&amp;\: \overline{A\cdot B}\\
+  (3)&amp;\: \overline{\bar{A}\cdot \bar{B}}\\
+\end{aligned}`
+---
+# Teoremas de De Morgan - Procedimiento
+.fl.w-40.pa2[
+1. Complementar toda la expresión
+2. Cambiar la función entre cada termino
+3. Complementar cada término
+]
+.fl.w-60.pa2[
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+**Ejemplo** Aplicar los teoremas de De Morgan a la expresión `\(\overline{𝐴\cdot𝐵}\)`. Dibuje ambos esquemas equivalentes.
+]
+.panelset[.panel[.panel-name[desarrollo]
+
+]
+.panel[.panel-name[sol]
+`\begin{aligned}
+  f(A,B)&amp;=\overline{A\cdot B}\\
+  (1) &amp;\: \overline{\overline{A\cdot B}}\\
+  (2)&amp;\: \overline{\overline{A+B}}\\
+  (3)&amp;\: \overline{\overline{\bar{A}+ \bar{B}}}\\
+  = &amp; \bar{A}+\bar{B}\\
+\end{aligned}`
+]]]
+
+???
+`\begin{aligned}
+  f(A,B)&amp;=\overline{A\cdot B}\\
+  (1) &amp;\: \overline{\overline{A\cdot B}}\\
+  (2)&amp;\: \overline{\overline{A+B}}\\
+  (3)&amp;\: \overline{\overline{\bar{A}+ \bar{B}}}\\
+  = &amp; \bar{A}+\bar{B}\\
+\end{aligned}`
+
+---
+# Teoremas de De Morgan - Procedimiento
+.fl.w-40.pa2[
+1. Complementar toda la expresión
+2. Cambiar la función entre cada termino
+3. Complementar cada término
+]
+.fl.w-60.pa2[
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+**Ejemplo** Reducir el circuito utilizando los teoremas de De Morgan
+]
+.panelset[.panel[.panel-name[desarrollo]
+&lt;img src="./images/04.1/ejemplo_DeMorgan.png" width="70%" style="display: block; margin: auto;" /&gt;
+
+
+]
+.panel[.panel-name[sol]
+`\begin{aligned}
+  f(A,B,C) &amp; =\overline{A\cdot B}+\overline{c}\\
+  (1)      &amp; \overline{\overline{A\cdot B}+\overline{c}}\\
+  (2)      &amp; \overline{\overline{A\cdot B}\cdot \overline{c}}\\
+  (3)      &amp; \overline{\overline{\overline{A\cdot B}}\cdot \overline{\overline{C}}}=\overline{A\cdot B\cdot C}\\
+\end{aligned}`
+
+]]]
+???
+`\begin{aligned}
+  f(A,B,C) &amp; =\overline{A\cdot B}+\overline{c}\\
+  (1)      &amp; \overline{\overline{A\cdot B}+\overline{c}}\\
+  (2)      &amp; \overline{\overline{A\cdot B}\cdot \overline{c}}\\
+  (3)      &amp; \overline{\overline{\overline{A\cdot B}}\cdot \overline{\overline{C}}}=\overline{A\cdot B\cdot C}\\
+\end{aligned}`
+---
+class: inverse, center, middle
+
+# Minitérminos y Maxitérminos
+
+---
+# Minitérminos 1
+.fl.w-60.pa2.font80[
+- **Literal:** Se define como cualquier variable que es utilizada en la tabla de verdad, pueden ser tanto las variables de entradas como sus conjugadas.
+- **Minitérmino:** Es el producto de N literales, donde no pueden ser repetidos dentro de un minitéminos.
+  - Los minitérminos son únicos.
+  - Se simbolizan con `\(𝑚_𝑛\)` donde `\(𝑛\)` es su posición y equivale a su configuración binaria.
+
+]
+.fl.w-40.pa2[
+&lt;img src="./images/04.1/tb_miniterminos.svg" width="60%" style="display: block; margin: auto;" /&gt;
+]
+
+---
+# Minitérminos 2
+.fl.w-60.pa2.font80[
+- **Literal:** Se define como cualquier variable que es utilizada en la tabla de verdad, pueden ser tanto las variables de entradas como sus conjugadas.
+- **Minitérmino:** Es el producto de N literales, donde no pueden ser repetidos dentro de un minitéminos.
+  - Los minitérminos son únicos.
+  - Se simbolizan con `\(𝑚_𝑛\)` donde `\(𝑛\)` es su posición y equivale a su configuración binaria.
+
+]
+.fl.w-40.pa2[
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+**Ejemplo** ¿Cuál es el 11-minitérmino `\((m_{11})\)`?
+]
+.panelset[
+.panel[.panel-name[Desarrollo]
+]
+.panel[.panel-name[sol]
+
+`\begin{aligned}
+  11_{10} &amp; = (1011)_2\\
+  m_{11}  &amp; = a\bar{b} c d\\
+\end{aligned}`
+
+]
+]]
+???
+`\begin{aligned}
+  11_{10} &amp; = (1011)_2\\
+  m_{11}  &amp; = a\bar{b} c d\\
+\end{aligned}`
+
+---
+# Minitérminos 3
+.fl.w-60.pa2.font70[
+**Cualquier tabla de verdad** pueden representarse mediante **minitérminos** de forma directa, mediante la suma de los minitérminos positivos `\((Y=1)\)` en la salida de la tabla.
+$$
+\forall Y=1 \qquad ;  f(a,b,c,\dots)=\sum_n m(1,2,3,\dots ,n)
+$$
+
+Ventajas:
+- Diseño sencillo
+- Permite pasar desde una descripción funcional a una estructural.
+
+Desventajas:
+- El resultado no se encuentra optimizado.
+  - Reducción mediante *álgebra booleana*.
+
+]
+.fl.w-40.pa2[
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+**Ejemplo** Encontrar la función lógica y el circuito equivalente para la tabla de verdad
+]
+.panelset[
+.panel[.panel-name[Desarrollo]
+&lt;img src="./images/04.1/tb_miniterminos.svg" width="60%" style="display: block; margin: auto;" /&gt;
+
+]
+.panel[.panel-name[sol]
+`\begin{aligned}
+  f(A,B) &amp; =\sum m(1, 2)\\
+   &amp; = m_1+m_2\\
+   &amp; = \bar{A} B+A\bar{B}\\
+\end{aligned}`
+]
+]]
+
+???
+`\begin{aligned}
+  f(A,B) &amp; =\sum m(1, 2)\\
+   &amp; = m_1+m_2\\
+   &amp; = \bar{A} B+A\bar{B}\\
+\end{aligned}`
+---
+# Maxitérminos 1
+.fl.w-60.pa2[
+- **Maxtérmino:** Es el complemento de los minitérminos. Son una equivalencia de ellos, pero utilizando puertan OR.
+- Se simbolizan con `\(M_𝑛\)` donde `\(𝑛\)` es su posición y equivale a su configuración binaria. En general
+$$
+m_j=\overline{Mj}
+$$
+
+
+]
+.fl.w-40.pa2[
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font80[
+**Ejemplo** Comprar `\(m(A,B)\)` con `\(M(A, B)\)`
+]
+.panelset[
+.panel[.panel-name[Desarrollo]
+&lt;img src="./images/04.1/tb_comparativa.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
+.panel[.panel-name[sol]
+&lt;img src="./images/04.1/tb_comparativa_resp.svg" width="80%" style="display: block; margin: auto;" /&gt;
+]
+]]
+???
+&lt;img src="./images/04.1/tb_comparativa_resp.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+# Maxitérminos 2
+Cada maxitérmino se obtiene de un término OR de las n variables, donde cada variable lleva un
+apóstrofo si el bit correspondiente del número binario es 1.
+
+El procedimiento para obtener el producto de maxitérminos:
+- Se forma un maxitérmino para cada combinación de las variables que produce un 0 en la función y luego se hace el AND de todos esos maxitérminos. 
+
+$$
+\forall Y=1; \qquad   f(a,b,c,\dots)=\prod_n M(1,2,3,\dots ,n)
+$$
+--
+En otras palabras **los maxitérminos es negar los ceros de salidas al utilizar minitérminos!!!**
+
+---
+class: clear
+
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font60[
+**Ejemplo**
+1. Encontrar los minitérminos y maxitérminos de la tabla de verdad. 
+2. Crear una función alternativa usando los ceros de salida
+3. Aplicar De Morgan a la función encontrada en (2) y comprar con maxitérminos
+]
+
+.panelset[
+.panel[.panel-name[desarrollo]
+.fl.w-50.pa2[
+&lt;img src="./images/04.1/ejemplo_maxi.svg" width="80%" style="display: block; margin: auto;" /&gt;
+]
+.fl.w-50.pa2[]
+
+
+]
+.panel[.panel-name[sol]
+&lt;img src="./images/04.1/ejemplo_maxi_sol.svg" width="50%" style="display: block; margin: auto;" /&gt;
+]
+
+]
+???
+&lt;img src="./images/04.1/ejemplo_maxtermino_sol.png" width="80%" style="display: block; margin: auto;" /&gt;
+
+---
+# XOR y XNOR
+**XOR**: OR exclusivo, es 1 en su salida solamente cuando una de sus entradas es 1.
+**XNOR**: No XOR.
+
+.fl.w-50.pa2[
+&lt;img src="./images/04.1/XOR.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+.panelset[
+.panel[.panel-name[desarrollo]
+&lt;img src="./images/04.1/tb_2x2.svg" width="40%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[sol]
+&lt;img src="./images/04.1/tb_XOR.svg" width="40%" style="display: block; margin: auto;" /&gt;
+$$
+  Y(A,B)=\bar{A}B+A\bar{B}
+$$
+
+]]]
+
+.fl.w-50.pa2[
+&lt;img src="./images/04.1/XNOR.png" width="50%" style="display: block; margin: auto;" /&gt;
+
+.panelset[
+.panel[.panel-name[desarrollo]
+&lt;img src="./images/04.1/tb_2x2.svg" width="40%" style="display: block; margin: auto;" /&gt;
+]
+.panel[.panel-name[sol]
+&lt;img src="./images/04.1/tb_XNOR.svg" width="40%" style="display: block; margin: auto;" /&gt;
+$$
+  Y(A,B)=\overline{AB}+AB
+$$
+
+]]]
+???
+.fl.w-50.pa2[
+&lt;img src="./images/04.1/tb_XOR.svg" width="40%" style="display: block; margin: auto;" /&gt;
+$$
+  Y(A,B)=\bar{A}B+A\bar{B}
+$$
+]
+.fl.w-50.pa2[
+&lt;img src="./images/04.1/tb_XNOR.svg" width="40%" style="display: block; margin: auto;" /&gt;
+$$
+  Y(A,B)=\overline{AB}+AB
+$$
+]
+
+
+
+
+---
+
+# Medio Sumador binario
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font60[
+1. Construir la tabla de verdad de un sumador binario de *dos números enteros binarios* de  1 bit cada uno.
+2. Utilizar minitérminos encontrar su función booleana y circuito combinacional.
+]
+
+.panelset[
+.panel[.panel-name[desarrollo 1]]
+.panel[.panel-name[desarrollo 2]
+&lt;img src="./images/04.1/tb_mediosumador.svg" width="40%" style="display: block; margin: auto;" /&gt;
+
+]
+.panel[.panel-name[res]
+.fl.w-50.pa2[
+&lt;img src="./images/04.1/tb_mediosumador_resp.svg" width="60%" style="display: block; margin: auto;" /&gt;
+]
+.fl.w-50.pa2[
+
+&lt;img src="./images/04.1/esquema_mediosumador.png" width="90%" style="display: block; margin: auto;" /&gt;
+$$
+S=A\bar{B}+\bar{A}=A\oplus B\\
+Ac=AB
+$$
+]]]
+
+???
+.fl.w-50.pa2[
+&lt;img src="./images/04.1/tb_mediosumador_resp.svg" width="60%" style="display: block; margin: auto;" /&gt;
+]
+.fl.w-50.pa2[
+
+&lt;img src="./images/04.1/esquema_mediosumador.png" width="90%" style="display: block; margin: auto;" /&gt;
+$$
+S=A\bar{B}+\bar{A}=A\oplus B\\
+Ac=AB
+$$
+]
+
+---
+# Sumador completo binario
+.bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font60[
+1. Construir la tabla de verdad de un sumador binario de *dos números enteros binarios con acarreo de entrada* de  1 bit cada uno.
+2. Utilizar minitérminos encontrar su función booleana y circuito combinacional.
+]
+
+.panelset[
+.panel[.panel-name[desarrollo 1]]
+.panel[.panel-name[desarrollo 2]
+&lt;img src="./images/04.1/tb_sumadorcompleto.svg" width="40%" style="display: block; margin: auto;" /&gt;
+
+]
+.panel[.panel-name[res]
+.fl.w-50.pa2[
+&lt;img src="./images/04.1/tb_sumadorcompleto_resp.svg" width="60%" style="display: block; margin: auto;" /&gt;
+]
+.fl.w-50.pa2[
+
+&lt;img src="./images/04.1/esquema_sumador_completo.png" width="90%" style="display: block; margin: auto;" /&gt;
+$$
+S=Cin \oplus(A\oplus B)\\
+Cout=Cin(A\oplus B)+AB
+$$
+]]]
+
+???
+.fl.w-50.pa2[
+&lt;img src="./images/04.1/ejemplo_sumadorcompleto_resp.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
+
+.fl.w-50.pa2[
+&lt;img src="./images/04.1/esquema_sumador_completo.png" width="90%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+# Conexión es cascada
+En algunos diseños digitales es conveniente pensar las operaciones de ***forma modular***. Por ejemplo, el sumador completo puede ser empaquetado como 
+
+&lt;div class="figure" style="text-align: center"&gt;
+&lt;img src="./images/04.1/cascada_sumador.png" alt="COnexión en cascada sumadores completo. Diseño digital - Morris Mano" width="80%" /&gt;
+&lt;p class="caption"&gt;COnexión en cascada sumadores completo. Diseño digital - Morris Mano&lt;/p&gt;
+&lt;/div&gt;
+
+
+---
+# Mapas de Karnaugh
+- Permite encontrar la función booleana desde una tabla de verdad.
+- La función encontrada la función ya minimizada!!!.
+
+.center.font130[**Próxima clase**]
+
+---
+# Bibliografía
+- Capítulo 3 – Formas de Onda y Lógica Booleana. Sección 3.1-3.7. Bignell, James W., et al. Electrónica digital.
+- Capítulo 2  – Álgebra booleana y compuertas lógicas. Sección 2.1-2.7. M. Morris Mano, Diseño Digital. Pearson Edutacion.
+- Capítulo 2  – Álgebra booleana y compuertas lógicas. Sección 2.1-2.2, 2.4. Victor P. Nelson, Análisis y Diseño de Circuitos Lógicos Digitales. Pearson.
+
+Profundizar
+- Cap. 4 Álgebra de boole y Simplificacióñ lógica. Floyd, Thomas L. Fundamentos de sistemas digitales. Prentice Hall, 2006.
+
+
+---
+# Aplicaciones
+- Restador
+- Display 7 segmentos
+- Multiplexor
+- Demultiplexor
+- Codificador
+- Decodificador
+- Generadores / comprobadores de paridad
 
 ---
 class: inverse, middle, center
