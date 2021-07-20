@@ -426,7 +426,7 @@ class: clear
 &lt;img src="./images/04.1/ejemplo_maxtermino_sol.png" width="80%" style="display: block; margin: auto;" /&gt;
 
 ---
-# XOR y XNOR
+# Aplicación: XOR y XNOR
 **XOR**: OR exclusivo, es 1 en su salida solamente cuando una de sus entradas es 1.
 **XNOR**: No XOR.
 
@@ -517,7 +517,7 @@ $$
 ]
 
 ---
-# Sumador completo binario
+# Aplicación: Sumador completo binario
 .bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font60[
 1. Construir la tabla de verdad de un sumador binario de *dos números enteros binarios con acarreo de entrada* de  1 bit cada uno.
 2. Utilizar minitérminos encontrar su función booleana y circuito combinacional.
@@ -555,7 +555,7 @@ $$
 
 ---
 # Conexión es cascada
-En algunos diseños digitales es conveniente pensar las operaciones de ***forma modular***. Por ejemplo, el sumador completo puede ser empaquetado como 
+En algunos diseños digitales es conveniente pensar las operaciones de ***forma modular***. Por ejemplo, el sumador completo puede ser empaquetado como: 
 
 &lt;div class="figure" style="text-align: center"&gt;
 &lt;img src="./images/04.1/cascada_sumador.png" alt="COnexión en cascada sumadores completo. Diseño digital - Morris Mano" width="80%" /&gt;
@@ -564,11 +564,152 @@ En algunos diseños digitales es conveniente pensar las operaciones de ***forma 
 
 
 ---
+---
+class: inverse, center, middle
+
 # Mapas de Karnaugh
-- Permite encontrar la función booleana desde una tabla de verdad.
+---
+
+# Mapas de Karnaugh (k-map)
+.fl.w-60.pa2[
+
+- Es un a representación gráfica de los mini/maxi términos.
+  -   Obtenemos gráficamente todas las posibles formas de representar una función lógica.
+- Permite inspeccionar y seleccionar la configuración idónea para nuestros circuitos combionacionales.
+encontrar la función booleana desde una tabla de verdad.
 - La función encontrada la función ya minimizada!!!.
 
-.center.font130[**Próxima clase**]
+- Desventaja: problemas cuando son muchas entradas en el circuito.
+]
+.fl.w-40.pa2[
+.rojo[COlocar imagen de referencia]
+]
+
+---
+# k-map - consideraciones
+- Cada Minitérmino del mapa-K difiere de su vecino en un literal.
+- Cuando agrupemos minitérminos en los mapas-K, estos grupos tienen que estar constituidos por potencias de 2.
+- Cada grupo debe posee la mayor cantidad de minitérminos para reducir la cantidad de literales utilizados en el circuito.
+- Se tiene que buscar/utilizar la menor cantidad de grupos en los mapas. Los minitérminos pueden ser utilizadas en más de un grupo.
+
+---
+# k-map de 2 variables - 1
+.fl.w-40.pa2[
+&lt;img src="./images/04.1/tb_2x2_kmap_or.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
+
+]
+.fl.w-30.pa2[
+$$
+Y(A, B) = \sum m(1, 2, 3)
+$$
+]
+.fl.w-30.pa2[
+&lt;img src="./images/04.1/tab/kmap 2x2.svg" width="50%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="./images/04.1/tab/kmap or.svg" width="50%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+# k-map de 2 variables - 2
+.fl.w-40.pa2[
+&lt;img src="./images/04.1/tb_2x2_kmap_or.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
+$$
+Y(A, B) = \sum m(1, 2, 3)
+$$
+
+]
+.fl.w-60.pa2[
+.fl.w-60.pa2.font80[
+1) Para 2 variables (x, y) ordenamos los minitérminos.
+]
+.fl.w-40.pa2[
+&lt;img src="./images/04.1/tab/kmap 2x2.svg" width="50%" style="display: block; margin: auto;" /&gt;
+]
+
+.font80[
+2) Filas para 𝑥 y columnas para 𝑦. Reemplazamos Los valores de 𝑓 en el mapa-K
+]
+.fl.w-50.pa2[
+
+&lt;img src="./images/04.1/tab/kmap 2x2 v2.svg" width="50%" style="display: block; margin: auto;" /&gt;
+]
+.fl.w-50.pa2[
+&lt;img src="./images/04.1/tab/kmap 2x2 v3.svg" width="50%" style="display: block; margin: auto;" /&gt;
+
+]]
+
+---
+# k-map de 2 variables - 3
+.fl.w-40.pa2[
+&lt;img src="./images/04.1/tb_2x2_kmap_or.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
+.font70[
+$$
+Y(A,B) = \sum m(1, 2, 3) = A+B
+$$
+]
+
+]
+.fl.w-60.pa2[
+.font80[
+3) Agrupamos minitérminos 1 en grupos de 1 o potencias de 2
+]
+
+.fl.w-50.pa2[
+
+&lt;img src="./images/04.1/tab/kmap or v1.svg" width="50%" style="display: block; margin: auto;" /&gt;
+.font70[
+$$
+Y(A,B)=A\bar{B}+\bar{A}B+AB
+$$
+]
+
+]
+.fl.w-50.pa2[
+&lt;img src="./images/04.1/tab/kmap or v2.svg" width="50%" style="display: block; margin: auto;" /&gt;
+.font70[
+$$
+Y(A,B)=A+\bar{A}B+AB
+$$
+]
+]
+
+&lt;img src="./images/04.1/tab/kmap or v3.svg" width="20%" style="display: block; margin: auto;" /&gt;
+
+.font70[
+$$
+Y(A,B)=A+B
+$$
+
+]
+]
+
+---
+# k-map de 3 variables - 1
+.fl.w-40.pa2[
+&lt;img src="./images/04.1/tb_3x3_kmap.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
+
+$$
+Y(A,B,C)=\sum m(0,1)
+$$
+
+]
+.fl.w-60.pa2[
+1. Agrupamos dos variables en las columnas y una en las filas. Para formar las combinaciones de las columnas, partimos de cualquier combinación (en este caso 00). 
+
+Las combinaciones siguientes solo pueden cambiar un bit respecto a su compañero:
+
+&lt;img src="./images/04.1/tab/ej 3x3 kmap.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
+
+]
+
 
 ---
 # Bibliografía
@@ -590,6 +731,7 @@ Profundizar
 - Decodificador
 - Generadores / comprobadores de paridad
 
+Las presentación son en pareja con una duración entre ***5 a 10 min***
 ---
 class: inverse, middle, center
 
