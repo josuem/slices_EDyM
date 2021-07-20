@@ -1,7 +1,7 @@
 introducción
 intro
-ejemplo-1
-otro
+medio-sumador
+sumador-completo
 ejemplo-2
 literature
 methods
