@@ -1,15 +1,11 @@
 introducción
 intro
 medio-sumador
+entradas-y-salidas
+tabla-de-verdad
 sumador-completo
-ejemplo-2
 methods
 applications
 example-one
 example-two
 final-words
-entradas
-entradas-y-salidas
-tabla-de-verdad
-sumador-completo-1
-ejemplo-2-1
