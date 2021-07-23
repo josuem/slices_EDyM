@@ -1,6 +1,0 @@
-book_filename: "Aplicaciones"
-delete_merged_file: true
-output_dir: "docs" # para subir la página a gitub.
-language:
-  ui:
-    chapter_name: "Cáp. "

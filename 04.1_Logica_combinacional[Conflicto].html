@@ -247,8 +247,8 @@ Son los teoremas que conocemos de álgebra, ahora aplicados sobre circuitos lóg
 **Ejemplo** Reducir el circuito utilizando los teoremas de De Morgan
 ]
 .panelset[.panel[.panel-name[desarrollo]
-
 &lt;img src="./images/04.1/ejemplo_DeMorgan.png" width="70%" style="display: block; margin: auto;" /&gt;
+
 
 ]
 .panel[.panel-name[sol]
@@ -473,18 +473,19 @@ $$
 $$
 ]
 
+
+
+
 ---
 
-# Aplicación: Medio Sumador binario
+# Medio Sumador binario
 .bg-lightest-blue.b--dark-blue.ba.bw2.br4.ph2.font60[
 1. Construir la tabla de verdad de un sumador binario de *dos números enteros binarios* de  1 bit cada uno.
 2. Utilizar minitérminos encontrar su función booleana y circuito combinacional.
 ]
 
 .panelset[
-.panel[.panel-name[desarrollo 1]
-.red.center[5 min para realizarlo]
-]
+.panel[.panel-name[desarrollo 1]]
 .panel[.panel-name[desarrollo 2]
 &lt;img src="./images/04.1/tb_mediosumador.svg" width="40%" style="display: block; margin: auto;" /&gt;
 
@@ -496,14 +497,10 @@ $$
 .fl.w-50.pa2[
 
 &lt;img src="./images/04.1/esquema_mediosumador.png" width="90%" style="display: block; margin: auto;" /&gt;
-
-`\begin{aligned}
-S &amp;=&amp; A\bar{B}+\bar{A}B\\
-  &amp;=&amp; A\oplus B\\
-  &amp; &amp; \\
-Ac &amp;=&amp; AB\\  
-\end{aligned}`
-
+$$
+S=A\bar{B}+\bar{A}=A\oplus B\\
+Ac=AB
+$$
 ]]]
 
 ???
@@ -513,14 +510,10 @@ Ac &amp;=&amp; AB\\
 .fl.w-50.pa2[
 
 &lt;img src="./images/04.1/esquema_mediosumador.png" width="90%" style="display: block; margin: auto;" /&gt;
-
-`\begin{aligned}
-S &amp;=&amp; A\bar{B}+\bar{A}B\\
-  &amp;=&amp; A\oplus B\\
-  &amp; &amp; \\
-Ac &amp;=&amp; AB\\  
-\end{aligned}`
-
+$$
+S=A\bar{B}+\bar{A}=A\oplus B\\
+Ac=AB
+$$
 ]
 
 ---
@@ -531,9 +524,7 @@ Ac &amp;=&amp; AB\\
 ]
 
 .panelset[
-.panel[.panel-name[desarrollo 1]
-.red.center[5 min para realizarlo]
-]
+.panel[.panel-name[desarrollo 1]]
 .panel[.panel-name[desarrollo 2]
 &lt;img src="./images/04.1/tb_sumadorcompleto.svg" width="40%" style="display: block; margin: auto;" /&gt;
 
@@ -545,40 +536,16 @@ Ac &amp;=&amp; AB\\
 .fl.w-50.pa2[
 
 &lt;img src="./images/04.1/esquema_sumador_completo.png" width="90%" style="display: block; margin: auto;" /&gt;
-
-`\begin{aligned}
-S &amp;=&amp; Cin \oplus (A\oplus B)\\
-C_{out} &amp;=&amp; Cin(A\oplus B)+AB\\
-\end{aligned}`
-
+$$
+S=Cin \oplus(A\oplus B)\\
+Cout=Cin(A\oplus B)+AB
+$$
 ]]]
 
 ???
-Recordar que 
-`\begin{aligned}
-A\oplus B &amp;=&amp; A\bar{B}+\bar{A}B\\
-\overline{A\oplus B }&amp;=&amp; AB+\overline{AB}\\
-\end{aligned}`
-
-
-`\begin{aligned}
-S &amp;=&amp; \bar{A} \bar{B} C_{in} + \bar{A} B \bar{C_{in}} + A \bar{B} \bar{C_{in}}\\
-  &amp;=&amp; \bar{A}(\bar{B} C_{in} + B \bar{C_{in}}) + A (\bar{B} \bar{C_{in}}+ V C_{in})\\
-\end{aligned}`
-
-Si `\(\alpha=B\oplus C_{in}\)`
-
-`\begin{aligned}
-  &amp;=&amp; \bar{A}\alpha + A\bar{\alpha}\\
-  &amp;=&amp; A \oplus \alpha\\
-  &amp;=&amp; A \oplus (B \oplus C_{in})
-\end{aligned}`
-
-`\begin{aligned}
-C_{out} &amp;=&amp;\bar{A}BC_{in}+A\bar{B}C_{in}+AB\bar{C_{in}}+ABC_{in}\\
-        &amp;=&amp;C_{in}(\bar{A}B+A\bar{B})+AB(\bar{C_{in}}+C_{in})\\
-        &amp;=&amp;C_{in}(A\oplus B)+AB\\
-\end{aligned}`
+.fl.w-50.pa2[
+&lt;img src="./images/04.1/ejemplo_sumadorcompleto_resp.png" width="80%" style="display: block; margin: auto;" /&gt;
+]
 
 .fl.w-50.pa2[
 &lt;img src="./images/04.1/esquema_sumador_completo.png" width="90%" style="display: block; margin: auto;" /&gt;
@@ -590,479 +557,63 @@ C_{out} &amp;=&amp;\bar{A}BC_{in}+A\bar{B}C_{in}+AB\bar{C_{in}}+ABC_{in}\\
 # Conexión es cascada
 En algunos diseños digitales es conveniente pensar las operaciones de ***forma modular***. Por ejemplo, el sumador completo puede ser empaquetado como: 
 
-
-
 &lt;div class="figure" style="text-align: center"&gt;
-&lt;img src="./images/04.1/cascada_sumador.png" alt="Conexión en cascada sumadores completo. Diseño digital - Morris Mano" width="80%" /&gt;
-&lt;p class="caption"&gt;Conexión en cascada sumadores completo. Diseño digital - Morris Mano&lt;/p&gt;
+&lt;img src="./images/04.1/cascada_sumador.png" alt="COnexión en cascada sumadores completo. Diseño digital - Morris Mano" width="80%" /&gt;
+&lt;p class="caption"&gt;COnexión en cascada sumadores completo. Diseño digital - Morris Mano&lt;/p&gt;
 &lt;/div&gt;
 
-.red.center[Realizamos este circuito usando logisim-evolution]
+
 ---
-
-
-
-
-
+---
 class: inverse, center, middle
+
 # Mapas de Karnaugh
 ---
 
 # Mapas de Karnaugh (k-map)
-.fl.w-60.pa2.font80[
+.fl.w-60.pa2[
 
-- Es un a representación gráfica de la tabla de verdad (minitérminos).
-- Permite encontrar la función lógica del circuito combinacional **reduciendo visualmente esta a su mínima expresión!!!!**.
-- Permite inspeccionar y seleccionar la configuración idónea para nuestros circuitos combinacionales.
+- Es un a representación gráfica de los mini/maxi términos.
+  -   Obtenemos gráficamente todas las posibles formas de representar una función lógica.
+- Permite inspeccionar y seleccionar la configuración idónea para nuestros circuitos combionacionales.
+encontrar la función booleana desde una tabla de verdad.
+- La función encontrada la función ya minimizada!!!.
 
-**Desventaja y Limitantes**
-- Útil hasta 4 variables de entrada del circuito.
-  - Para sistemas más completos se utiliza el algoritmo de Quine-McCluskey*.    
-
+- Desventaja: problemas cuando son muchas entradas en el circuito.
 ]
 .fl.w-40.pa2[
-
-
-&lt;br&gt;&lt;br&gt;
-
-&lt;img src="./images/04.1/Karnaugh_map_torus.svg" width="60%" style="display: block; margin: auto;" /&gt;
-
+.rojo[COlocar imagen de referencia]
 ]
 
 ---
-# k-map - Construcción de k-map
-.fl.w-50.pa2[
-
-- Se contruye una tabla (mapa) donde cada fila y columna representa una entrada del circuito
+# k-map - consideraciones
 - Cada Minitérmino del mapa-K difiere de su vecino en un literal.
-- En las coordenadas dentro del mapa se agregan los valores de salida según la tabla de verdad del circuito.
-
-]
-
-.fl.w-50.pa2[
-.panelset[.panel[.panel-name[ejemplo]
-
-&lt;img src="./images/04.1/tab/kmap 2var clean.svg" width="20%" style="display: block; margin: auto;" /&gt;
-
-&lt;img src="./images/04.1/tab/kmap 3var clean.svg" width="30%" style="display: block; margin: auto;" /&gt;
-
-&lt;img src="./images/04.1/tab/kmap 4var clean.svg" width="30%" style="display: block; margin: auto;" /&gt;
-
-]
-
-.panel[.panel-name[desarrollo]
-&lt;img src="./images/04.1/tab/resp kmap 2var clean.svg" width="20%" style="display: block; margin: auto;" /&gt;
-
-&lt;img src="./images/04.1/tab/resp kmap 3var clean.svg" width="30%" style="display: block; margin: auto;" /&gt;
-
-&lt;img src="./images/04.1/tab/resp kmap 4var clean.svg" width="30%" style="display: block; margin: auto;" /&gt;
-
-]]]
-
----
-# k-map - Reglas generales
-
-.fl.w-50.pa2[
-- Cuando agrupemos minitérminos en los mapas-K  (globos lógicos), estos grupos tienen que estar constituidos por potencias de 2.
+- Cuando agrupemos minitérminos en los mapas-K, estos grupos tienen que estar constituidos por potencias de 2.
 - Cada grupo debe posee la mayor cantidad de minitérminos para reducir la cantidad de literales utilizados en el circuito.
 - Se tiene que buscar/utilizar la menor cantidad de grupos en los mapas. Los minitérminos pueden ser utilizadas en más de un grupo.
 
-]
-
---
-
-.fl.w-50.pa2[
-## Pasos para construir un k-map
-  1. Reconocer cuantas entradas y salidas tiene el circuito combinacional. 
-  2. Construirlos los k-mapas considerando las entradas y que los literales vecinos no difieran en más de un literal.
-  3. Agregar los unos lógicos al mapa de acuerdo a la tabla de verdad.
-  4. Agrupar los unos lógicos en globos potencias de dos.
-  
-]
-
-
-
 ---
-# k-map de 2 variables - Puerta Or
-Usar un k-map para encontrar la función lógica de la compuerta Or desde su tabla de verdad.
+# k-map de 2 variables - 1
+.fl.w-40.pa2[
+&lt;img src="./images/04.1/tb_2x2_kmap_or.svg" width="80%" style="display: block; margin: auto;" /&gt;
 
-.panelset.sideways[.panel[.panel-name[paso 1]
-Reconocer cuantas entradas y salidas tiene el circuito combinacional. Por cada salida tendremos un k-map
 
-&lt;img src="./images/04.1/tb_2x2_kmap_or.svg" width="40%" style="display: block; margin: auto;" /&gt;
-
-.font80[
+]
+.fl.w-30.pa2[
 $$
 Y(A, B) = \sum m(1, 2, 3)
 $$
-]]
-.panel[.panel-name[paso 2]
-
-Construirlos los k-mapas considerando las entradas y que los literales vecinos no difieran en más de un literal.
-
-.fl.w-40.pa2[
-&lt;img src="./images/04.1/tb_2x2_kmap_or.svg" width="70%" style="display: block; margin: auto;" /&gt;
-
-.font80[
-$$
-Y(A, B) = \sum m(1, 2, 3)
-$$
-]]
-
-.fl.w-30.pa2[
-
-&lt;img src="./images/04.1/tab/kmap 2var v2.svg" width="70%" style="display: block; margin: auto;" /&gt;
 ]
 .fl.w-30.pa2[
-&lt;img src="./images/04.1/tab/kmap 2var v3.svg" width="70%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/04.1/tab/kmap 2x2.svg" width="50%" style="display: block; margin: auto;" /&gt;
+
+&lt;img src="./images/04.1/tab/kmap or.svg" width="50%" style="display: block; margin: auto;" /&gt;
 
 ]
-
-.panel[.panel-name[paso 3]
-Agregar los unos lógicos al mapa de acuerdo a la tabla de verdad.
-
-.fl.w-40.pa2[
-&lt;img src="./images/04.1/tb_2x2_kmap_or.svg" width="70%" style="display: block; margin: auto;" /&gt;
-
-.font80[
-$$
-Y(A, B) = \sum m(1, 2, 3)
-$$
-]]
-
-
-.fl.w-30.pa2[
-
-&lt;img src="./images/04.1/tab/kmap 2var v2.svg" width="70%" style="display: block; margin: auto;" /&gt;
-]
-.fl.w-30.pa2[
-&lt;img src="./images/04.1/tab/kmap 2var v3.svg" width="70%" style="display: block; margin: auto;" /&gt;
-
-]
-
-
-]
-.panel[.panel-name[paso 4]
-
-Agrupamos los unos lógicos en globos potencias de dos. 
-
-.fl.w-50[
-
-&lt;img src="./images/04.1/tab/kmap or v1.svg" width="40%" style="display: block; margin: auto;" /&gt;
-
-.font70[
-$$
-Y(A,B)=A\bar{B}+\bar{A}B+AB
-$$
-]
-
-]
-.fl.w-50[
-&lt;img src="./images/04.1/tab/kmap or v2.svg" width="40%" style="display: block; margin: auto;" /&gt;
-
-.font70[
-$$
-Y(A,B)=A+\bar{A}B+AB
-$$
-]
-]
-
-.fl.w-50[
-
-&lt;img src="./images/04.1/tab/kmap or v3.svg" width="40%" style="display: block; margin: auto;" /&gt;
-
-.font70[
-$$
-Y(A,B)=A+B
-$$
-
-]]
-]
-]]
 
 
 ---
-
-# k-map de 3 variables
-.fl.w-40.pa2[
-&lt;img src="./images/04.1/tb_3x3_kmap.svg" width="80%" style="display: block; margin: auto;" /&gt;
-
-
-$$
-Y(A,B,C)=\sum m(0,1)
-$$
-
-]
-.fl.w-60.pa2[
-1. Tenemos 3 entradas y 1 salida
-2. Construimos el k-map para 3 variables. 
-
-.panelset[.panel[.panel-name[desarrollo]
-&lt;img src="./images/04.1/tab/kmap 3var clean.svg" width="40%" style="display: block; margin: auto;" /&gt;
-
-]
-
-.panel[.panel-name[resupuesta]
-&lt;img src="./images/04.1/tab/res ej 3var kmap.svg" width="40%" style="display: block; margin: auto;" /&gt;
-
-
-]
-]
-
-
-
-
-]
-
-]
-
-???
-1. Reconocer cuantas entradas y salidas tiene el circuito combinacional. Por cada salida tendremos un k-map.
-2. Construirlos los k-mapas considerando las entradas y que los literales vecinos no difieran en más de un literal.
-3. Agregar los unos lógicos al mapa de acuerdo a la tabla de verdad.
-4. Agrupar los unos lógicos en globos potencias de dos.
-
-&lt;img src="./images/04.1/tab/res ej 3var kmap.svg" width="60%" style="display: block; margin: auto;" /&gt;
-
----
-
-
-# k-map de 4 variables
-.fl.w-40.pa2[
-&lt;img src="./images/04.1/tab/ej kmap tab 4var.svg" width="60%" style="display: block; margin: auto;" /&gt;
-
-]
-.fl.w-60.pa2[
-1. Tenemos 4 entradas y 1 salida
-2. Construimos el k-map para 4 variables. 
-
-.panelset[.panel[.panel-name[Toroide]
-&lt;img src="./images/04.1/Karnaugh_map_torus.svg" width="35%" style="display: block; margin: auto;" /&gt;
-
-
-
-]
-
-.panel[.panel-name[Desarrollo]
-&lt;img src="./images/04.1/tab/kmap 4var dona.svg" width="75%" style="display: block; margin: auto;" /&gt;
-]
-
-.panel[.panel-name[respuesta]
-&lt;img src="./images/04.1/tab/resp ej kmap 4var.svg" width="40%" style="display: block; margin: auto;" /&gt;
-
-
-]
-]
-]
-
-???
-1. Reconocer cuantas entradas y salidas tiene el circuito combinacional. Por cada salida tendremos un k-map.
-2. Construirlos los k-mapas considerando las entradas y que los literales vecinos no difieran en más de un literal.
-3. Agregar los unos lógicos al mapa de acuerdo a la tabla de verdad.
-4. Agrupar los unos lógicos en globos potencias de dos.
-
-&lt;img src="./images/04.1/tab/resp ej kmap 4var.svg" width="60%" style="display: block; margin: auto;" /&gt;
-
----
-# Ejemplos - Dont care
-.fl.w-40.pa2[
-
-
-.font80[
-Existen casos en los cuales algunas de las combinaciones de la entrada de nuestro circuito no estarán permitidas.
-
-&gt; Estos casos son llamadas **condiciones de indiferencia** o **don't care**. 
-
-- Son utilizados para "agrandar" los globos lógicos o simplemente no utilizarlos.
-- Se anotan colocando una **X** en su respectiva salida.
-]]
-
-.fl.w-60.pa2[
-
-.panelset[.panel[.panel-name[casos]
-
-.fl.w-50.pa2[
-&lt;img src="./images/04.1/tab/ej dont care 1.svg" width="80%" style="display: block; margin: auto;" /&gt;
-]
-
-.fl.w-50.pa2[
-&lt;img src="./images/04.1/tab/ej dont care 2.svg" width="80%" style="display: block; margin: auto;" /&gt;
-
-.panel[.panel-name[respuesta]
-
-.fl.w-50.pa2[
-&lt;img src="./images/04.1/tab/resp ej dont care 1.svg" width="55%" style="display: block; margin: auto;" /&gt;
-]
-.fl.w-50.pa2[
-&lt;img src="./images/04.1/tab/resp ej dont care 2.svg" width="55%" style="display: block; margin: auto;" /&gt;
-]]
-
-
-]]]]
-
-
-???
-Existen casos en los cuales algunas de las combinaciones de la entrada de nuestro circuito no estarán permitidas, por lo que su salida no es de interés. Estos casos son llamadas **condiciones de indiferencia** o **don't care**. 
-
-Los términos indiferentes son utilizados para simplificar de mejor manera los k-maps ya po podemos utilizar estas salidas como 1 o 0 lógicos dependiendo si nos permiten o no agrandar los globos lógicos.
-
-Para anotar una condición de indiferencia en la tabla de verdad de un circuito basta con colocar **X** o **-** en su respectiva salida.
-
-&lt;img src="./images/04.1/tab/resp ej dont care 1.svg" width="60%" style="display: block; margin: auto;" /&gt;
-
-&lt;img src="./images/04.1/tab/resp ej dont care 2.svg" width="60%" style="display: block; margin: auto;" /&gt;
-
----
-
-
-
-
-class: inverse, center, middle
-
-# Ejemplos k-map
----
-
-# Puerta XOR y XNOR mediante K-map
-.fl.w-40.pa2[
-
-&lt;img src="./images/04.1/tb_XOR.svg" width="40%" style="display: block; margin: auto;" /&gt;
-$$
-  Y(A,B)=\bar{A}B+A\bar{B}
-$$
-&lt;img src="./images/04.1/tb_XNOR.svg" width="40%" style="display: block; margin: auto;" /&gt;
-$$
-  Y(A,B)=\overline{AB}+AB
-$$
-
-]
-
-.panelset[.panel[.panel-name[desarrollo]
-&lt;img src="./images/04.1/tab/kmap 2var clean.svg" width="15%" style="display: block; margin: auto;" /&gt;
-
-&lt;img src="./images/04.1/tab/kmap 2var clean.svg" width="15%" style="display: block; margin: auto;" /&gt;
-
-]
-.panel[.panel-name[resp]
-&lt;img src="./images/04.1/tab/resp xor.svg" width="15%" style="display: block; margin: auto;" /&gt;
-
-&lt;img src="./images/04.1/tab/resp nxor.svg" width="15%" style="display: block; margin: auto;" /&gt;
-
-]]
-
-???
-&lt;img src="./images/04.1/tab/resp xor.svg" width="55%" style="display: block; margin: auto;" /&gt;
-
-&lt;img src="./images/04.1/tab/resp nxor.svg" width="55%" style="display: block; margin: auto;" /&gt;
-
----
-# Medio Sumador mediante K-map
-.fl.w-40.pa2[
-
-&lt;img src="./images/04.1/tb_mediosumador_resp.svg" width="60%" style="display: block; margin: auto;" /&gt;
-
-`\begin{aligned}
-S &amp;=&amp; A\bar{B}+\bar{A}B\\
-  &amp;=&amp; A\oplus B\\
-  &amp; &amp; \\
-Ac &amp;=&amp; AB\\  
-\end{aligned}`
-]
-.panelset[.panel[.panel-name[desarrollo]
-&lt;img src="./images/04.1/tab/kmap 2var clean.svg" width="15%" style="display: block; margin: auto;" /&gt;
-
-&lt;img src="./images/04.1/tab/kmap 2var clean.svg" width="15%" style="display: block; margin: auto;" /&gt;
-]
-.panel[.panel-name[resp]
-&lt;img src="./images/04.1/tab/resp medio sumador.svg" width="45%" style="display: block; margin: auto;" /&gt;
-]]
-
-???
-&lt;img src="./images/04.1/tab/resp medio sumador.svg" width="80%" style="display: block; margin: auto;" /&gt;
----
-# Sumador completo mediante K-map
-.fl.w-40.pa2[
-
-&lt;img src="./images/04.1/tb_sumadorcompleto_resp.svg" width="60%" style="display: block; margin: auto;" /&gt;
-
-`\begin{aligned}
-S &amp;=&amp; Cin \oplus (A\oplus B)\\
-C_{out} &amp;=&amp; Cin(A\oplus B)+AB\\
-\end{aligned}`
-]
-
-.panelset[.panel[.panel-name[desarrollo]
-&lt;img src="./images/04.1/tab/kmap 3var clean.svg" width="25%" style="display: block; margin: auto;" /&gt;
-
-&lt;img src="./images/04.1/tab/kmap 3var clean.svg" width="25%" style="display: block; margin: auto;" /&gt;
-]
-.panel[.panel-name[resp]
-&lt;img src="./images/04.1/tab/resp sumador completo.svg" width="45%" style="display: block; margin: auto;" /&gt;
-
-  
-]]
-???
-&lt;img src="./images/04.1/tab/resp sumador completo.svg" width="80%" style="display: block; margin: auto;" /&gt;
-
----
-exclude: true
-# Control nivel estanque
-.fl.w-40.pa2[
-
-]
-.panelset[.panel[.panel-name[desarrollo]
-
-]
-.panel[.panel-name[resp]
-
-]]
-
-
----
-
-
-
-exclude: true
-
-# TODO
-- [x] Agregar uso de logisim-evolution
-- [] Agregar el uso de cronogramas para estudiar el circuito.
-- [] Cambiar repositorio de las aplicaciones
-- [X] ~dont care~
-- [] entrada habilitante
----
-# Bibliografía
-- Capítulo 3 – Formas de Onda y Lógica Booleana. Sección 3.1-3.7. Bignell, James W., et al. Electrónica digital.
-- Capítulo 2  – Álgebra booleana y compuertas lógicas. Sección 2.1-2.7. M. Morris Mano, Diseño Digital. Pearson Edutacion.
-- Capítulo 2  – Álgebra booleana y compuertas lógicas. Sección 2.1-2.2, 2.4. Victor P. Nelson, Análisis y Diseño de Circuitos Lógicos Digitales. Pearson.
-
-Profundizar
-- Cap. 4 Álgebra de boole y Simplificacióñ lógica. Floyd, Thomas L. Fundamentos de sistemas digitales. Prentice Hall, 2006.
-
-
----
-# Presentaciones Aplicaciones
-Las presentación son en pareja con una duración entre ***5 a 10 min***
-
-- Restador
-- Comparador
-- Display 7 segmentos
-- Multiplexor
-- Demultiplexor
-- Codificador
-- Decodificador
-- Detector/Generador de paridad
-
----
-class: inverse, middle, center
-
-[**Próxima clase:** Lógica Combinacional - Aplicaciones]()
-
-
----
-exclude: true
-
 # k-map de 2 variables - 2
-
 .fl.w-40.pa2[
 &lt;img src="./images/04.1/tb_2x2_kmap_or.svg" width="80%" style="display: block; margin: auto;" /&gt;
 
@@ -1076,7 +627,7 @@ $$
 1) Para 2 variables (x, y) ordenamos los minitérminos.
 ]
 .fl.w-40.pa2[
-&lt;img src="./images/04.1/tab/kmap 2var.svg" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/04.1/tab/kmap 2x2.svg" width="50%" style="display: block; margin: auto;" /&gt;
 ]
 
 .font80[
@@ -1084,16 +635,14 @@ $$
 ]
 .fl.w-50.pa2[
 
-&lt;img src="./images/04.1/tab/kmap 2var v2.svg" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/04.1/tab/kmap 2x2 v2.svg" width="50%" style="display: block; margin: auto;" /&gt;
 ]
 .fl.w-50.pa2[
-&lt;img src="./images/04.1/tab/kmap 2var v3.svg" width="50%" style="display: block; margin: auto;" /&gt;
+&lt;img src="./images/04.1/tab/kmap 2x2 v3.svg" width="50%" style="display: block; margin: auto;" /&gt;
 
 ]]
 
 ---
-exclude: true
-
 # k-map de 2 variables - 3
 .fl.w-40.pa2[
 &lt;img src="./images/04.1/tb_2x2_kmap_or.svg" width="80%" style="display: block; margin: auto;" /&gt;
@@ -1138,6 +687,57 @@ $$
 
 ]
 ]
+
+---
+# k-map de 3 variables - 1
+.fl.w-40.pa2[
+&lt;img src="./images/04.1/tb_3x3_kmap.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
+
+$$
+Y(A,B,C)=\sum m(0,1)
+$$
+
+]
+.fl.w-60.pa2[
+1. Agrupamos dos variables en las columnas y una en las filas. Para formar las combinaciones de las columnas, partimos de cualquier combinación (en este caso 00). 
+
+Las combinaciones siguientes solo pueden cambiar un bit respecto a su compañero:
+
+&lt;img src="./images/04.1/tab/ej 3x3 kmap.svg" width="80%" style="display: block; margin: auto;" /&gt;
+
+]
+
+]
+
+
+---
+# Bibliografía
+- Capítulo 3 – Formas de Onda y Lógica Booleana. Sección 3.1-3.7. Bignell, James W., et al. Electrónica digital.
+- Capítulo 2  – Álgebra booleana y compuertas lógicas. Sección 2.1-2.7. M. Morris Mano, Diseño Digital. Pearson Edutacion.
+- Capítulo 2  – Álgebra booleana y compuertas lógicas. Sección 2.1-2.2, 2.4. Victor P. Nelson, Análisis y Diseño de Circuitos Lógicos Digitales. Pearson.
+
+Profundizar
+- Cap. 4 Álgebra de boole y Simplificacióñ lógica. Floyd, Thomas L. Fundamentos de sistemas digitales. Prentice Hall, 2006.
+
+
+---
+# Aplicaciones
+- Restador
+- Display 7 segmentos
+- Multiplexor
+- Demultiplexor
+- Codificador
+- Decodificador
+- Generadores / comprobadores de paridad
+
+Las presentación son en pareja con una duración entre ***5 a 10 min***
+---
+class: inverse, middle, center
+
+[**Próxima clase:** Lógica Combinacional - Aplicaciones]()
+
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="libs/remark-latest.min.js"></script>
@@ -1146,7 +746,7 @@ $$
 "highlightLines": true,
 "countIncrementalSlides": true,
 "ratio": "16:9",
-"slideNumberFormat": "<div class=\"progress-bar-container\">\n  </div>\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n"
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n  <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n  </div>\n</div>`\n"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
