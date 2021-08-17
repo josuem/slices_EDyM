@@ -1,0 +1,828 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="80.685211mm"
+   height="34.904068mm"
+   viewBox="0 0 80.685212 34.904068"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="simbolo_FF.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="0.43843"
+     inkscape:cx="-55.881212"
+     inkscape:cy="478.98182"
+     inkscape:window-width="1920"
+     inkscape:window-height="1057"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath838">
+      <path
+         d="M -1,667 H 525 V -1 H -1 Z"
+         id="path836" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath846">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path844" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath858">
+      <path
+         d="m 135,524.507 h 293.139 v 81.234 H 135 Z"
+         id="path856" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath866">
+      <path
+         d="M 135.5,606 H 431.44 V 523 H 135.5 Z"
+         clip-rule="evenodd"
+         id="path864" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath874">
+      <path
+         d="M -1,667 H 525 V -1 H -1 Z"
+         id="path872" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath882">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path880" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath922">
+      <path
+         d="m 208.935,596.021 h 6.048 v -5.517 h -6.048 z"
+         id="path920" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath934">
+      <path
+         d="m 209.889,571.955 h 5.274 v -5.742 h -5.274 z"
+         id="path932" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath946">
+      <path
+         d="m 325.899,596.021 h 6.057 v -5.517 h -6.057 z"
+         id="path944" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath958">
+      <path
+         d="m 326.853,571.955 h 5.283 v -5.742 h -5.283 z"
+         id="path956" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath974">
+      <path
+         d="m 228.042,588.857 h 19.773 v -5.796 h -19.773 z"
+         id="path972" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath990">
+      <path
+         d="m 249.921,588.659 h 6.057 v -5.517 h -6.057 z"
+         id="path988" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1002">
+      <path
+         d="m 232.011,579.641 h 20.268 v -7.92 h -20.268 z"
+         id="path1000" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1018">
+      <path
+         d="m 232.011,579.641 h 20.268 v -7.92 h -20.268 z"
+         id="path1016" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1034">
+      <path
+         d="m 345.114,588.857 h 19.764 v -5.796 h -19.764 z"
+         id="path1032" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1050">
+      <path
+         d="m 366.993,588.659 h 6.057 v -5.517 h -6.057 z"
+         id="path1048" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1062">
+      <path
+         d="m 343.962,579.641 h 30.492 v -7.92 h -30.492 z"
+         id="path1060" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1078">
+      <path
+         d="m 343.962,579.641 h 30.492 v -7.92 h -30.492 z"
+         id="path1076" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1090">
+      <path
+         d="m 281.619,602.195 h 5.643 v -5.517 h -5.643 z"
+         id="path1088" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1102">
+      <path
+         d="m 135,524.507 h 293.139 v 81.234 H 135 Z"
+         id="path1100" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1110">
+      <path
+         d="M 135.5,606 H 431.44 V 523 H 135.5 Z"
+         clip-rule="evenodd"
+         id="path1108" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1118">
+      <path
+         d="M -1,667 H 525 V -1 H -1 Z"
+         id="path1116" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1126">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path1124" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1142">
+      <path
+         d="M -1,667 H 525 V -1 H -1 Z"
+         id="path1140" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1150">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path1148" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1292">
+      <path
+         d="m 128.5,286.72 h 307 v -216 h -307 z"
+         clip-rule="evenodd"
+         id="path1290" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1300">
+      <path
+         d="M -1,667 H 525 V -1 H -1 Z"
+         id="path1298" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1308">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path1306" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1434">
+      <path
+         d="M -1,667 H 525 V -1 H -1 Z"
+         id="path1432" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath1442">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path1440" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3397">
+      <path
+         d="m 161.41,71.22 h 229.214 v 99.134 H 161.41 Z"
+         id="path3395" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3403">
+      <path
+         d="m 161.91,170.72 h 229 v -100 h -229 z"
+         clip-rule="evenodd"
+         id="path3401" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3409">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path3407" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3421">
+      <path
+         d="m 161.41,71.22 h 229.214 v 99.134 H 161.41 Z"
+         id="path3419" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3427">
+      <path
+         d="m 161.91,170.72 h 229 v -100 h -229 z"
+         clip-rule="evenodd"
+         id="path3425" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3433">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path3431" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3445">
+      <path
+         d="m 161.41,71.22 h 229.214 v 99.134 H 161.41 Z"
+         id="path3443" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3451">
+      <path
+         d="m 161.91,170.72 h 229 v -100 h -229 z"
+         clip-rule="evenodd"
+         id="path3449" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3457">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path3455" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3469">
+      <path
+         d="m 161.41,71.22 h 229.214 v 99.134 H 161.41 Z"
+         id="path3467" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3475">
+      <path
+         d="m 161.91,170.72 h 229 v -100 h -229 z"
+         clip-rule="evenodd"
+         id="path3473" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3481">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path3479" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3493">
+      <path
+         d="m 161.41,71.22 h 229.214 v 99.134 H 161.41 Z"
+         id="path3491" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3499">
+      <path
+         d="m 161.91,170.72 h 229 v -100 h -229 z"
+         clip-rule="evenodd"
+         id="path3497" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3505">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path3503" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3517">
+      <path
+         d="m 161.41,71.22 h 229.214 v 99.134 H 161.41 Z"
+         id="path3515" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3523">
+      <path
+         d="m 161.91,170.72 h 229 v -100 h -229 z"
+         clip-rule="evenodd"
+         id="path3521" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3529">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path3527" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3541">
+      <path
+         d="m 161.41,71.22 h 229.214 v 99.134 H 161.41 Z"
+         id="path3539" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3547">
+      <path
+         d="m 161.91,170.72 h 229 v -100 h -229 z"
+         clip-rule="evenodd"
+         id="path3545" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3553">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path3551" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3565">
+      <path
+         d="m 161.41,71.22 h 229.214 v 99.134 H 161.41 Z"
+         id="path3563" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3571">
+      <path
+         d="m 161.91,170.72 h 229 v -100 h -229 z"
+         clip-rule="evenodd"
+         id="path3569" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3577">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path3575" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3589">
+      <path
+         d="m 161.41,71.22 h 229.214 v 99.134 H 161.41 Z"
+         id="path3587" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3595">
+      <path
+         d="m 161.91,170.72 h 229 v -100 h -229 z"
+         clip-rule="evenodd"
+         id="path3593" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3601">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path3599" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3613">
+      <path
+         d="m 161.41,71.22 h 229.214 v 99.134 H 161.41 Z"
+         id="path3611" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3619">
+      <path
+         d="m 161.91,170.72 h 229 v -100 h -229 z"
+         clip-rule="evenodd"
+         id="path3617" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3625">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path3623" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3637">
+      <path
+         d="m 161.41,71.22 h 229.214 v 99.134 H 161.41 Z"
+         id="path3635" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3643">
+      <path
+         d="m 161.91,170.72 h 229 v -100 h -229 z"
+         clip-rule="evenodd"
+         id="path3641" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3649">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path3647" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3661">
+      <path
+         d="m 161.41,71.22 h 229.214 v 99.134 H 161.41 Z"
+         id="path3659" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3667">
+      <path
+         d="m 161.91,170.72 h 229 v -100 h -229 z"
+         clip-rule="evenodd"
+         id="path3665" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3673">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path3671" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5397">
+      <path
+         d="M -1,667 H 525 V -1 H -1 Z"
+         id="path5395" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5405">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path5403" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5417">
+      <path
+         d="M 81.5,449.5 H 467.978 V 606.344 H 81.5 Z"
+         id="path5415" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5425">
+      <path
+         d="M 82,606 H 470.41 V 449 H 82 Z"
+         clip-rule="evenodd"
+         id="path5423" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5433">
+      <path
+         d="M -1,667 H 525 V -1 H -1 Z"
+         id="path5431" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5441">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path5439" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5537">
+      <path
+         d="M -1,667 H 525 V -1 H -1 Z"
+         id="path5535" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath5545">
+      <path
+         d="M 0.03,666.03 H 524.01 V 0.03 H 0.03 Z"
+         id="path5543" />
+    </clipPath>
+  </defs>
+  <g
+     inkscape:label="Capa 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(63.615981,-108.01376)">
+    <g
+       id="g5184">
+      <g
+         id="g3393"
+         clip-path="url(#clipPath3397)"
+         transform="matrix(0.35277777,0,0,-0.35277777,-120.73423,168.11086)">
+        <g
+           id="g3399"
+           clip-path="url(#clipPath3403)">
+          <g
+             id="g3405"
+             clip-path="url(#clipPath3409)">
+            <g
+               id="g3411"
+               transform="translate(189.081,157.13)">
+              <path
+                 d="M 0,0 H -27.671 M 0,-42.64 H -27.671 M 70.16,0 H 42.489 M 70.16,-42.64 H 45.906"
+                 style="fill:none;stroke:#231f20;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                 id="path3413" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g3417"
+         clip-path="url(#clipPath3421)"
+         transform="matrix(0.35277777,0,0,-0.35277777,-120.73423,168.11086)">
+        <g
+           id="g3423"
+           clip-path="url(#clipPath3427)">
+          <g
+             id="g3429"
+             clip-path="url(#clipPath3433)">
+            <text
+               transform="matrix(1,0,0,-1,191.471,154.711)"
+               style="font-style:italic;font-variant:normal;font-size:8px;font-family:'Times New Roman';-inkscape-font-specification:TimesTen-Italic;writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text3437"><tspan
+                 x="0"
+                 y="0"
+                 id="tspan3435">D</tspan></text>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g3441"
+         clip-path="url(#clipPath3445)"
+         transform="matrix(0.35277777,0,0,-0.35277777,-120.73423,168.11086)">
+        <g
+           id="g3447"
+           clip-path="url(#clipPath3451)">
+          <g
+             id="g3453"
+             clip-path="url(#clipPath3457)">
+            <g
+               id="g3459"
+               transform="translate(234.992,114.449)">
+              <path
+                 d="m 0,0 c 0,-0.967 -0.783,-1.751 -1.75,-1.751 -0.967,0 -1.75,0.784 -1.75,1.751 0,0.966 0.783,1.749 1.75,1.749 C -0.783,1.749 0,0.966 0,0 Z"
+                 style="fill:none;stroke:#231f20;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                 id="path3461" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g3465"
+         clip-path="url(#clipPath3469)"
+         transform="matrix(0.35277777,0,0,-0.35277777,-120.73423,168.11086)">
+        <g
+           id="g3471"
+           clip-path="url(#clipPath3475)">
+          <g
+             id="g3477"
+             clip-path="url(#clipPath3481)">
+            <text
+               transform="matrix(1,0,0,-1,199.458,111.768)"
+               style="font-style:italic;font-variant:normal;font-size:8px;font-family:'Times New Roman';-inkscape-font-specification:TimesTen-Italic;writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text3485"><tspan
+                 x="0"
+                 y="0"
+                 id="tspan3483">C</tspan></text>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g3489"
+         clip-path="url(#clipPath3493)"
+         transform="matrix(0.35277777,0,0,-0.35277777,-120.73423,168.11086)">
+        <g
+           id="g3495"
+           clip-path="url(#clipPath3499)">
+          <g
+             id="g3501"
+             clip-path="url(#clipPath3505)">
+            <g
+               id="g3507"
+               transform="translate(189.405,110.202)">
+              <path
+                 d="M 0,0 0.001,8.277 7.138,4.138 Z m 131.059,46.928 h -27.671 m 23.914,-42.64 h -23.914 m 97.831,42.64 h -27.671 m 27.671,-42.64 h -24.254"
+                 style="fill:none;stroke:#231f20;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                 id="path3509" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g3513"
+         clip-path="url(#clipPath3517)"
+         transform="matrix(0.35277777,0,0,-0.35277777,-120.73423,168.11086)">
+        <g
+           id="g3519"
+           clip-path="url(#clipPath3523)">
+          <g
+             id="g3525"
+             clip-path="url(#clipPath3529)">
+            <text
+               transform="matrix(1,0,0,-1,180.018,73.1399)"
+               style="font-variant:normal;font-weight:normal;font-size:8px;font-family:'Times New Roman';-inkscape-font-specification:TimesTen-Roman;writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text3533"><tspan
+                 x="0 4 7.112 9.1120005 14.888 19.336 22.448 26.896 30.896 32.896 37.344002 41.792 44.903999 47.127998 49.792 52.015999 56.015999"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan3531">a) Borde positivo</tspan></text>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g3537"
+         clip-path="url(#clipPath3541)"
+         transform="matrix(0.35277777,0,0,-0.35277777,-120.73423,168.11086)">
+        <g
+           id="g3543"
+           clip-path="url(#clipPath3547)">
+          <g
+             id="g3549"
+             clip-path="url(#clipPath3553)">
+            <text
+               transform="matrix(1,0,0,-1,322.858,154.708)"
+               style="font-style:italic;font-variant:normal;font-size:8px;font-family:'Times New Roman';-inkscape-font-specification:TimesTen-Italic;writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text3557"><tspan
+                 x="0"
+                 y="0"
+                 id="tspan3555">D</tspan></text>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g3561"
+         clip-path="url(#clipPath3565)"
+         transform="matrix(0.35277777,0,0,-0.35277777,-120.73423,168.11086)">
+        <g
+           id="g3567"
+           clip-path="url(#clipPath3571)">
+          <g
+             id="g3573"
+             clip-path="url(#clipPath3577)">
+            <g
+               id="g3579"
+               transform="translate(366.375,114.449)">
+              <path
+                 d="m 0,0 c 0,-0.967 -0.783,-1.751 -1.75,-1.751 -0.966,0 -1.75,0.784 -1.75,1.751 0,0.966 0.784,1.749 1.75,1.749 C -0.783,1.749 0,0.966 0,0 Z m -46.086,0 c 0,-0.967 -0.783,-1.751 -1.75,-1.751 -0.966,0 -1.75,0.784 -1.75,1.751 0,0.966 0.784,1.749 1.75,1.749 0.967,0 1.75,-0.783 1.75,-1.749 z"
+                 style="fill:none;stroke:#231f20;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                 id="path3581" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g3585"
+         clip-path="url(#clipPath3589)"
+         transform="matrix(0.35277777,0,0,-0.35277777,-120.73423,168.11086)">
+        <g
+           id="g3591"
+           clip-path="url(#clipPath3595)">
+          <g
+             id="g3597"
+             clip-path="url(#clipPath3601)">
+            <text
+               transform="matrix(1,0,0,-1,330.841,111.768)"
+               style="font-style:italic;font-variant:normal;font-size:8px;font-family:'Times New Roman';-inkscape-font-specification:TimesTen-Italic;writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text3605"><tspan
+                 x="0"
+                 y="0"
+                 id="tspan3603">C</tspan></text>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g3609"
+         clip-path="url(#clipPath3613)"
+         transform="matrix(0.35277777,0,0,-0.35277777,-120.73423,168.11086)">
+        <g
+           id="g3615"
+           clip-path="url(#clipPath3619)">
+          <g
+             id="g3621"
+             clip-path="url(#clipPath3625)">
+            <g
+               id="g3627"
+               transform="translate(320.788,110.202)">
+              <path
+                 d="M 0,0 0.001,8.277 7.138,4.138 Z"
+                 style="fill:none;stroke:#231f20;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                 id="path3629" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g3633"
+         clip-path="url(#clipPath3637)"
+         transform="matrix(0.35277777,0,0,-0.35277777,-120.73423,168.11086)">
+        <g
+           id="g3639"
+           clip-path="url(#clipPath3643)">
+          <g
+             id="g3645"
+             clip-path="url(#clipPath3649)">
+            <g
+               id="g3651">
+              <path
+                 d="m 189.363,169.979 h 41.752 v -67.247 h -41.752 z m 131.354,0 h 41.752 v -67.247 h -41.752 z"
+                 style="fill:none;stroke:#231f20;stroke-width:0.75;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+                 id="path3653" />
+            </g>
+          </g>
+        </g>
+      </g>
+      <g
+         id="g3657"
+         clip-path="url(#clipPath3661)"
+         transform="matrix(0.35277777,0,0,-0.35277777,-120.73423,168.11086)">
+        <g
+           id="g3663"
+           clip-path="url(#clipPath3667)">
+          <g
+             id="g3669"
+             clip-path="url(#clipPath3673)">
+            <text
+               transform="matrix(1,0,0,-1,310.069,73.1399)"
+               style="font-variant:normal;font-weight:normal;font-size:8px;font-family:'Times New Roman';-inkscape-font-specification:TimesTen-Roman;writing-mode:lr-tb;fill:#231f20;fill-opacity:1;fill-rule:nonzero;stroke:none"
+               id="text3677"><tspan
+                 x="0 4.448 7.5599999 9.5600004 15.336 19.784 22.896 27.344 31.344 33.344002 37.792 41.792 45.792 49.792 52.456001 54.68 58.68"
+                 y="0"
+                 sodipodi:role="line"
+                 id="tspan3675">b) Borde negativo</tspan></text>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
