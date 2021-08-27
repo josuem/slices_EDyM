@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<script src="grViz_libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="grViz_libs/viz/viz.js"></script>
+<link href="grViz_libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
+<script src="grViz_libs/grViz-binding/grViz.js"></script>
+<script src="grViz_libs/pymjs/pym.v1.min.js"></script>
+  <title>grViz</title>
+</head>
+<body>
+<div id="htmlwidget_container">
+  <div id="htmlwidget-77b26401d12622c2e12b" style="width:100%;height:500px;" class="grViz html-widget"></div>
+  <script>HTMLWidgets.pymChild = new pym.Child();HTMLWidgets.addPostRenderHandler(function(){
+                                setTimeout(function(){HTMLWidgets.pymChild.sendHeight();},100);
+                            });</script>
+</div>
+<script type="application/json" data-for="htmlwidget-77b26401d12622c2e12b">{"x":{"diagram":"digraph finite_state_machine {\n  rankdir=LR;\n  size=\"8,5\"\n  node [shape = doublecircle]; 0 3 4 8;\n  node [shape = circle];\n  0 -> 2 [label = \"SS(B)\"];\n  0 -> 1 [label = \"SS(S)\"];\n  1 -> 3 [label = \"S($end)\"];\n  2 -> 6 [label = \"SS(b)\"];\n  2 -> 5 [label = \"SS(a)\"];\n  2 -> 4 [label = \"S(A)\"];\n  5 -> 7 [label = \"S(b)\"];\n  5 -> 5 [label = \"S(a)\"];\n  6 -> 6 [label = \"S(b)\"];\n  6 -> 5 [label = \"S(a)\"];\n  7 -> 8 [label = \"S(b)\"];\n  7 -> 5 [label = \"S(a)\"];\n  8 -> 6 [label = \"S(b)\"];\n  8 -> 5 [label = \"S(a)\"];\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<script type="application/htmlwidget-sizing" data-for="htmlwidget-77b26401d12622c2e12b">{"viewer":{"width":"100%","height":350,"padding":0,"fill":false},"browser":{"width":"100%","height":500,"padding":0,"fill":false}}</script>
+</body>
+</html>

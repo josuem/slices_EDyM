@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<style>body{background-color:white;}</style>
+<script src="grViz_libs/htmlwidgets/htmlwidgets.js"></script>
+<script src="grViz_libs/viz/viz.js"></script>
+<link href="grViz_libs/DiagrammeR-styles/styles.css" rel="stylesheet" />
+<script src="grViz_libs/grViz-binding/grViz.js"></script>
+<script src="grViz_libs/pymjs/pym.v1.min.js"></script>
+  <title>grViz</title>
+</head>
+<body>
+<div id="htmlwidget_container">
+  <div id="htmlwidget-921d0adffb99ead4bcbf" style="width:80%;height:500px;" class="grViz html-widget"></div>
+  <script>HTMLWidgets.pymChild = new pym.Child();HTMLWidgets.addPostRenderHandler(function(){
+                                setTimeout(function(){HTMLWidgets.pymChild.sendHeight();},100);
+                            });</script>
+</div>
+<script type="application/json" data-for="htmlwidget-921d0adffb99ead4bcbf">{"x":{"diagram":"digraph finite_state_machine {\n  rankdir=LR;\n  size=\"8,5\"\n  // node [shape = doublecircle]; 0 3 4 8;\n  node [shape = circle]; 0 1;\n  0 -> 0 [label = \"00/0\\n01/1\\n10/1\"];\n  \n  1 -> 0 [label = \"00/1\"];\n  0 -> 1 [label = \"11/0\"];\n  \n  1 -> 1 [label = \"01/0\\n10/0\\n11/1\"];\n}","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<script type="application/htmlwidget-sizing" data-for="htmlwidget-921d0adffb99ead4bcbf">{"viewer":{"width":"80%","height":350,"padding":0,"fill":false},"browser":{"width":"80%","height":500,"padding":0,"fill":false}}</script>
+</body>
+</html>
